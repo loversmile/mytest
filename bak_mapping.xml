@@ -1,0 +1,3413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root version="1">
+  <node name="user" function="challenge,login,logout,checkUser,checkInfo" validator="VVV" >
+    <path type="sql" key="user_name" table="users" format="VARCHAR" />
+  </node>
+  <node name="user_id" function="updateUserPassword,getUser,updateUser,deleteUser,getUserPrivilege,listUser" validator="VVV" >
+    <path type="sql" key="user_id" table="users" format="VARCHAR" />
+  </node>
+  <node name="token" function="login,updateUserPassword">
+  </node>
+  <node name="model_name" function="getInfo" default="UCM6104">
+    <path type="pvalue" key=":syslog_id"/>
+  </node>
+  <node name="description" function="getInfo" default="IPPBX Appliance">
+    <path type="pvalue" key="description"/>
+  </node>
+  <node name="logo" function="getInfo" default="images/h_logo.png">
+    <path type="pvalue" key="logo"/>
+  </node>
+  <node name="logo_url" function="getInfo" default="http://www.grandstream.com/">
+    <path type="pvalue" key="logo_url"/>
+  </node>
+  <node name="copyright" function="getInfo" default="Copyright © Grandstream Networks, Inc. 2014. All Rights Reserved.">
+    <path type="pvalue" key="copyright" regex=""/>
+  </node>
+  <node name="num_fxo" function="getInfo" default="2">
+    <path type="pvalue" key="num_fxo"/>
+  </node>
+  <node name="num_fxs" function="getInfo" default="2">
+    <path type="pvalue" key="num_fxs"/>
+  </node>
+  <node name="num_eth" function="getInfo" default="1">
+    <path type="pvalue" key="num_eth"/>
+  </node>
+  <node name="allow_nat" function="getInfo" default="0">
+    <path type="pvalue" key="allow_nat"/>
+  </node>
+  <node name="svip_type" function="getInfo" default="4">
+    <path type="pvalue" key="svip_type"/>
+  </node>
+  <node name="net_mode" function="getInfo" default="1"><!-->P231</!-->
+    <path type="pvalue" key="231"/>
+  </node>
+  <node name="prog_version" function="getInfo" default="1.0.0.1">
+    <path type="pvalue" key="68"/>
+  </node>
+  <node name="country" function="getInfo" default="US">
+    <path type="pvalue" key="ac_country"/>
+  </node>
+  
+  <!-->Please don't modify the key's order and value of networksettings<!-->
+  <node name="method" function="getNetworkSettings,updateNetworkSettings" default="">
+    <path type="pvalue" key="231" />
+  </node>
+  <node name="lan1_ip_method" function="getNetworkSettings,updateNetworkSettings" default="DHCP">
+    <path type="pvalue" key="8" />
+  </node>
+  <node name="lan1_ipaddr" function="getNetworkSettings,updateNetworkSettings" default="10.0.0.9">
+    <path type="pvalue" key="12" />
+    <path type="pvalue" key="11" />
+    <path type="pvalue" key="10" />
+    <path type="pvalue" key="9" />
+  </node>
+  <node name="lan1_submask" function="getNetworkSettings,updateNetworkSettings" default="255.255.255.0">
+    <path type="pvalue" key="16" />
+    <path type="pvalue" key="15" />
+    <path type="pvalue" key="14" />
+    <path type="pvalue" key="13" />
+  </node>
+  <node name="lan1_gateway" function="getNetworkSettings,updateNetworkSettings" default="">
+    <path type="pvalue" key="20" />
+    <path type="pvalue" key="19" />
+    <path type="pvalue" key="18" />
+    <path type="pvalue" key="17" />
+  </node>
+  <node name="lan1_dns1" function="getNetworkSettings,updateNetworkSettings" default="">
+    <path type="pvalue" key="24" />
+    <path type="pvalue" key="23" />
+    <path type="pvalue" key="22" />
+    <path type="pvalue" key="21" />
+  </node>
+  <node name="lan1_dns2" function="getNetworkSettings,updateNetworkSettings" default="">
+    <path type="pvalue" key="28" />
+    <path type="pvalue" key="27" />
+    <path type="pvalue" key="26" />
+    <path type="pvalue" key="25" />
+  </node>
+  <node name="lan1_username" function="getNetworkSettings,updateNetworkSettings" default="">
+    <path type="pvalue" key="82" />
+  </node>
+  <node name="lan1_password" function="getNetworkSettings,updateNetworkSettings" default="">
+    <path type="pvalue" key="83" />
+  </node>
+  <node name="altdns" function="getNetworkSettings,updateNetworkSettings" default="">
+    <path type="pvalue" key="95" />
+    <path type="pvalue" key="94" />
+    <path type="pvalue" key="93" />
+    <path type="pvalue" key="92" />
+  </node>
+  <node name="lan1_vid" function="getNetworkSettings,updateNetworkSettings" default="">
+    <path type="pvalue" key="51" />
+  </node>
+  <node name="lan1_priority" function="getNetworkSettings,updateNetworkSettings" default="">
+    <path type="pvalue" key="87" />
+  </node>
+  <node name="dhcp_ipaddr" function="getNetworkSettings" default="10.0.0.9">
+    <path type="sql" key="dhcp_ipaddr" table="dhcp_settings" format="VARCHAR"/>
+  </node>
+  <node name="dhcp_ipaddr" function="updateNetworkSettings" default="10.0.0.9">
+    <path type="sql" key="dhcp_ipaddr" table="dhcp_settings" format="VARCHAR"/>
+    <path type="pvalue" key="111" />
+  </node>
+  <node name="dhcp_submask" function="getNetworkSettings" default="255.255.255.0">
+    <path type="sql" key="dhcp_submask" table="dhcp_settings" format="VARCHAR"/>
+  </node>
+  <node name="dhcp_submask" function="updateNetworkSettings" default="255.255.255.0">
+    <path type="sql" key="dhcp_submask" table="dhcp_settings" format="VARCHAR"/>
+    <path type="pvalue" key="110" />
+  </node>
+  <node name="dhcp_enable" function="getNetworkSettings,updateNetworkSettings" default="no">
+    <path type="pvalue" key="5001" />
+  </node>
+  <node name="dhcp_dns1" function="getNetworkSettings,updateNetworkSettings" default="">
+    <path type="sql" key="dhcp_dns1" table="dhcp_settings" format="VARCHAR"/>
+  </node>
+  <node name="dhcp_dns2" function="getNetworkSettings,updateNetworkSettings" default="">
+    <path type="sql" key="dhcp_dns2" table="dhcp_settings" format="VARCHAR"/>
+  </node>    
+  <node name="ipfrom" function="getNetworkSettings,updateNetworkSettings" default="192.168.2.100">
+    <path type="sql" key="ipfrom" table="dhcp_settings" format="VARCHAR"/>
+  </node>
+  <node name="ipto" function="getNetworkSettings,updateNetworkSettings" default="192.168.2.254">
+    <path type="sql" key="ipto" table="dhcp_settings" format="VARCHAR" />
+  </node>
+  <node name="ipleasetime" function="getNetworkSettings,updateNetworkSettings" default="43200">
+    <path type="sql" key="ipleasetime" table="dhcp_settings" format="INT"/>
+  </node>
+  <node name="tftpserver" function="getNetworkSettings,updateNetworkSettings" default="">
+    <path type="sql" key="tftpserver" table="dhcp_settings" format="VARCHAR"/>
+  </node>
+  <node name="default_interface" function="getNetworkSettings,updateNetworkSettings" default="LAN2">
+    <path type="pvalue" key="default_if" />
+  </node>
+  <node name="lan2_ip_method" function="getNetworkSettings,updateNetworkSettings" default="DHCP">
+    <path type="pvalue" key="lan2.method" />
+  </node>
+  <node name="lan2_ip" function="getNetworkSettings,updateNetworkSettings" default="192.168.0.160">
+    <path type="pvalue" key="lan2.static.ipaddress" />
+  </node>
+  <node name="lan2_mask" function="getNetworkSettings,updateNetworkSettings" default="255.255.0.0">
+    <path type="pvalue" key="lan2.static.mask" />
+  </node>
+  <node name="lan2_gateway" function="getNetworkSettings,updateNetworkSettings" default="">
+    <path type="pvalue" key="lan2.static.gateway" />
+  </node>
+  <node name="lan2_dns1" function="getNetworkSettings,updateNetworkSettings" default="0.0.0.0">
+    <path type="pvalue" key="lan2.static.dns1" />
+  </node>
+  <node name="lan2_dns2" function="getNetworkSettings,updateNetworkSettings" default="">
+    <path type="pvalue" key="lan2.static.dns2" />
+  </node>
+  <node name="lan2_username" function="getNetworkSettings,updateNetworkSettings" default="">
+    <path type="pvalue" key="lan2.PPPoE.username" />
+  </node>
+  <node name="lan2_password" function="getNetworkSettings,updateNetworkSettings" default="">
+    <path type="pvalue" key="lan2.PPPoE.password" />
+  </node>
+  <node name="lan2_vid" function="getNetworkSettings,updateNetworkSettings" default="0">
+    <path type="pvalue" key="lan2.802.1q.vid" />
+  </node>
+  <node name="lan2_priority" function="getNetworkSettings,updateNetworkSettings" default="0">
+    <path type="pvalue" key="lan2.802.1q.priority" />
+  </node>
+
+  <!-->static_defense<!-->
+  <node name="sequence" function="moveStaticDefenseTop,moveStaticDefenseBottom,moveStaticDefenseUp,moveStaticDefenseDown,updateStaticDefense,addStaticDefense" default="0">
+    <path type="sql" key="sequence" table="static_defense" format="INT"/>
+  </node>
+  <node name="rule_name" function="getStaticDefense,updateStaticDefense,listStaticDefense,addStaticDefense,deleteStaticDefense" default="">
+    <path type="sql" key="rule_name" table="static_defense" format="VARCHAR"/>
+  </node>
+  <node name="rule_act" function="getStaticDefense,updateStaticDefense,addStaticDefense,deleteStaticDefense" default="">
+    <path type="sql" key="rule_act" table="static_defense" format="VARCHAR"/>
+  </node>
+  <node name="protocol" function="getStaticDefense,updateStaticDefense,addStaticDefense,deleteStaticDefense" default="">
+    <path type="sql" key="protocol" table="static_defense" format="VARCHAR"/>
+  </node>
+  <node name="type" function="getStaticDefense,updateStaticDefense,addStaticDefense,deleteStaticDefense" default="">
+    <path type="sql" key="type" table="static_defense" format="VARCHAR"/>
+  </node>
+  <node name="source_addr" function="getStaticDefense,updateStaticDefense,addStaticDefense,deleteStaticDefense" default="">
+    <path type="sql" key="source_addr" table="static_defense" format="VARCHAR"/>
+  </node>
+  <node name="dest_addr" function="getStaticDefense,updateStaticDefense,addStaticDefense,deleteStaticDefense" default="">
+    <path type="sql" key="dest_addr" table="static_defense" format="VARCHAR"/>
+  </node>
+  <node name="source_port" function="getStaticDefense,updateStaticDefense,addStaticDefense,deleteStaticDefense" default="">
+    <path type="sql" key="source_port" table="static_defense" format="INT"/>
+  </node>
+  <node name="dest_port" function="getStaticDefense,updateStaticDefense,addStaticDefense,deleteStaticDefense" default="">
+    <path type="sql" key="dest_port" table="static_defense" format="INT"/>
+  </node>
+  <node name="interface" function="getStaticDefense,updateStaticDefense,addStaticDefense,deleteStaticDefense" default="">
+    <path type="sql" key="interface" table="static_defense" format="VARCHAR"/>
+  </node>
+  <node name="flags" function="getStaticDefense,updateStaticDefense,addStaticDefense,deleteStaticDefense" default="">
+    <path type="sql" key="flags" table="static_defense" format="VARCHAR"/>
+  </node>
+  <node name="ping_enable" function="getTypicalFirewallSettings,updateTypicalFirewallSettings" default="">
+    <path type="sql" key="ping_enable" table="typical_firewallsettings" format="VARCHAR"/>
+  </node>
+  <node name="syn_flood" function="getTypicalFirewallSettings,updateTypicalFirewallSettings" default="">
+    <path type="sql" key="syn_flood" table="typical_firewallsettings" format="VARCHAR"/>
+  </node>
+  <node name="ping_of_death" function="getTypicalFirewallSettings,updateTypicalFirewallSettings" default="">
+    <path type="sql" key="ping_of_death" table="typical_firewallsettings" format="VARCHAR"/>
+  </node>
+  <node name="reject_all" function="getTypicalFirewallSettings,updateTypicalFirewallSettings" default="">
+    <path type="sql" key="reject_all" table="typical_firewallsettings" format="VARCHAR"/>
+  </node>
+
+  <node name="up-time" function="getSystemStatus" default="0">
+    <path type="file" key="/proc/uptime" regex="^[0-9.]+"/>
+  </node>
+  <node name="idle-time" function="getSystemStatus" default="0">
+    <path type="file" key="/proc/uptime" regex="[0-9.]+$"/>
+  </node>
+  <node name="system-time" function="getSystemStatus" default="">
+    <path type="cmd" key="date" />
+  </node>
+  <node name="item_num" function="listUser,listAccount,listZeroConfig,listIVR,listVMGroup,listRingGroup,listPagingGroup,listQueue,listDISA,listPickupGroup,listExtensionGroup,listConference,listFax,listAnalogTrunk,listVoIPTrunk,listInboundRoute,listInboundBlacklist,listOutboundRoute,listSipExtenStatus,listParkingLotStatus,listConfStatus,listConfMemberStatus,listFile,listDODVoIPTrunk,listLogSwitchStatic,listLogSwitchDynamic,listPhonebookDn,listEventList,listInboundTimeCondition,fetchRemoteLanguageList,listAllTrunk,listBridgedChannels,listUnBridgedChannels,listDirectory,listStaticDefense" default="20">
+  </node>
+  <node name="page" function="listUser,listAccount,listZeroConfig,listIVR,listVMGroup,listRingGroup,listPagingGroup,listQueue,listDISA,listPickupGroup,listExtensionGroup,listConference,listFax,listAnalogTrunk,listVoIPTrunk,listInboundRoute,listInboundBlacklist,listOutboundRoute,listSipExtenStatus,listParkingLotStatus,listConfStatus,listConfMemberStatus,listFile,listDODVoIPTrunk,listLogSwitchStatic,listLogSwitchDynamic,listPhonebookDn,listEventList,listInboundTimeCondition,fetchRemoteLanguageList,listAllTrunk,listBridgedChannels,listUnBridgedChannels,listDirectory,listStaticDefense" default="1">
+  </node>
+  <node name="sidx" function="listUser,listAccount,listZeroConfig,listIVR,listVMGroup,listRingGroup,listPagingGroup,listQueue,listDISA,listPickupGroup,listExtensionGroup,listConference,listFax,listAnalogTrunk,listVoIPTrunk,listInboundRoute,listInboundBlacklist,listOutboundRoute,listSipExtenStatus,listParkingLotStatus,listConfStatus,listConfMemberStatus,listFile,listDODVoIPTrunk,listLogSwitchStatic,listLogSwitchDynamic,listPhonebookDn,listEventList,listInboundTimeCondition,fetchRemoteLanguageList,listAllTrunk,listAllOpermodeSettings,listAllToneZoneSettings,listBridgedChannels,listUnBridgedChannels,listDirectory,listStaticDefense" default="">
+  </node>
+  <node name="sord" function="listUser,listAccount,listZeroConfig,listIVR,listVMGroup,listRingGroup,listPagingGroup,listQueue,listDISA,listPickupGroup,listExtensionGroup,listConference,listFax,listAnalogTrunk,listVoIPTrunk,listInboundRoute,listInboundBlacklist,listOutboundRoute,listSipExtenStatus,listParkingLotStatus,listConfStatus,listConfMemberStatus,listFile,listDODVoIPTrunk,listLogSwitchStatic,listLogSwitchDynamic,listPhonebookDn,listEventList,listInboundTimeCondition,fetchRemoteLanguageList,listAllTrunk,listAllOpermodeSettings,listAllToneZoneSettings,listBridgedChannels,listUnBridgedChannels,listDirectory,listStaticDefense" default="asc">
+  </node>
+  <node name="options" function="listUser,listAccount,listZeroConfig,listIVR,listVMGroup,listRingGroup,listPagingGroup,listQueue,listDISA,listPickupGroup,listExtensionGroup,listConference,listFax,listAnalogTrunk,listVoIPTrunk,listInboundRoute,listInboundBlacklist,listOutboundRoute,listSipExtenStatus,listParkingLotStatus,listConfStatus,listConfMemberStatus,listFile,listDODVoIPTrunk,listLogSwitchStatic,listLogSwitchDynamic,listPhonebookDn,listEventList,listInboundTimeCondition,fetchRemoteLanguageList,listAllTrunk,listAllToneZoneSettings,listBridgedChannels,listUnBridgedChannels,listDirectory,listStaticDefense" default="">
+  </node>
+  <node name="filter" function="listFile" default="">
+  </node>
+  <node name="number" function="getNumberList" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  
+  <node name="user_id" function="getUserAccountList" default=""><!-->this user 
+    is the option in the table numbers</!-->
+    <path type="sql" key="extension" table="sip_accounts" format="VARCHAR" />
+    <path type="sql" key="extension" table="iax_accounts" format="VARCHAR" />
+    <path type="sql" key="extension" table="fxs_accounts" format="VARCHAR" />
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="user_name" function="getUser,updateUser,addUser,getUserNameList" default="">
+    <path type="sql" key="user_name" table="users" format="VARCHAR" />
+  </node>
+  <node name="user_password" function="getUser,updateUser,addUser" default="">
+    <path type="sql" key="user_password" table="users" format="VARCHAR" />
+  </node>
+  <node name="privilege" function="getUser,updateUser,addUser" default="">
+    <path type="sql" key="privilege" table="users" format="INT" />
+  </node>
+  <node name="department" function="getUser,updateUser,addUser" default="">
+    <path type="sql" key="department" table="users" format="VARCHAR" />
+  </node>
+  <node name="first_name" function="getUser,updateUser,addUser,addSIPAccountAndUser,addIAXAccountAndUser,addFXSAccountAndUser" default="">
+    <path type="sql" key="first_name" table="users" format="VARCHAR" />
+  </node>
+  <node name="last_name" function="getUser,updateUser,addUser,addSIPAccountAndUser,addIAXAccountAndUser,addFXSAccountAndUser" default="">
+    <path type="sql" key="last_name" table="users" format="VARCHAR" />
+  </node>
+  <node name="fullname" function="updateUser" default="">
+    <path type="sql" key="extension" table="sip_accounts" format="VARCHAR" />
+    <path type="sql" key="extension" table="iax_accounts" format="VARCHAR" />
+    <path type="sql" key="extension" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="enable_multiple_extension" function="getUser,updateUser,addUser" default="">
+    <path type="sql" key="enable_multiple_extension" table="users" format="VARCHAR" />
+  </node>
+  <node name="multiple_extension" function="getUser,updateUser,addUser" default="">
+    <path type="sql" key="multiple_extension" table="users" format="VARCHAR" />
+  </node>
+  <node name="email" function="getUser,updateUser,addUser,addSIPAccountAndUser,addIAXAccountAndUser,addFXSAccountAndUser" default="">
+    <path type="sql" key="email" table="users" format="VARCHAR" />
+  </node>
+  <node name="language" function="getUser,updateUser,addUser,addSIPAccountAndUser,addIAXAccountAndUser,addFXSAccountAndUser" default="">
+    <path type="sql" key="language" table="users" format="VARCHAR" />
+  </node>
+  <node name="fax" function="getUser,updateUser,addUser" default="">
+    <path type="sql" key="fax" table="users" format="VARCHAR" />
+  </node>
+  <node name="family_number" function="getUser,updateUser,addUser" default="">
+    <path type="sql" key="family_number" table="users" format="VARCHAR" />
+  </node>
+  <node name="phone_number" function="getUser,updateUser,addUser" default="">
+    <path type="sql" key="phone_number" table="users" format="VARCHAR" />
+  </node>
+  <node name="cookie" function="getUser,updateUser,addUser" default="">
+    <path type="sql" key="cookie" table="users" format="VARCHAR" />
+  </node>
+  <node name="login_time" function="getUser,updateUser,addUser" default="">
+    <path type="sql" key="login_time" table="users" format="TIMESTAMP" />
+  </node>
+  
+  <node name="account" function="deleteAccount" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="account" function="listAccount,getAccountPrivilege,getAccountList" default="">
+    <path type="sql" key="extension" table="sip_accounts" format="VARCHAR" />
+    <path type="sql" key="extension" table="iax_accounts" format="VARCHAR" />
+    <path type="sql" key="extension" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="account_type" function="listAccount" default="">
+    <path type="sql" key="account_type" table="fxs_accounts" format="VARCHAR" />
+    <path type="sql" key="account_type" table="iax_accounts" format="VARCHAR" />
+    <path type="sql" key="account_type" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="account" function="getSIPAccount" default="">
+    <path type="sql" key="extension" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="account" function="updateSIPAccount" default="">
+    <path type="sql" key="extension" table="voicemail" format="VARCHAR" />
+    <path type="sql" key="extension" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <!-->
+  <node name="extension" function="updateSIPAccount" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <!-->
+  <node name="extension" function="addSIPAccount" default="">
+    <path type="sql" key="extension" table="voicemail" format="VARCHAR"/>
+    <path type="sql" key="extension" table="sip_extension_status" format="VARCHAR"/>
+    <path type="sql" key="extension" table="sip_accounts" format="VARCHAR" />
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="extension" function="addSIPAccountAndUser" default="">
+    <path type="sql" key="extension" table="voicemail" format="VARCHAR"/>
+    <path type="sql" key="extension" table="sip_extension_status" format="VARCHAR"/>
+    <path type="sql" key="extension" table="sip_accounts" format="VARCHAR" />
+    <path type="sql" key="user_name" table="users" format="VARCHAR" />
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="extension" function="getSIPAccount,getSIPAccountList" default="">
+    <path type="sql" key="extension" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="account_type" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="account_type" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <!--> fullname = first_name + last_name<!-->
+  <node name="fullname" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser" default="">
+    <path type="sql" key="fullname" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="hasvoicemail" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="hasvoicemail" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="cidnumber" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="cidnumber" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="secret" function="getSIPAccount,addSIPAccount,updateSIPAccount" default="">
+    <path type="sql" key="secret" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="secret" function="addSIPAccountAndUser" default="">
+    <path type="sql" key="user_password" table="users" format="VARCHAR" />
+    <path type="sql" key="secret" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="vmsecret" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="vmsecret" table="voicemail" format="VARCHAR" /> 
+    <path type="sql" key="vmsecret" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="skip_vmsecret" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="skip_vmsecret" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="ring_timeout" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="ring_timeout" table="sip_accounts" format="INT" />
+  </node>
+  <node name="auto_record" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="auto_record" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="encryption" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="encryption" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="faxdetect" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="faxdetect" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="strategy_ipacl" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="strategy_ipacl" table="sip_accounts" format="INT" />
+  </node>
+  <node name="local_network1" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="local_network1" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="local_network2" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="local_network2" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="local_network3" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="local_network3" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="local_network4" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="local_network4" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="local_network5" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="local_network5" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="local_network6" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="local_network6" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="local_network7" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="local_network7" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="local_network8" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="local_network8" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="local_network9" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="local_network9" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="local_network10" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="local_network10" table="sip_accounts" format="VARCHAR" />
+  </node>
+
+  <node name="specific_ip" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="specific_ip" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="allow" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="allow" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="cfb" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="cfb" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="cfn" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="cfn" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="cfu" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="cfu" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="permission" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="permission" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="nat" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="nat" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="bypass_outrt_auth" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="bypass_outrt_auth" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="directmedia" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="directmedia" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="dtmfmode" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="dtmfmode" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="insecure" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="insecure" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="enable_qualify" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="enable_qualify" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="qualify" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="qualify" table="sip_accounts" format="INT" />
+  </node>
+  <node name="qualifyfreq" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="qualifyfreq" table="sip_accounts" format="INT" />
+  </node>
+  <node name="authid" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="authid" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="enablehotdesk" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="enablehotdesk" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="user_outrt_passwd" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+    <path type="sql" key="user_outrt_passwd" table="sip_accounts" format="VARCHAR" />
+  </node>
+  <node name="out_of_service" function="getSIPAccount,addSIPAccount,addSIPAccountAndUser,updateSIPAccount" default="">
+   <path type="sql" key="out_of_service" table="sip_accounts" format="VARCHAR" />
+  </node>
+
+  <node name="account" function="getIAXAccount,updateIAXAccount" default="">
+    <path type="sql" key="extension" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="extension" function="addIAXAccount" default="">
+    <path type="sql" key="extension" table="voicemail" format="VARCHAR"/>
+    <path type="sql" key="extension" table="iax_extension_status" format="VARCHAR" />
+    <path type="sql" key="extension" table="iax_accounts" format="VARCHAR" />
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="extension" function="addIAXAccountAndUser" default="">
+    <path type="sql" key="extension" table="voicemail" format="VARCHAR"/>
+    <path type="sql" key="extension" table="iax_extension_status" format="VARCHAR" />
+    <path type="sql" key="extension" table="iax_accounts" format="VARCHAR" />
+    <path type="sql" key="user_name" table="users" format="VARCHAR" />
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <!-->
+  <node name="extension" function="updateIAXAccount" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <!-->
+  <node name="account_type" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="account_type" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="fullname" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser" default="">
+    <path type="sql" key="fullname" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="hasvoicemail" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="hasvoicemail" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="cidnumber" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="cidnumber" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="secret" function="getIAXAccount,addIAXAccount,updateIAXAccount" default="">
+    <path type="sql" key="secret" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="secret" function="addIAXAccountAndUser" default="">
+    <path type="sql" key="secret" table="iax_accounts" format="VARCHAR" />
+    <path type="sql" key="user_password" table="users" format="VARCHAR" />
+  </node>
+  <node name="vmsecret" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="vmsecret" table="voicemail" format="VARCHAR" /> 
+    <path type="sql" key="vmsecret" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="skip_vmsecret" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="skip_vmsecret" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="ring_timeout" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="ring_timeout" table="iax_accounts" format="INT" />
+  </node>
+  <node name="auto_record" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="auto_record" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="encryption" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="encryption" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="faxdetect" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="faxdetect" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="strategy_ipacl" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="strategy_ipacl" table="iax_accounts" format="INT" />
+  </node>
+  <node name="local_network1" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="local_network1" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="local_network2" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="local_network2" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="local_network3" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="local_network3" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="local_network4" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="local_network4" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="local_network5" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="local_network5" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="local_network6" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="local_network6" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="local_network7" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="local_network7" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="local_network8" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="local_network8" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="local_network9" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="local_network9" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="local_network10" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="local_network10" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="specific_ip" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="specific_ip" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="allow" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="allow" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="cfb" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="cfb" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="cfn" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="cfn" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="cfu" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="cfu" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="permission" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="permission" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="requirecalltoken" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="requirecalltoken" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="maxcallnumbers" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="maxcallnumbers" table="iax_accounts" format="INT" />
+  </node>
+  <node name="bypass_outrt_auth" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="bypass_outrt_auth" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="user_outrt_passwd" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="user_outrt_passwd" table="iax_accounts" format="VARCHAR" />
+  </node>
+  <node name="out_of_service" function="getIAXAccount,addIAXAccount,addIAXAccountAndUser,updateIAXAccount" default="">
+    <path type="sql" key="out_of_service" table="iax_accounts" format="VARCHAR" />
+  </node>
+  
+  <node name="account" function="getFXSAccount,updateFXSAccount" default="">
+    <path type="sql" key="extension" table="voicemail" format="VARCHAR" />
+    <path type="sql" key="extension" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="extension" function="addFXSAccount" default="">
+    <path type="sql" key="extension" table="voicemail" format="VARCHAR" /> 
+    <path type="sql" key="extension" table="fxs_extension_status" format="VARCHAR" />
+    <path type="sql" key="extension" table="fxs_accounts" format="VARCHAR" />
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="extension" function="addFXSAccountAndUser" default="">
+    <path type="sql" key="extension" table="voicemail" format="VARCHAR" /> 
+    <path type="sql" key="extension" table="fxs_extension_status" format="VARCHAR" />
+    <path type="sql" key="extension" table="fxs_accounts" format="VARCHAR" />
+    <path type="sql" key="user_name" table="users" format="VARCHAR" />
+    <path type="sql" key="user_password" table="users" format="VARCHAR" />
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <!-->
+  <node name="extension" function="updateFXSAccount" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <!-->
+  <node name="extension" function="getFXSAccount" default="">
+    <path type="sql" key="extension" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="account_type" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="account_type" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="fullname" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser" default="">
+    <path type="sql" key="fullname" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="hasvoicemail" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="hasvoicemail" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="cidnumber" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="cidnumber" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="vmsecret" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="vmsecret" table="voicemail" format="VARCHAR" /> 
+    <path type="sql" key="vmsecret" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="skip_vmsecret" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="skip_vmsecret" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="ring_timeout" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="ring_timeout" table="fxs_accounts" format="INT" />
+  </node>
+  <node name="auto_record" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="auto_record" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="faxdetect" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="faxdetect" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="bypass_outrt_auth" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="bypass_outrt_auth" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="cfb" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="cfb" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="cfn" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="cfn" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="cfu" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="cfu" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="permission" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="permission" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="dahdi" function="getFXSAccount,updateFXSAccount,getDahdiList" default="">
+    <path type="sql" key="dahdi" table="fxs_accounts" format="INT" />
+  </node>
+  <node name="dahdi" function="addFXSAccount,addFXSAccountAndUser" default="">
+    <path type="sql" key="chan" table="fxs_extension_status" format="INT" />
+    <path type="sql" key="dahdi" table="fxs_accounts" format="INT" />
+  </node>
+  <node name="callwaiting" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="callwaiting" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="sharpissendkey" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="sharpissendkey" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="rxgain" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="rxgain" table="fxs_accounts" format="INT" />
+  </node>
+  <node name="txgain" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="txgain" table="fxs_accounts" format="INT" />
+  </node>
+  <node name="rxflash_min" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="rxflash_min" table="fxs_accounts" format="INT" />
+  </node>
+  <node name="rxflash" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="rxflash" table="fxs_accounts" format="INT" />
+  </node>
+  <node name="answeronpolarityswitch" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="answeronpolarityswitch" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="hanguponpolarityswitch" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="hanguponpolarityswitch" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="cidsignalling" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="cidsignalling" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="echocancel" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="echocancel" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="threewaycalling" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="threewaycalling" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="sendcalleridafter" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="sendcalleridafter" table="fxs_accounts" format="INT" />
+  </node>
+  <node name="user_outrt_passwd" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="user_outrt_passwd" table="fxs_accounts" format="VARCHAR" />
+  </node>
+  <node name="out_of_service" function="getFXSAccount,addFXSAccount,addFXSAccountAndUser,updateFXSAccount" default="">
+    <path type="sql" key="out_of_service" table="fxs_accounts" format="VARCHAR" />
+  </node>
+
+  <!-->Zero config Start<-->
+  <node name="filter" function="listZeroConfig" default="">
+    <path type="sql" key="mac" table="zc_devices" format="VARCHAR" />
+  </node>
+  <node name="zeroconfig" function="getZeroConfigPrivilege" default="">
+    <path type="sql" key="mac" table="zc_members" format="VARCHAR" />
+    <path type="sql" key="mac" table="zc_devices" format="VARCHAR" />
+    <path type="sql" key="auto_assign" table="zc_settings" format="INT" />
+  </node>
+  <node name="mac" function="getZeroConfig,addZeroConfig,updateZeroConfig,deleteZeroConfig" default="">
+    <path type="sql" key="mac" table="zc_devices" format="VARCHAR" />
+  </node>
+  <node name="original_ip" function="getZeroConfig,updateZeroConfig,deleteZeroConfig" default="">
+    <path type="sql" key="ip" table="zc_devices" format="VARCHAR" />
+  </node>
+  <node name="model" function="getZeroConfig,addZeroConfig,updateZeroConfig" default="">
+    <path type="sql" key="model" table="zc_devices" format="VARCHAR" />
+  </node>
+  <node name="ip" function="getZeroConfig,addZeroConfig,updateZeroConfig" default="">
+    <path type="sql" key="ip" table="zc_devices" format="VARCHAR" />
+  </node>
+  <node name="version" function="getZeroConfig,addZeroConfig,updateZeroConfig" default="">
+    <path type="sql" key="version" table="zc_devices" format="VARCHAR" />
+  </node>
+  <node name="vendor" function="getZeroConfig,addZeroConfig,updateZeroConfig" default="">
+    <path type="sql" key="vendor" table="zc_devices" format="VARCHAR" />
+  </node>
+  <node name="state" function="getZeroConfig,addZeroConfig,updateZeroConfig" default="">
+    <path type="sql" key="state" table="zc_devices" format="INT" />
+  </node>
+  <node name="ad_state" function="getZeroConfig,addZeroConfig,updateZeroConfig" default="">
+    <path type="sql" key="ad_state" table="zc_devices" format="INT" />
+  </node>
+  <node name="hot_desking" function="getZeroConfig,addZeroConfig,updateZeroConfig" default="">
+    <path type="sql" key="hot_desking" table="zc_devices" format="VARCHAR" />
+  </node>
+  <node name="members" function="getZeroConfig,addZeroConfig,updateZeroConfig" default="">
+    <path type="sql" key="member_index" table="zc_members" format="VARCHAR" />
+    <path type="sql" key="extension" table="zc_members" format="VARCHAR" />
+  </node>
+  <node name="extension" function="getZeroConfigExtension" default="">
+    <path type="sql" key="extension" table="zc_members" format="VARCHAR" />
+  </node>
+  <node name="enable_zeroconfig" function="updateZeroConfigSettings" default="0">
+    <path type="pvalue" key="zero_config"/>
+    <path type="cmd" key="zeroconfig.sh"/>
+  </node>
+  <node name="enable_zeroconfig" function="getZeroConfigSettings" default="1">
+    <path type="pvalue" key="zero_config"/>
+  </node>
+  <node name="auto_assign" function="getZeroConfigSettings,updateZeroConfigSettings" default="">
+    <path type="sql" key="auto_assign" table="zc_settings" format="VARCHAR" />
+  </node>
+  <node name="enable_pick" function="getZeroConfigSettings,updateZeroConfigSettings" default="">
+    <path type="sql" key="enable_pick" table="zc_settings" format="VARCHAR" />
+  </node>
+  <node name="pick_period" function="getZeroConfigSettings,updateZeroConfigSettings" default="">
+    <path type="sql" key="pick_period" table="zc_settings" format="REAL" />
+  </node>
+  <node name="pick_until_time" function="getZeroConfigSettings" default="">
+    <path type="sql" key="pick_until_time" table="zc_settings" format="REAL" />
+  </node>
+  <node name="datetime_enabled" function="getZeroConfigSettings,updateZeroConfigSettings" default="">
+    <path type="sql" key="datetime_enabled" table="zc_settings" format="INT" />
+  </node>
+  <node name="date_format" function="getZeroConfigSettings,updateZeroConfigSettings" default="">
+    <path type="sql" key="date_format" table="zc_settings" format="INT" />
+  </node>
+  <node name="time_format" function="getZeroConfigSettings,updateZeroConfigSettings" default="">
+    <path type="sql" key="time_format" table="zc_settings" format="INT" />
+  </node>
+  <node name="timezone" function="getZeroConfigSettings,updateZeroConfigSettings" default="">
+    <path type="sql" key="timezone" table="zc_settings" format="VARCHAR" />
+  </node>
+  <node name="model" function="getZeroConfigModel" default="">
+    <path type="sql" key="model" table="zc_models" format="REAL" />
+  </node>
+  <node name="vendor" function="getZeroConfigModel" default="">
+    <path type="sql" key="vendor" table="zc_models" format="REAL" />
+  </node>
+  <node name="num_acct" function="getZeroConfigModel" default="">
+    <path type="sql" key="num_acct" table="zc_models" format="REAL" />
+  </node>
+
+  <node name="method" function="scanDevices" default="">
+    <path type="sql" key="" table="" format="VARCHAR" />
+  </node>
+  <node name="ip" function="scanDevices,rebootDevice" default="">
+    <path type="sql" key="state" table="zc_devices" format="VARCHAR" />
+  </node>
+  <node name="interface" function="scanDevices" default="">
+    <path type="sql" key="" table="" format="VARCHAR" />
+  </node>
+  <node name="mac" function="downloadCfg" default="">
+    <path type="sql" key="" table="" format="VARCHAR" />
+  </node>
+  <node name="field" function="clearDevice" default="">
+    <path type="sql" key="" table="" format="VARCHAR" />
+  </node>
+
+  <!-->Zero config End<-->
+
+  <node name="conference" function="listConference,getConferencePrivilege,getConference">
+    <path type="sql" key="extension" table="conference" format="VARCHAR" />
+  </node>
+  <node name="conference" function="updateConference">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+    <path type="sql" key="extension" table="conference" format="VARCHAR" />
+  </node>
+  <node name="conference" function="deleteConference">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="extension" function="updateConference" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="extension" function="addConference" default="">
+    <path type="sql" key="extension" table="conference_status" format="VARCHAR"/>
+    <path type="sql" key="extension" table="conference" format="VARCHAR" />
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="extension" function="getConference,getConferenceList" default="">
+    <path type="sql" key="extension" table="conference" format="VARCHAR" />
+  </node>
+  <node name="pincode" function="getConference,updateConference,addConference" default="">
+    <path type="sql" key="pincode" table="conference" format="VARCHAR" />
+  </node>
+  <node name="admin_pincode" function="getConference,updateConference,addConference" default="">
+    <path type="sql" key="admin_pincode" table="conference" format="VARCHAR" />
+  </node>
+  <node name="call_menu" function="getConference,updateConference,addConference" default="">
+    <path type="sql" key="call_menu" table="conference" format="VARCHAR" />
+  </node>
+  <node name="recording" function="getConference,updateConference,addConference" default="">
+    <path type="sql" key="recording" table="conference" format="VARCHAR" />
+  </node>
+  <node name="quiet_mode" function="getConference,updateConference,addConference" default="">
+    <path type="sql" key="quiet_mode" table="conference" format="VARCHAR" />
+  </node>
+  <node name="wait_admin" function="getConference,updateConference,addConference" default="">
+    <path type="sql" key="wait_admin" table="conference" format="VARCHAR" />
+  </node>
+  <node name="user_invite" function="getConference,updateConference,addConference" default="">
+    <path type="sql" key="user_invite" table="conference" format="VARCHAR" />
+  </node>
+  <node name="announce_callers" function="getConference,updateConference,addConference" default="">
+    <path type="sql" key="announce_callers" table="conference" format="VARCHAR" />
+  </node>
+  <node name="public" function="getConference,updateConference,addConference" default="">
+    <path type="sql" key="public" table="conference" format="VARCHAR" />
+  </node>
+  <node name="moh_firstcaller" function="getConference,updateConference,addConference" default="">
+    <path type="sql" key="moh_firstcaller" table="conference" format="VARCHAR" />
+  </node>
+  <node name="skipauth" function="getConference,updateConference,addConference" default="">
+    <path type="sql" key="skipauth" table="conference" format="VARCHAR" />
+  </node>
+  <node name="musicclass" function="getConference,updateConference,addConference" default="">
+    <path type="sql" key="musicclass" table="conference" format="VARCHAR" />
+  </node>
+  <node name="permission" function="getConference,updateConference,addConference" default="">
+    <path type="sql" key="permission" table="conference" format="VARCHAR" />
+  </node>
+
+  <node name="ivr" function="getIVRPrivilege,getIVR" default="">
+    <path type="sql" key="ivr_id" table="ivr_members" format="VARCHAR" />
+    <path type="sql" key="ivr_id" table="ivr" format="VARCHAR" />
+  </node>
+  <node name="ivr" function="listIVR,deleteIVR,updateIVR" default="">
+    <path type="sql" key="ivr_id" table="ivr" format="VARCHAR" />
+  </node>
+  <node name="ivr_id" function="getIVR,updateIVR,addIVR,getIVRList" default="">
+    <path type="sql" key="ivr_id" table="ivr" format="VARCHAR" />
+  </node>
+  <node name="ivr_name" function="getIVR,updateIVR,addIVR,getIVRNameList,getIVRList" default="">
+    <path type="sql" key="ivr_name" table="ivr" format="VARCHAR" />
+  </node>
+  <node name="extension" function="addIVR" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+    <path type="sql" key="extension" table="ivr" format="VARCHAR" />
+  </node>
+  <node name="extension" function="getIVR,updateIVR" default="">
+    <path type="sql" key="extension" table="ivr" format="VARCHAR" />
+  </node>
+  <node name="welcome_prompt" function="getIVR,updateIVR,addIVR" default="">
+    <path type="sql" key="welcome_prompt" table="ivr" format="VARCHAR" />
+  </node>
+  <node name="response_timeout" function="getIVR,updateIVR,addIVR" default="">
+    <path type="sql" key="response_timeout" table="ivr" format="INT" />
+  </node>
+  <node name="digit_timeout" function="getIVR,updateIVR,addIVR" default="">
+    <path type="sql" key="digit_timeout" table="ivr" format="INT" />
+  </node>
+  <node name="timeout_prompt" function="getIVR,updateIVR,addIVR" default="">
+    <path type="sql" key="timeout_prompt" table="ivr" format="VARCHAR" />
+  </node>
+  <node name="invalid_prompt" function="getIVR,updateIVR,addIVR" default="">
+    <path type="sql" key="invalid_prompt" table="ivr" format="VARCHAR" />
+  </node>
+  <node name="tloop" function="getIVR,updateIVR,addIVR" default="">
+    <path type="sql" key="tloop" table="ivr" format="INT" />
+  </node>
+  <node name="iloop" function="getIVR,updateIVR,addIVR" default="">
+    <path type="sql" key="iloop" table="ivr" format="INT" />
+  </node>
+  <node name="dial_extension" function="getIVR,updateIVR,addIVR" default="">
+    <path type="sql" key="dial_extension" table="ivr" format="VARCHAR" />
+  </node>
+  <node name="dial_conference" function="getIVR,updateIVR,addIVR" default="">
+    <path type="sql" key="dial_conference" table="ivr" format="VARCHAR" />
+  </node>
+  <node name="dial_queue" function="getIVR,updateIVR,addIVR" default="">
+    <path type="sql" key="dial_queue" table="ivr" format="VARCHAR" />
+  </node>
+  <node name="dial_ringgroup" function="getIVR,updateIVR,addIVR" default="">
+    <path type="sql" key="dial_ringgroup" table="ivr" format="VARCHAR" />
+  </node>
+  <node name="dial_vmgroup" function="getIVR,updateIVR,addIVR" default="">
+    <path type="sql" key="dial_vmgroup" table="ivr" format="VARCHAR" />
+  </node>
+  <node name="dial_paginggroup" function="getIVR,updateIVR,addIVR" default="">
+    <path type="sql" key="dial_paginggroup" table="ivr" format="VARCHAR" />
+  </node>
+  <node name="dial_fax" function="getIVR,updateIVR,addIVR" default="">
+    <path type="sql" key="dial_fax" table="ivr" format="VARCHAR" />
+  </node>
+  <node name="dial_trunk" function="getIVR,updateIVR,addIVR" default="">
+    <path type="sql" key="dial_trunk" table="ivr" format="VARCHAR" />
+  </node>
+  <node name="dial_directory" function="getIVR,updateIVR,addIVR" default="">
+    <path type="sql" key="dial_directory" table="ivr" format="VARCHAR" />
+  </node>
+   <node name="permission" function="getIVR,updateIVR,addIVR" default="">
+    <path type="sql" key="permission" table="ivr" format="VARCHAR" />
+  </node>
+  <node name="language" function="getIVR,updateIVR,addIVR" default="">
+    <path type="sql" key="language" table="ivr" format="VARCHAR" />
+  </node>
+  <node name="members" function="getIVR,updateIVR,addIVR" default="">
+    <path type="sql" key="keypress" table="ivr_members" format="VARCHAR" />
+    <path type="sql" key="keypress_event" table="ivr_members" format="VARCHAR" />
+  </node>
+
+  <node name="extension" function="getVoicemailList" default="">
+    <path type="sql" key="extension" table="voicemail_mapping" format="VARCHAR" />
+  </node>
+  <node name="vmgroup" function="listVMGroup,getVMGroup,getVMGroupPrivilege" default="">
+    <path type="sql" key="member_extension" table="vmgroup_members" format="VARCHAR" />
+    <path type="sql" key="extension" table="vmgroups" format="VARCHAR" />
+  </node>
+  <node name="vmgroup" function="updateVMGroup" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+    <path type="sql" key="member_extension" table="vmgroup_members" format="VARCHAR" />
+    <path type="sql" key="extension" table="vmgroups" format="VARCHAR" />
+  </node>
+  <node name="vmgroup" function="deleteVMGroup" default="">
+    <path type="cmd" key="rm -rf /cfg/var/spool/asterisk/voicemail/default/"/>
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" /></node>
+  <node name="extension" function="addVMGroup" default="">
+    <path type="sql" key="extension" table="vmgroups" format="VARCHAR" />
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="extension" function="updateVMGroup" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="extension" function="getVMGroup,getVMGroupList" default="">
+    <path type="sql" key="extension" table="vmgroups" format="VARCHAR" />
+  </node>
+  <node name="vmgroup_name" function="getVMGroup,updateVMGroup,addVMGroup,getVMGroupNameList,getVMGroupList" default="">
+    <path type="sql" key="vmgroup_name" table="vmgroups" format="VARCHAR" />
+  </node>
+  <node name="vmsecret" function="getVMGroup,updateVMGroup,addVMGroup" default="">
+    <path type="sql" key="vmsecret" table="vmgroups" format="VARCHAR" />
+  </node>
+  <node name="email" function="getVMGroup,updateVMGroup,addVMGroup" default="">
+    <path type="sql" key="email" table="vmgroups" format="VARCHAR" />
+  </node>
+  <node name="members" function="getVMGroup,updateVMGroup,addVMGroup" default="">
+    <path type="sql" key="member_extension" table="vmgroup_members" format="VARCHAR" />
+  </node>
+
+  <node name="serveremail" function="getVMSettings,updateVMSettings,getVMSettingsPrivilege" default="">
+    <path type="sql" key="serveremail" table="voicemail_settings" format="VARCHAR" />
+  </node>
+  <node name="attach" function="getVMSettings,updateVMSettings" default="">
+    <path type="sql" key="attach" table="voicemail_settings" format="VARCHAR" />
+  </node>
+  <node name="maxmsg" function="getVMSettings,updateVMSettings" default="">
+    <path type="sql" key="maxmsg" table="voicemail_settings" format="INT" />
+  </node>
+  <node name="saycid" function="getVMSettings,updateVMSettings" default="">
+    <path type="sql" key="saycid" table="voicemail_settings" format="VARCHAR" />
+  </node>
+  <node name="sayduration" function="getVMSettings,updateVMSettings" default="">
+    <path type="sql" key="sayduration" table="voicemail_settings" format="VARCHAR" />
+  </node>
+  <node name="envelope" function="getVMSettings,updateVMSettings" default="">
+    <path type="sql" key="envelope" table="voicemail_settings" format="VARCHAR" />
+  </node>
+  <node name="review" function="getVMSettings,updateVMSettings" default="">
+    <path type="sql" key="review" table="voicemail_settings" format="VARCHAR" />
+  </node>
+  <node name="maxsecs" function="getVMSettings,updateVMSettings" default="">
+    <path type="sql" key="maxsecs" table="voicemail_settings" format="INT" />
+  </node>
+  <node name="minsecs" function="getVMSettings,updateVMSettings" default="">
+    <path type="sql" key="minsecs" table="voicemail_settings" format="INT" />
+  </node>
+  <node name="maxgreet" function="getVMSettings,updateVMSettings" default="">
+    <path type="sql" key="maxgreet" table="voicemail_settings" format="INT" />
+  </node>
+  <node name="operator" function="getVMSettings,updateVMSettings" default="">
+    <path type="sql" key="operator" table="voicemail_settings" format="VARCHAR" />
+  </node>
+  <node name="emailsubject" function="getVMSettings,updateVMSettings" default="">
+    <path type="sql" key="emailsubject" table="voicemail_settings" format="VARCHAR" />
+  </node>
+  <node name="emailbody" function="getVMSettings,updateVMSettings" default="">
+    <path type="sql" key="emailbody" table="voicemail_settings" format="VARCHAR" />
+  </node>
+  <node name="fromstring" function="getVMSettings,updateVMSettings" default="">
+    <path type="sql" key="fromstring" table="voicemail_settings" format="VARCHAR" />
+  </node>
+<!-->directorys!-->  
+  <node name="directory" function="listDirectory,getDirectory,getDirectoryPrivilege" default="">
+    <path type="sql" key="member_extension" table="directory_members" format="VARCHAR" />
+    <path type="sql" key="extension" table="directorys" format="VARCHAR" />
+  </node>
+  <node name="directory" function="updateDirectory" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+    <path type="sql" key="member_extension" table="directory_members" format="VARCHAR" />
+    <path type="sql" key="extension" table="directorys" format="VARCHAR" />
+  </node>
+  <node name="directory" function="deleteDirectory" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="extension" function="addDirectory" default="">
+    <path type="sql" key="extension" table="directorys" format="VARCHAR" />
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="extension" function="getDirectory,getDirectoryList" default="">
+    <path type="sql" key="extension" table="directorys" format="VARCHAR" />
+  </node>
+  <node name="extension" function="updateDirectory" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="name" function="getDirectory,updateDirectory,addDirectory,getDirectoryNameList,getDirectoryList" default="">
+    <path type="sql" key="name" table="directorys" format="VARCHAR" />
+  </node>
+  <node name="query_type" function="getDirectory,updateDirectory,addDirectory" default="">
+    <path type="sql" key="query_type" table="directorys" format="VARCHAR" />
+  </node>
+  <node name="select_type" function="getDirectory,updateDirectory,addDirectory" default="">
+    <path type="sql" key="select_type" table="directorys" format="VARCHAR" />
+  </node>
+ 
+  <node name="members" function="getDirectory,updateDirectory,addDirectory,listDirectory" default="">
+    <path type="sql" key="member_extension" table="directory_members" format="VARCHAR" />
+  </node>
+<!-->ringgroup!-->   
+  <node name="ringgroup" function="listRingGroup,getRingGroup,getRingGroupPrivilege" default="">
+    <path type="sql" key="ringgroup_index" table="ringgroup_members" format="INT" />
+    <path type="sql" key="member_extension" table="ringgroup_members" format="VARCHAR" />
+    <path type="sql" key="extension" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="ringgroup" function="updateRingGroup" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+    <path type="sql" key="ringgroup_index" table="ringgroup_members" format="INT" />
+    <path type="sql" key="member_extension" table="ringgroup_members" format="VARCHAR" />
+    <path type="sql" key="extension" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="ringgroup" function="deleteRingGroup" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="extension" function="addRingGroup" default="">
+    <path type="sql" key="extension" table="ringgroups" format="VARCHAR" />
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="extension" function="getRingGroup,getRingGroupList" default="">
+    <path type="sql" key="extension" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="extension" function="updateRingGroup" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="ringgroup_name" function="getRingGroup,updateRingGroup,addRingGroup,getRingGroupNameList,getRingGroupList" default="">
+    <path type="sql" key="ringgroup_name" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="strategy" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="strategy" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="ringtime" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="ringtime" table="ringgroups" format="INT" />
+  </node>
+  <node name="auto_record" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="auto_record" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="hasvoicemail" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="hasvoicemail" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="ringgroupasvm" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="ringgroupasvm" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="email" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="email" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="vmsecret" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="vmsecret" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="vm_extension" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="vm_extension" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="enable_destination" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="enable_destination" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="destination_type" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="destination_type" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="account" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="account" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="conference" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="conference" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="vmgroup" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="vmgroup" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="ivr" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="ivr" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="ringgroup_dest" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="ringgroup" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="queue" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="queue" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="paginggroup" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="paginggroup" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="fax" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="fax" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="disa" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="disa" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="directory" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="directory" table="ringgroups" format="VARCHAR" />
+  </node>
+  <node name="members" function="getRingGroup,updateRingGroup,addRingGroup" default="">
+    <path type="sql" key="member_extension" table="ringgroup_members" format="VARCHAR" />
+    <path type="sql" key="ringgroup_index" table="ringgroup_members" format="INT" />
+  </node>
+
+  <node name="paginggroup" function="getPagingGroupPrivilege" default="">
+    <path type="sql" key="member_extension" table="paginggroup_members" format="VARCHAR" />
+    <path type="sql" key="extension" table="paginggroups" format="VARCHAR" />
+    <path type="sql" key="paging_header" table="paginggroup_settings" format="VARCHAR" />
+  </node>
+  <node name="paginggroup" function="listPagingGroup,getPagingGroup" default="">
+    <path type="sql" key="member_extension" table="paginggroup_members" format="VARCHAR" />
+    <path type="sql" key="extension" table="paginggroups" format="VARCHAR" />
+  </node>
+  <node name="paginggroup" function="updatePagingGroup" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+    <path type="sql" key="member_extension" table="paginggroup_members" format="VARCHAR" />
+    <path type="sql" key="extension" table="paginggroups" format="VARCHAR" />
+  </node>
+  <node name="paginggroup" function="deletePagingGroup" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="extension" function="addPagingGroup" default="">
+    <path type="sql" key="extension" table="paginggroups" format="VARCHAR" />
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="extension" function="getPagingGroup,getPagingGroupList" default="">
+    <path type="sql" key="extension" table="paginggroups" format="VARCHAR" />
+  </node>
+  <node name="extension" function="updatePagingGroup" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="paginggroup_name" function="getPagingGroup,updatePagingGroup,addPagingGroup,getPagingGroupNameList,getPagingGroupList" default="">
+    <path type="sql" key="paginggroup_name" table="paginggroups" format="VARCHAR" />
+  </node>
+  <node name="paginggroup_type" function="getPagingGroup,updatePagingGroup,addPagingGroup" default="">
+    <path type="sql" key="paginggroup_type" table="paginggroups" format="VARCHAR" />
+  </node>
+  <node name="members" function="getPagingGroup,updatePagingGroup,addPagingGroup" default="">
+    <path type="sql" key="member_extension" table="paginggroup_members" format="VARCHAR" />
+  </node>
+
+  <node name="paging_header" function="getPagingGroupSettings,updatePagingGroupSettings" default="">
+    <path type="sql" key="paging_header" table="paginggroup_settings" format="VARCHAR" />
+  </node>
+  
+  <node name="queue" function="listQueue,getQueue" default="">
+    <path type="sql" key="queue_index" table="queue_members" format="INT" />
+    <path type="sql" key="member_extension" table="queue_members" format="VARCHAR" />
+    <path type="sql" key="extension" table="queues" format="VARCHAR" />
+  </node>
+    <node name="queue" function="getQueuePrivilege" default="">
+    <path type="sql" key="queue_index" table="queue_members" format="INT" />
+    <path type="sql" key="extension" table="queues" format="VARCHAR" />
+    <path type="sql" key="queuelogin" table="queue_settings" format="VARCHAR" />
+  </node>
+  <node name="queue" function="updateQueue" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+    <path type="sql" key="queue_index" table="queue_members" format="INT" />
+    <path type="sql" key="member_extension" table="queue_members" format="VARCHAR" />
+    <path type="sql" key="extension" table="queues" format="VARCHAR" />
+  </node>
+  <node name="queue" function="deleteQueue" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="extension" function="addQueue" default="">
+    <path type="sql" key="extension" table="queue_status" format="VARCHAR" />
+    <path type="sql" key="extension" table="queues" format="VARCHAR" />
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="extension" function="getQueue,getQueueList" default="">
+    <path type="sql" key="extension" table="queues" format="VARCHAR" />
+  </node>
+  <node name="extension" function="updateQueue" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="queue_name" function="getQueue,updateQueue,addQueue,getQueueNameList,getQueueList" default="">
+    <path type="sql" key="queue_name" table="queues" format="VARCHAR" />
+  </node>
+  <node name="strategy" function="getQueue,updateQueue,addQueue" default="">
+    <path type="sql" key="strategy" table="queues" format="VARCHAR" />
+  </node>
+  <node name="musicclass" function="getQueue,updateQueue,addQueue" default="">
+    <path type="sql" key="musicclass" table="queues" format="VARCHAR" />
+  </node>
+  <node name="leavewhenempty" function="getQueue,updateQueue,addQueue" default="">
+    <path type="sql" key="leavewhenempty" table="queues" format="VARCHAR" />
+  </node>
+  <node name="joinempty" function="getQueue,updateQueue,addQueue" default="">
+    <path type="sql" key="joinempty" table="queues" format="VARCHAR" />
+  </node>
+  <node name="pin" function="getQueue,updateQueue,addQueue" default="">
+    <path type="sql" key="pin" table="queues" format="VARCHAR" />
+  </node>
+  <node name="ringtime" function="getQueue,updateQueue,addQueue" default="">
+    <path type="sql" key="ringtime" table="queues" format="INT" />
+  </node>
+  <node name="wrapuptime" function="getQueue,updateQueue,addQueue" default="">
+    <path type="sql" key="wrapuptime" table="queues" format="INT" />
+  </node>
+  <node name="maxlen" function="getQueue,updateQueue,addQueue" default="">
+    <path type="sql" key="maxlen" table="queues" format="INT" />
+  </node>
+  <node name="reportholdtime" function="getQueue,updateQueue,addQueue" default="">
+    <path type="sql" key="reportholdtime" table="queues" format="VARCHAR" />
+  </node>
+  <node name="auto_record" function="getQueue,updateQueue,addQueue" default="">
+    <path type="sql" key="auto_record" table="queues" format="VARCHAR" />
+  </node>
+  <node name="waittime" function="getQueue,updateQueue,addQueue" default="">
+    <path type="sql" key="waittime" table="queues" format="INT" />
+  </node>
+  <node name="members" function="getQueue,updateQueue,addQueue" default="">
+    <path type="sql" key="member_extension" table="queue_members" format="VARCHAR" />
+    <path type="sql" key="queue_index" table="queue_members" format="INT" />
+  </node>
+  <node name="queuelogin" function="getQueueSettings,updateQueueSettings" default="">
+    <path type="sql" key="queuelogin" table="queue_settings" format="VARCHAR" />
+  </node>
+  <node name="queuelogout" function="getQueueSettings,updateQueueSettings" default="">
+    <path type="sql" key="queuelogout" table="queue_settings" format="VARCHAR" />
+  </node>
+  
+  <node name="disa" function="listDISA,getDISAPrivilege,getDISA,updateDISA,deleteDISA" default="">
+    <path type="sql" key="disa_id" table="disa" format="INT" />
+  </node>
+  <node name="disa_id" function="getDISA,updateDISA,addDISA,getDISAList" default="">
+    <path type="sql" key="disa_id" table="disa" format="INT" />
+  </node>
+  <node name="display_name" function="getDISA,updateDISA,addDISA,getDISANameList,getDISAList" default="">
+    <path type="sql" key="display_name" table="disa" format="VARCHAR" />
+  </node>
+  <node name="password" function="getDISA,updateDISA,addDISA" default="">
+    <path type="sql" key="password" table="disa" format="VARCHAR" />
+  </node>
+  <node name="digit_timeout" function="getDISA,updateDISA,addDISA" default="">
+    <path type="sql" key="digit_timeout" table="disa" format="INT" />
+  </node>
+  <node name="response_timeout" function="getDISA,updateDISA,addDISA" default="">
+    <path type="sql" key="response_timeout" table="disa" format="INT" />
+  </node>
+  <node name="permission" function="getDISA,updateDISA,addDISA" default="">
+    <path type="sql" key="permission" table="disa" format="VARCHAR" />
+  </node>
+  <node name="hangup" function="getDISA,updateDISA,addDISA" default="">
+    <path type="sql" key="hangup" table="disa" format="VARCHAR" />
+  </node>
+  <node name="eventlist" function="deleteEventList" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="eventlist" function="getEventList,listEventList" default="">
+    <path type="sql" key="uri" table="eventlist" format="VARCHAR" />
+  </node>
+  <node name="eventlist" function="getEventList,updateEventList" default="">
+    <path type="sql" key="uri" table="eventlist" format="VARCHAR" />
+    <path type="sql" key="uri" table="eventlist_extens" format="VARCHAR" />
+  </node>
+  <node name="uri" function="getEventListPrivilege" default="">
+    <path type="sql" key="uri" table="eventlist" format="VARCHAR" />
+    <path type="sql" key="uri" table="eventlist_extens" format="VARCHAR" />
+  </node>
+  <node name="uri" function="addEventList" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+    <path type="sql" key="uri" table="eventlist" format="VARCHAR" />
+  </node>
+  <node name="uri" function="getEventList" default="">
+    <path type="sql" key="uri" table="eventlist" format="VARCHAR" />
+  </node>
+  <node name="extension" function="getEventList" default="">
+    <path type="sql" key="extension" table="eventlist_extens" format="VARCHAR" />
+  </node>
+  <node name="location" function="getEventList" default="">
+    <path type="sql" key="location" table="eventlist_extens" format="VARCHAR" />
+  </node>
+  <node name="trunk" function="getEventList" default="">
+    <path type="sql" key="trunk" table="eventlist_extens" format="VARCHAR" />
+  </node>
+  <node name="members" function="getEventList,updateEventList,addEventList" default="">
+    <path type="sql" key="extension" table="eventlist_extens" format="VARCHAR" />
+    <path type="sql" key="location" table="eventlist_extens" format="VARCHAR" />
+    <path type="sql" key="trunk" table="eventlist_extens" format="VARCHAR" />
+  </node>
+
+  <node name="pickupgroup" function="listPickupGroup,getPickupGroup,updatePickupGroup,getPickupGroupPrivilege" default="">
+    <path type="sql" key="member_extension" table="pickupgroup_members" format="VARCHAR" />
+    <path type="sql" key="pickupgroup_id" table="pickupgroups" format="INT" />
+  </node>
+  <node name="pickupgroup" function="deletePickupGroup" default="">
+    <path type="sql" key="pickupgroup_id" table="pickupgroups" format="INT" />
+  </node>
+  <node name="pickupgroup_id" function="getPickupGroup,updatePickupGroup,addPickupGroup,getPickupGroupList" default="">
+    <path type="sql" key="pickupgroup_id" table="pickupgroups" format="INT" />
+  </node>
+  <node name="pickupgroup_name" function="getPickupGroup,updatePickupGroup,addPickupGroup,getPickupGroupNameList,getPickupGroupList" default="">
+    <path type="sql" key="pickupgroup_name" table="pickupgroups" format="VARCHAR" />
+  </node>
+  <node name="members" function="getPickupGroup,updatePickupGroup,addPickupGroup" default="">
+    <path type="sql" key="member_extension" table="pickupgroup_members" format="VARCHAR" />
+    <path type="sql" key="pickupgroup_id" table="pickupgroup_members" format="INT" />
+  </node>
+  
+  <node name="extension_group" function="listExtensionGroup,getExtensionGroup,getExtensionGroupPrivilege,updateExtensionGroup" default="">
+    <path type="sql" key="member_extension" table="extension_group_members" format="VARCHAR" />
+    <path type="sql" key="group_id" table="extension_groups" format="VARCHAR" />
+  </node>
+  <node name="extension_group" function="deleteExtensionGroup" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="group_id" function="getExtensionGroup,getExtensionGroupList,addExtensionGroup" default="">
+    <path type="sql" key="group_id" table="extension_groups" format="VARCHAR" />
+  </node>
+  <node name="group_name" function="getExtensionGroup,updateExtensionGroup,addExtensionGroup,getExtensionGroupList,getExtensionGroupNameList" default="">
+    <path type="sql" key="group_name" table="extension_groups" format="VARCHAR" />
+  </node>
+  <node name="members" function="getExtensionGroup,updateExtensionGroup,addExtensionGroup" default="">
+    <path type="sql" key="group_id" table="extension_group_members" format="VARCHAR" />
+    <path type="sql" key="member_extension" table="extension_group_members" format="VARCHAR" />
+  </node>
+
+  <node name="language_id" function="getLanguage,getLanguagePrivilege" default="">
+    <path type="sql" key="language_id" table="languages" format="VARCHAR" />
+  </node>
+  <node name="language_name" function="getLanguage" default="">
+    <path type="sql" key="language_name" table="languages" format="VARCHAR" />
+  </node>
+  <node name="version" function="getLanguage" default="">
+    <path type="sql" key="version" table="languages" format="VARCHAR" />
+  </node>
+
+  <node name="language" function="getLanguageSettings,updateLanguageSettings,getLanguagePrivilege" default="">
+    <path type="sql" key="language" table="language_settings" format="VARCHAR" />
+  </node>
+
+  <node name="language_list" function="fetchRemoteLanguageList" default="">
+    <path type="remote" key="" table="" format="VARCHAR" />
+  </node>
+  <node name="package" function="fetchRemoteLanguagePackage" default="">
+    <path type="remote" key="" table="" format="VARCHAR" />
+  </node>
+  
+  <node name="privilege_id" function="getPrivilege" default="">
+    <path type="sql" key="privilege_id" table="privilege" format="INT" />
+  </node>
+  <node name="privilege_name" function="getPrivilege" default="">
+    <path type="sql" key="privilege_name" table="privilege" format="VARCHAR" />
+  </node>
+  <node name="level" function="getPrivilege" default="">
+    <path type="sql" key="level" table="privilege" format="INT" />
+  </node>
+  
+  <node name="moh" function="deleteMOH,getMOHPrivilege,getMOH,updateMOH" default="">
+    <path type="sql" key="moh_name" table="moh" format="VARCHAR" />
+  </node>
+  <node name="moh_name" function="getMOHNameList,addMOH,getMOH" default="">
+    <path type="sql" key="moh_name" table="moh" format="VARCHAR" />
+  </node>
+  <node name="sort" function="getMOHNameList,addMOH,getMOH,updateMOH" default="">
+    <path type="sql" key="sort" table="moh" format="VARCHAR" />
+  </node>
+  
+  <node name="fcode_dnd_on" function="getFeatureCodes,updateFeatureCodes,getFeatureCodesPrivilege" default="">
+    <path type="sql" key="fcode_dnd_on" table="feature_codes" format="VARCHAR" />
+  </node>
+  <node name="fcode_dnd_off" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="fcode_dnd_off" table="feature_codes" format="VARCHAR" />
+  </node>
+  <node name="fcode_cfb_on" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="fcode_cfb_on" table="feature_codes" format="VARCHAR" />
+  </node>
+  <node name="fcode_cfb_off" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="fcode_cfb_off" table="feature_codes" format="VARCHAR" />
+  </node>
+  <node name="fcode_cfn_on" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="fcode_cfn_on" table="feature_codes" format="VARCHAR" />
+  </node>
+  <node name="fcode_cfn_off" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="fcode_cfn_off" table="feature_codes" format="VARCHAR" />
+  </node>
+  <node name="fcode_cfu_on" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="fcode_cfu_on" table="feature_codes" format="VARCHAR" />
+  </node>
+  <node name="fcode_cfu_off" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="fcode_cfu_off" table="feature_codes" format="VARCHAR" />
+  </node>
+  <node name="fcode_dialvm" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="fcode_dialvm" table="feature_codes" format="VARCHAR" />
+  </node>
+  <node name="fcode_vmmain" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="fcode_vmmain" table="feature_codes" format="VARCHAR" />
+  </node>
+  <node name="fcode_agentpause" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="fcode_agentpause" table="feature_codes" format="VARCHAR" />
+  </node>
+  <node name="fcode_agentunpause" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="fcode_agentunpause" table="feature_codes" format="VARCHAR" />
+  </node>
+  <node name="fcode_paging_prefix" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="fcode_paging_prefix" table="feature_codes" format="VARCHAR" />
+  </node>
+  <node name="fcode_intercom_prefix" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="fcode_intercom_prefix" table="feature_codes" format="VARCHAR" />
+  </node>
+  <node name="fcode_blacklist_add" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="fcode_blacklist_add" table="feature_codes" format="VARCHAR" />
+  </node>
+  <node name="fcode_blacklist_remove" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="fcode_blacklist_remove" table="feature_codes" format="VARCHAR" />
+  </node>
+  <node name="fcode_pickup" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="fcode_pickup" table="feature_codes" format="VARCHAR" />
+  </node>
+  <node name="fgeneral_pickupexten" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="fgeneral_pickupexten" table="feature_codes" format="VARCHAR" />
+  </node>
+  <node name="fcode_direct_vm" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="fcode_direct_vm" table="feature_codes" format="VARCHAR" />
+  </node>
+  <node name="blindxfer" function="getFeatureCodes,updateFeatureCodes,getFeatureCodesPrivilege" default="">
+    <path type="sql" key="blindxfer" table="feature_maps" format="VARCHAR" />
+  </node>
+  <node name="blindxfer_allow" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="blindxfer_allow" table="feature_maps" format="VARCHAR" />
+  </node>
+  <node name="disconnect" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="disconnect" table="feature_maps" format="VARCHAR" />
+  </node>
+  <node name="disconnect_allow" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="disconnect_allow" table="feature_maps" format="VARCHAR" />
+  </node>
+  <node name="atxfer" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="atxfer" table="feature_maps" format="VARCHAR" />
+  </node>
+  <node name="atxfer_allow" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="atxfer_allow" table="feature_maps" format="VARCHAR" />
+  </node>
+  <node name="parkcall" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="parkcall" table="feature_maps" format="VARCHAR" />
+  </node>
+  <node name="parkcall_allow" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="parkcall_allow" table="feature_maps" format="VARCHAR" />
+  </node>
+  <node name="automon" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="automon" table="feature_maps" format="VARCHAR" />
+  </node>
+  <node name="automon_allow" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="automon_allow" table="feature_maps" format="VARCHAR" />
+  </node>
+  <node name="automixmon" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="automixmon" table="feature_maps" format="VARCHAR" />
+  </node>
+  <node name="automixmon_allow" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="automixmon_allow" table="feature_maps" format="VARCHAR" />
+  </node>
+  <node name="parkext" function="getFeatureCodes,updateFeatureCodes,getFeatureCodesPrivilege" default="">
+    <path type="sql" key="parkext" table="feature_settings" format="VARCHAR" />
+  </node>
+  <node name="parkpos" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="parkpos" table="feature_settings" format="VARCHAR" />
+  </node>
+  <node name="context" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="context" table="feature_settings" format="VARCHAR" />
+  </node>
+  <node name="parkingtime" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="parkingtime" table="feature_settings" format="INT" />
+  </node>
+  <node name="featuredigittimeout" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="featuredigittimeout" table="feature_settings" format="INT" />
+  </node>
+  <node name="prompt_record" function="getFeatureCodes,updateFeatureCodes" default="">
+    <path type="sql" key="prompt_record" table="feature_settings" format="VARCHAR" />
+  </node>
+
+  <!--> by yfyang <!-->
+  <!--> jitterbuffer_settings <!-->
+  <node name="gs_jbenable" function="getJBSettings,updateJBSettings,getJBSettingsPrivilege" default="">
+    <path type="sql" key="gs_jbenable" table="jitterbuffer_settings" format="VARCHAR" />
+  </node>
+  <node name="gs_jbmpl" function="getJBSettings,updateJBSettings" default="">
+    <path type="sql" key="gs_jbmpl" table="jitterbuffer_settings" format="VARCHAR" />
+  </node>
+  <node name="gs_jblen" function="getJBSettings,updateJBSettings" default="">
+    <path type="sql" key="gs_jblen" table="jitterbuffer_settings" format="INT" />
+  </node>
+  <node name="gs_jbmax" function="getJBSettings,updateJBSettings" default="">
+    <path type="sql" key="gs_jbmax" table="jitterbuffer_settings" format="INT" />
+  </node>
+
+  <!--> rtp_settings <!-->
+  <node name="rtpstart" function="getRTPSettings,updateRTPSettings,getRTPSettingsPrivilege" default="">
+    <path type="sql" key="rtpstart" table="rtp_settings" format="INT" />
+  </node>
+  <node name="rtpend" function="getRTPSettings,updateRTPSettings" default="">
+    <path type="sql" key="rtpend" table="rtp_settings" format="INT" />
+  </node>
+  <node name="strictrtp" function="getRTPSettings,updateRTPSettings" default="">
+    <path type="sql" key="strictrtp" table="rtp_settings" format="VARCHAR" />
+  </node>
+  <node name="rtpchecksums" function="getRTPSettings,updateRTPSettings" default="">
+    <path type="sql" key="rtpchecksums" table="rtp_settings" format="VARCHAR" />
+  </node>
+
+  <!--> stunmonitor_settings <!-->
+  <node name="stunaddr" function="getSTUNSettings,updateSTUNSettings,getSTUNSettingsPrivilege" default="">
+    <path type="sql" key="stunaddr" table="stunmonitor_settings" format="VARCHAR" />
+  </node>
+  <node name="stunrefresh" function="getSTUNSettings,updateSTUNSettings" default="">
+    <path type="sql" key="stunrefresh" table="stunmonitor_settings" format="INT" />
+  </node>
+
+  <!--> siptos_settings <!-->
+  <node name="tos_sip" function="getTOSSettings,updateTOSSettings,getTOSSettingsPrivilege" default="">
+    <path type="sql" key="tos_sip" table="siptos_settings" format="VARCHAR" />
+  </node>
+  <node name="tos_audio" function="getTOSSettings,updateTOSSettings" default="">
+    <path type="sql" key="tos_audio" table="siptos_settings" format="VARCHAR" />
+  </node>
+  <node name="tos_video" function="getTOSSettings,updateTOSSettings" default="">
+    <path type="sql" key="tos_video" table="siptos_settings" format="VARCHAR" />
+  </node>
+  <node name="defaultexpiry" function="getTOSSettings,updateTOSSettings" default="">
+    <path type="sql" key="defaultexpiry" table="siptos_settings" format="INT" />
+  </node>
+  <node name="maxexpiry" function="getTOSSettings,updateTOSSettings" default="">
+    <path type="sql" key="maxexpiry" table="siptos_settings" format="INT" />
+  </node>
+  <node name="minexpiry" function="getTOSSettings,updateTOSSettings" default="">
+    <path type="sql" key="minexpiry" table="siptos_settings" format="INT" />
+  </node>
+  <node name="mohinterpret" function="getTOSSettings,updateTOSSettings" default="">
+    <path type="sql" key="mohinterpret" table="siptos_settings" format="VARCHAR" />
+  </node>
+  <node name="mohsuggest" function="getTOSSettings,updateTOSSettings" default="">
+    <path type="sql" key="mohsuggest" table="siptos_settings" format="VARCHAR" />
+  </node>
+  <node name="relaxdtmf" function="getTOSSettings,updateTOSSettings" default="">
+    <path type="sql" key="relaxdtmf" table="siptos_settings" format="VARCHAR" />
+  </node>
+  <node name="dtmfmode" function="getTOSSettings,updateTOSSettings" default="">
+    <path type="sql" key="dtmfmode" table="siptos_settings" format="VARCHAR" />
+  </node>
+  <node name="rtptimeout" function="getTOSSettings,updateTOSSettings" default="">
+    <path type="sql" key="rtptimeout" table="siptos_settings" format="INT" />
+  </node>
+  <node name="rtpholdtimeout" function="getTOSSettings,updateTOSSettings" default="">
+    <path type="sql" key="rtpholdtimeout" table="siptos_settings" format="INT" />
+  </node>
+  <node name="trustrpid" function="getTOSSettings,updateTOSSettings" default="">
+    <path type="sql" key="trustrpid" table="siptos_settings" format="VARCHAR" />
+  </node>
+  <node name="sendrpid" function="getTOSSettings,updateTOSSettings" default="">
+    <path type="sql" key="sendrpid" table="siptos_settings" format="VARCHAR" />
+  </node>
+  <node name="progressinband" function="getTOSSettings,updateTOSSettings" default="">
+    <path type="sql" key="progressinband" table="siptos_settings" format="VARCHAR" />
+  </node>
+  <node name="useragent" function="getTOSSettings,updateTOSSettings" default="">
+    <path type="sql" key="useragent" table="siptos_settings" format="VARCHAR" />
+  </node>
+  <node name="usereqphone" function="getTOSSettings,updateTOSSettings" default="">
+    <path type="sql" key="usereqphone" table="siptos_settings" format="VARCHAR" />
+  </node>
+  <node name="compactheaders" function="getTOSSettings,updateTOSSettings" default="">
+    <path type="sql" key="compactheaders" table="siptos_settings" format="VARCHAR" />
+  </node>
+
+  <!-->email_settings<!-->
+  <node name="fromstring" function="getEmailSettings,updateEmailSettings,getEmailSettingsPrivilege" default="">
+    <path type="sql" key="fromstring" table="email_settings" format="VARCHAR" />
+  </node>
+  <node name="serveremail" function="getEmailSettings,updateEmailSettings" default="">
+    <path type="sql" key="serveremail" table="email_settings" format="VARCHAR" />
+  </node>
+  <node name="email_addr" function="sendTestMail" default="">
+      <path type="cmd" key="/app/asterisk/var/lib/asterisk/scripts/sendTestMail.sh"/>
+  </node>
+
+  <!-->general_pref_settings<!-->
+  <node name="global_outboundcid" function="getGeneralPrefSettings,updateGeneralPrefSettings,getGeneralPrefSettingsPrivilege" default="">
+    <path type="sql" key="global_outboundcid" table="general_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="global_outboundcidname" function="getGeneralPrefSettings,updateGeneralPrefSettings" default="">
+    <path type="sql" key="global_outboundcidname" table="general_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="operator" function="getGeneralPrefSettings,updateGeneralPrefSettings" default="">
+    <path type="sql" key="operator" table="general_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="ringtime" function="getGeneralPrefSettings,updateGeneralPrefSettings" default="">
+    <path type="sql" key="ringtime" table="general_pref_settings" format="INT" />
+  </node>
+  <node name="record_prompt" function="getGeneralPrefSettings,updateGeneralPrefSettings" default="">
+    <path type="sql" key="record_prompt" table="general_pref_settings" format="VARCHAR" />
+  </node>
+
+  <!-->extension_pref_settings<!-->
+  <node name="weak_password" function="getExtenPrefSettings,updateExtenPrefSettings,getExtenPrefSettingsPrivilege" default="">
+    <path type="sql" key="weak_password" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="rand_password" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="rand_password" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="secret" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="secret" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="disable_extension_ranges" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="disable_extension_ranges" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="ue_start" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="ue_start" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="ue_end" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="ue_end" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="pkue_start" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="pkue_start" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="pkue_end" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="pkue_end" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="zcue_start" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="zcue_start" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="zcue_end" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="zcue_end" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="mm_start" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="mm_start" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="mm_end" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="mm_end" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="rge_start" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="rge_start" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="rge_end" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="rge_end" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="qe_start" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="qe_start" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="qe_end" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="qe_end" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="vmg_start" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="vmg_start" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="vmg_end" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="vmg_end" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="vme_start" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="vme_start" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="vme_end" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="vme_end" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="fax_start" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="fax_start" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="fax_end" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="fax_end" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="directory_start" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="directory_start" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+  <node name="directory_end" function="getExtenPrefSettings,updateExtenPrefSettings" default="">
+    <path type="sql" key="directory_end" table="extension_pref_settings" format="VARCHAR" />
+  </node>
+   
+  <!-->fax_accounts<!-->
+  <node name="fax" function="listFax,getFax,getFaxPrivilege" default="">
+    <path type="sql" key="extension" table="fax" format="VARCHAR" />
+  </node>
+  <node name="fax" function="deleteFax" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="fax" function="updateFax" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+    <path type="sql" key="extension" table="fax" format="VARCHAR" />
+  </node>
+  <node name="extension" function="addFax" default="">
+    <path type="sql" key="extension" table="fax" format="VARCHAR" />
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="extension" function="updateFax" default="">
+    <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="extension" function="getFax,getFaxList" default="">
+    <path type="sql" key="extension" table="fax" format="VARCHAR" />
+  </node>
+  <node name="fax_name" function="getFax,updateFax,addFax,getFaxList,getFaxNameList" default="">
+    <path type="sql" key="fax_name" table="fax" format="VARCHAR" />
+  </node>
+  <node name="email" function="getFax,updateFax,addFax" default="">
+    <path type="sql" key="email" table="fax" format="VARCHAR" />
+  </node>
+
+  <!-->fax_settings<!-->
+  <node name="maxrate" function="getFaxSettings,updateFaxSettings,getFaxSettingsPrivilege" default="">
+    <path type="sql" key="maxrate" table="fax_settings" format="INT" />
+  </node>
+  <node name="minrate" function="getFaxSettings,updateFaxSettings" default="">
+    <path type="sql" key="minrate" table="fax_settings" format="INT" />
+  </node>
+  <node name="statusevents" function="getFaxSettings,updateFaxSettings" default="">
+    <path type="sql" key="statusevents" table="fax_settings" format="VARCHAR" />
+  </node>
+  <node name="modems" function="getFaxSettings,updateFaxSettings" default="">
+    <path type="sql" key="modems" table="fax_settings" format="VARCHAR" />
+  </node>
+  <node name="ecm" function="getFaxSettings,updateFaxSettings" default="">
+    <path type="sql" key="ecm" table="fax_settings" format="VARCHAR" />
+  </node>
+  <node name="default_email" function="getFaxSettings,updateFaxSettings" default="">
+    <path type="sql" key="default_email" table="fax_settings" format="VARCHAR" />
+  </node>
+  <node name="emailsubject" function="getFaxSettings,updateFaxSettings" default="">
+    <path type="sql" key="emailsubject" table="fax_settings" format="VARCHAR" />
+  </node>
+  <node name="emailbody" function="getFaxSettings,updateFaxSettings" default="">
+    <path type="sql" key="emailbody" table="fax_settings" format="VARCHAR" />
+  </node>
+
+  <!-->fxs_settings<!-->
+  <node name="fxs" function="getAnalogSettings,getAnalogSettingsPrivilege" default="">
+    <path type="sql" key="chan" table="fxs_settings" format="INT" />
+  </node>
+  <node name="sig" function="getAnalogSettings,updateAnalogSettings" default="">
+    <path type="sql" key="sig" table="fxs_settings" format="VARCHAR" />
+  </node>
+
+  <!-->fxo_settings<!-->
+  <node name="fxo" function="getAnalogSettings,getAnalogSettingsPrivilege" default="">
+    <path type="sql" key="chan" table="fxo_settings" format="INT" />
+  </node>
+  <node name="acim" function="getAnalogSettings,updateAnalogSettings" default="">
+    <path type="sql" key="acim" table="fxo_settings" format="INT" />
+  </node>
+  <node name="echocefs" function="getAnalogSettings,updateAnalogSettings" default="">
+    <path type="sql" key="echocefs" table="fxo_settings" format="VARCHAR" />
+  </node>
+
+  <!-->tonezone_settings<!-->
+  <node name="country" function="getToneZoneSettings,getToneZoneSettingsPrivilege" default="">
+    <path type="sql" key="country" table="tonezone_settings" format="VARCHAR" />
+  </node>
+  <node name="description" function="getToneZoneSettings" default="">
+    <path type="sql" key="description" table="tonezone_settings" format="VARCHAR" />
+  </node>
+  <node name="busy" function="getToneZoneSettings" default="">
+    <path type="sql" key="busy" table="tonezone_settings" format="VARCHAR" />
+  </node>
+  <node name="congestion" function="getToneZoneSettings" default="">
+    <path type="sql" key="congestion" table="tonezone_settings" format="VARCHAR" />
+  </node>
+  <node name="CountryTone" function="listAllToneZoneSettings" default="">
+    <path type="sql" key="country" table="tonezone_settings" format="VARCHAR" />
+  </node>
+  <node name="fxs_surpport" function="listAllToneZoneSettings" default="">
+    <path type="sql" key="fxs_surpport" table="tonezone_settings" format="VARCHAR" />
+  </node>
+  <!-->opermode_settings<!-->
+  <node name="opermode" function="getOpermodeSettings,getOpermodeSettingsPrivilege" default="">
+    <path type="sql" key="opermode" table="opermode_settings" format="VARCHAR" />
+  </node>
+  <node name="country_description" function="getOpermodeSettings" default="">
+    <path type="sql" key="country_description" table="opermode_settings" format="VARCHAR" />
+  </node>
+  <node name="CountryOpermode" function="listAllOpermodeSettings" default="">
+    <path type="sql" key="country_description" table="opermode_settings" format="VARCHAR" />
+  </node>
+  <!-->hardware_global_settings<!-->
+  <node name="fxs_tonezone" function="getAnalogSettings,updateAnalogSettings,getAnalogSettingsPrivilege" default="">
+    <path type="sql" key="fxs_tonezone" table="hardware_global_settings" format="VARCHAR" />
+  </node>
+  <node name="fxs_mwisendtype" function="getAnalogSettings,updateAnalogSettings" default="">
+    <path type="sql" key="fxs_mwisendtype" table="hardware_global_settings" format="VARCHAR" />
+  </node>
+  <node name="fxo_opermode" function="getAnalogSettings,updateAnalogSettings" default="US">
+    <path type="sql" key="fxo_opermode" table="hardware_global_settings" format="VARCHAR" />
+  </node>
+  <node name="fxs_opermode" function="getAnalogSettings,updateAnalogSettings" default="US">
+    <path type="sql" key="fxs_opermode" table="hardware_global_settings" format="VARCHAR" />
+  </node>
+  <node name="fxs_override_tiss" function="getAnalogSettings,updateAnalogSettings" default="US">
+    <path type="sql" key="fxs_override_tiss" table="hardware_global_settings" format="INT" />
+  </node>
+  <node name="fxs_tiss" function="getAnalogSettings,updateAnalogSettings" default="US">
+    <path type="sql" key="fxs_tiss" table="hardware_global_settings" format="INT" />
+  </node>
+  <node name="alawoverride" function="getAnalogSettings,updateAnalogSettings" default="US">
+    <path type="sql" key="alawoverride" table="hardware_global_settings" format="INT" />
+  </node>
+  <node name="boostringer" function="getAnalogSettings,updateAnalogSettings" default="US">
+    <path type="sql" key="boostringer" table="hardware_global_settings" format="INT" />
+  </node>
+  <node name="fastringer" function="getAnalogSettings,updateAnalogSettings" default="US">
+    <path type="sql" key="fastringer" table="hardware_global_settings" format="INT" />
+  </node>
+  <node name="lowpower" function="getAnalogSettings,updateAnalogSettings" default="US">
+    <path type="sql" key="lowpower" table="hardware_global_settings" format="INT" />
+  </node>
+  <node name="fwringdetect" function="getAnalogSettings,updateAnalogSettings" default="US">
+    <path type="sql" key="fwringdetect" table="hardware_global_settings" format="INT" />
+  </node>
+
+  <!-->analog trunk config<!-->
+  <node name="analogtrunk" function="listAnalogTrunk,getAnalogTrunk,getAnalogTrunkPrivilege" default="">
+    <path type="sql" key="chan" table="analog_trunk_chans" format="INT" />
+    <path type="sql" key="trunk_index" table="analog_trunks" format="INT" />
+  </node>
+  <node name="analogtrunk" function="deleteAnalogTrunk" default="">
+    <path type="sql" key="trunk_index" table="trunks" format="INT" />
+  </node>
+  <node name="out_maxchans" function="addAnalogTrunk,updateAnalogTrunk,getAnalogTrunk" default="">
+    <path type="sql" key="out_maxchans" table="analog_trunks" format="INT" />
+  </node>
+  <node name="analogtrunk" function="updateAnalogTrunk" default="">
+    <path type="sql" key="trunk_index" table="trunks" format="INT" />
+    <path type="sql" key="trunk_index" table="analog_trunks" format="INT" />
+  </node>
+  <node name="analogtrunk" function="addAnalogTrunk" default="">
+    <path type="sql" key="trunk_index" table="analog_trunk_status" format="INT" />
+    <path type="sql" key="trunk_index" table="analog_trunks" format="INT" />
+    <path type="sql" key="trunk_index" table="trunks" format="INT" />
+  </node>
+  <node name="trunk_index" function="getAnalogTrunk" default="">
+    <path type="sql" key="trunk_index" table="analog_trunks" format="INT" />
+  </node>
+  <node name="trunk_name" function="getAnalogTrunk,getAnalogTrunkNameList" default="">
+    <path type="sql" key="trunk_name" table="analog_trunks" format="VARCHAR" />
+  </node>
+  <node name="trunk_name" function="addAnalogTrunk" default="">
+    <path type="sql" key="trunk_name" table="analog_trunk_status" format="VARCHAR" />
+    <path type="sql" key="trunk_name" table="analog_trunks" format="VARCHAR" />
+    <path type="sql" key="trunk_name" table="trunks" format="VARCHAR" />
+  </node>
+  <node name="trunk_name" function="updateAnalogTrunk" default="">
+    <path type="sql" key="trunk_name" table="trunks" format="VARCHAR" />
+  </node>
+  <node name="group" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk,getAnalogTrunkNameList" default="">
+    <path type="sql" key="trunkgroup" table="analog_trunks" format="INT" />
+  </node>
+  <node name="polarityswitch" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="polarityswitch" table="analog_trunks" format="VARCHAR" />
+  </node>
+  <node name="polarityonanswerdelay" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="polarityonanswerdelay" table="analog_trunks" format="INT" />
+  </node>
+  <node name="enablecurrentdisconnectthreshold" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="enablecurrentdisconnectthreshold" table="analog_trunks" format="VARCHAR" />
+  </node>
+  <node name="currentdisconnectthreshold" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="currentdisconnectthreshold" table="analog_trunks" format="INT" />
+  </node>
+  <node name="ringtimeout" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="ringtimeout" table="analog_trunks" format="INT" />
+  </node>
+  <node name="rxgain" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="rxgain" table="analog_trunks" format="REAL" />
+  </node>
+  <node name="txgain" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="txgain" table="analog_trunks" format="REAL" />
+  </node>
+  <node name="usecallerid" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="usecallerid" table="analog_trunks" format="VARCHAR" />
+  </node>
+  <node name="cidmode" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="cidmode" table="analog_trunks" format="INT" />
+  </node>
+  <node name="cidstart" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="cidstart" table="analog_trunks" format="VARCHAR" />
+  </node>
+  <node name="cidsignalling" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="cidsignalling" table="analog_trunks" format="VARCHAR" />
+  </node>
+  <node name="faxdetect" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="faxdetect" table="analog_trunks" format="VARCHAR" />
+  </node>
+  <node name="auto_record" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="auto_record" table="analog_trunks" format="VARCHAR" />
+  </node>
+  <node name="countrytone" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="countrytone" table="analog_trunks" format="VARCHAR" />
+  </node>
+  <node name="busydetect" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="busydetect" table="analog_trunks" format="VARCHAR" />
+  </node>
+  <node name="busycount" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="busycount" table="analog_trunks" format="INT" />
+  </node>
+  <node name="busy" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="busy" table="analog_trunks" format="VARCHAR" />
+  </node>
+  <node name="congestiondetect" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="congestiondetect" table="analog_trunks" format="VARCHAR" />
+  </node>
+  <node name="congestioncount" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="congestioncount" table="analog_trunks" format="INT" />
+  </node>
+  <node name="congestion" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="congestion" table="analog_trunks" format="VARCHAR" />
+  </node>
+  <node name="echocancel" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="echocancel" table="analog_trunks" format="INT" />
+  </node>
+  <node name="callerid" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="callerid" table="analog_trunks" format="VARCHAR" />
+  </node>
+  <node name="out_of_service" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk" default="">
+    <path type="sql" key="out_of_service" table="analog_trunks" format="VARCHAR" />
+    <path type="sql" key="out_of_service" table="trunks" format="VARCHAR" />
+  </node>
+  <node name="chans" function="getAnalogTrunk,updateAnalogTrunk,addAnalogTrunk,getAnalogTrunkChanList" default="">
+    <path type="sql" key="chan" table="analog_trunk_chans" format="INT" />
+  </node>
+  
+  <node name="trunks" function="listAllTrunk" default="">
+    <path type="sql" key="trunk_index" table="analog_trunk_chans" format="INT" />
+    <path type="sql" key="trunk_index" table="analog_trunk_status" format="INT" />
+    <path type="sql" key="trunk_index" table="sip_trunks" format="INT" />
+    <path type="sql" key="trunk_index" table="iax_trunks" format="INT" />
+  </node>
+  <node name="voip_trunk" function="listVoIPTrunk,getVoIPTrunkPrivilege" default="">
+    <path type="sql" key="trunk_index" table="sip_trunks" format="INT" />
+    <path type="sql" key="trunk_index" table="iax_trunks" format="INT" />
+  </node>
+  <node name="trunk" function="deleteSIPTrunk,deleteIAXTrunk,getTrunkList" default="">
+    <path type="sql" key="trunk_index" table="trunks" format="INT" />
+  </node>
+  <node name="trunk" function="updateSIPTrunk" default="">
+    <path type="sql" key="trunk_index" table="trunks" format="INT" />
+    <path type="sql" key="trunk_index" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="trunk" function="getSIPTrunk" default="">
+    <path type="sql" key="trunk_index" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="technology" function="addSIPTrunk,addIAXTrunk,getTrunkList" default="">
+    <path type="sql" key="technology" table="trunks" format="VARCHAR" />
+  </node>
+  <node name="out_of_service" function="getTrunkList" default="">
+      <path type="sql" key="out_of_service" table="trunks" format="VARCHAR" />
+  </node>
+  <!-->SIP Trunks start<!-->
+  <node name="trunk_name" function="addSIPTrunk" default="">
+    <path type="sql" key="trunk_name" table="sip_trunks" format="VARCHAR" />
+    <path type="sql" key="trunk_name" table="trunks" format="VARCHAR" />
+  </node>
+  <node name="trunk_name" function="updateSIPTrunk,updateIAXTrunk,getTrunkList" default="">
+    <path type="sql" key="trunk_name" table="trunks" format="VARCHAR" />
+  </node>
+  <node name="trunk_name" function="getSIPTrunk,getSIPTrunkStatusList,getOutbandRoutesList" default="">
+    <path type="sql" key="trunk_name" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="trunk_index" function="getSIPTrunk,addSIPTrunk,getSIPTrunkStatusList" default="">
+    <path type="sql" key="trunk_index" table="sip_trunks" format="INT" />
+    <path type="sql" key="trunk_index" table="trunks" format="INT" />
+  </node>
+  <node name="host" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk,getSIPTrunkStatusList" default="">
+    <path type="sql" key="host" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="trunk_type" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="trunk_type" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="status" function="getSIPTrunk,getSIPTrunkStatusList" default="">
+    <path type="sql" key="status" table="sip_trunks" format="VARCHAR"/>
+  </node>
+  <node name="cidnumber" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="cidnumber" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="cidname" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="cidname" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="keepcid" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="keepcid" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="auto_recording" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="auto_recording" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="faxdetect" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="faxdetect" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="username" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk,getSIPTrunkStatusList" default="">
+    <path type="sql" key="username" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="authid" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="authid" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="secret" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="secret" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <!--<node name="context" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="context" table="sip_trunks" format="VARCHAR" />
+  </node>-->
+  <node name="outboundproxy" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="outboundproxy" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="encryption" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="encryption" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="enable_qualify" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="enable_qualify" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="qualify" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="qualify" table="sip_trunks" format="INT" />
+  </node>
+  <node name="qualifyfreq" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="qualifyfreq" table="sip_trunks" format="INT" />
+  </node>
+  <node name="directmedia" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="directmedia" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="insecure" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="insecure" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="transport" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="transport" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <!--<node name="disallow" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="" table="sip_trunks" format="VARCHAR" />
+  </node>-->
+  <node name="allow" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="allow" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="did_mode" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="did_mode" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="fromdomain" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="fromdomain" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="fromuser" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="fromuser" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="need_register" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="need_register" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="ldap_sync_enable" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="ldap_sync_enable" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="ldap_sync_passwd" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="ldap_sync_passwd" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="ldap_sync_port" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="ldap_sync_port" table="sip_trunks" format="INT" />
+  </node>
+  <node name="ldap_default_outrt" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="ldap_default_outrt" table="sip_trunks" format="INT" />
+  </node>
+  <node name="ldap_default_outrt_prefix" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="ldap_default_outrt_prefix" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="ldap_custom_prefix" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="ldap_custom_prefix" table="sip_trunks" format="VARCHAR" />
+  </node>
+  <node name="ldap_last_sync_date" function="getLDAPDate" default="">
+    <path type="pvalue" key="ldap_sync_date_" table="" format="VARCHAR" />
+  </node>
+  <node name="ldap_sync_progress" function="getLDAPSyncProgress" default="">
+    <path type="pvalue" key="ldap_sync_progress_" table="" format="VARCHAR" />
+  </node>
+  <node name="out_maxchans" function="addSIPTrunk,updateSIPTrunk,getSIPTrunk" default="">
+    <path type="sql" key="out_maxchans" table="sip_trunks" format="INT" />
+  </node>
+  <node name="out_of_service" function="getSIPTrunk,updateSIPTrunk,addSIPTrunk" default="">
+    <path type="sql" key="out_of_service" table="sip_trunks" format="VARCHAR" />
+    <path type="sql" key="out_of_service" table="trunks" format="VARCHAR" />
+  </node>
+  <!-->SIP Trunks end  <!-->
+
+  <!-->IAX Trunks start<!-->
+  <node name="trunk" function="updateIAXTrunk" default="">
+    <path type="sql" key="trunk_index" table="trunks" format="INT" />
+    <path type="sql" key="trunk_index" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="trunk" function="getIAXTrunk" default="">
+    <path type="sql" key="trunk_index" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="trunk_name" function="addIAXTrunk" default="">
+    <path type="sql" key="trunk_name" table="iax_trunks" format="VARCHAR" />
+    <path type="sql" key="trunk_name" table="trunks" format="VARCHAR" />
+  </node>
+  <node name="trunk_name" function="getIAXTrunk,getIAXTrunkStatusList" default="">
+    <path type="sql" key="trunk_name" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="trunk_index" function="getIAXTrunk,addIAXTrunk,getIAXTrunkStatusList" default="">
+    <path type="sql" key="trunk_index" table="iax_trunks" format="INT" />
+    <path type="sql" key="trunk_index" table="trunks" format="INT" />
+  </node>
+  <node name="host" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk,getIAXTrunkStatusList" default="">
+    <path type="sql" key="host" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="trunk_type" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="trunk_type" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="status" function="getIAXTrunk,getIAXTrunkStatusList" default="">
+    <path type="sql" key="status" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="cidnumber" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="cidnumber" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="cidname" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="cidname" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="keepcid" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="keepcid" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="auto_recording" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="auto_recording" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="faxdetect" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="faxdetect" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="username" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk,getIAXTrunkStatusList" default="">
+    <path type="sql" key="username" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="authid" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="authid" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="secret" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="secret" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <!--<node name="context" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="context" table="iax_trunks" format="VARCHAR" />
+  </node>-->
+  <node name="outboundproxy" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="outboundproxy" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="encryption" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="encryption" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="enable_qualify" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="enable_qualify" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="qualify" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="qualify" table="iax_trunks" format="INT" />
+  </node>
+  <node name="qualifyfreq" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="qualifyfreq" table="iax_trunks" format="INT" />
+  </node>
+  <node name="directmedia" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="directmedia" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="insecure" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="insecure" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="transport" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="transport" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <!--<node name="disallow" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="" table="iax_trunks" format="VARCHAR" />
+  </node>-->
+  <node name="allow" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="allow" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="did_mode" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="did_mode" table="iax_trunks" format="VARCHAR" />
+  </node>
+  <node name="out_maxchans" function="addIAXTrunk,updateIAXTrunk,getIAXTrunk" default="">
+    <path type="sql" key="out_maxchans" table="iax_trunks" format="INT" />
+  </node>
+  <node name="out_of_service" function="getIAXTrunk,updateIAXTrunk,addIAXTrunk" default="">
+    <path type="sql" key="out_of_service" table="iax_trunks" format="VARCHAR" />
+    <path type="sql" key="out_of_service" table="trunks" format="VARCHAR" />
+  </node>
+  <!-->IAX Trunks end  <!-->
+  <!-->Outound Route start <!-->
+  <node name="outbound_route" function="deleteOutboundRoute,listOutboundRoute" default="">
+    <path type="sql" key="outbound_rt_index" table="outbound_routes" format="INT" />
+  </node>
+  <node name="outbound_route" function="getOutboundRoute,updateOutboundRoute" default="">
+    <path type="sql" key="member_extension" table="outrt_wlist_members" format="VARCHAR" />
+    <path type="sql" key="outbound_rt_index" table="outbound_routes" format="INT" />
+  </node>
+  <node name="outbound_route" function="getOutboundRoutePrivilege" default="">
+    <path type="sql" key="outrt_id" table="outrt_wlist_members" format="VARCHAR" />
+    <path type="sql" key="outbound_rt_index" table="outbound_routes" format="INT" />
+    <path type="sql" key="outbound_rt_index" table="outbound_rt_dial_patterns" format="INT" />
+  </node>
+  <node name="outbound_rt_name" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute,getOutboundRouteList" default="">
+    <path type="sql" key="outbound_rt_name" table="outbound_routes" format="VARCHAR" />
+  </node>
+  <node name="outbound_rt_index" function="getOutboundRoute,addOutboundRoute,getOutboundRouteList" default="">
+    <path type="sql" key="outbound_rt_index" table="outbound_routes" format="INT" />
+  </node>
+  <node name="sequence" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute,moveOutboundRouteTop,moveOutboundRouteBottom,moveOutboundRouteUp,moveOutboundRouteDown" default="">
+    <path type="sql" key="sequence" table="outbound_routes" format="INT" />
+  </node>
+  <node name="default_trunk_index" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="default_trunk_index" table="outbound_routes" format="INT" />
+  </node>
+  <node name="permission" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="permission" table="outbound_routes" format="VARCHAR" />
+  </node>
+  <node name="password" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="password" table="outbound_routes" format="VARCHAR" />
+  </node>
+  <node name="strip" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="strip" table="outbound_routes" format="INT" />
+  </node>
+  <node name="prepend" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="prepend" table="outbound_routes" format="VARCHAR" />
+  </node>
+  <node name="failover_a_trunk_index" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="failover_a_trunk_index" table="outbound_routes" format="INT" />
+  </node>
+  <node name="failover_a_trunk_sequence" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="failover_a_trunk_sequence" table="outbound_routes" format="INT" />
+  </node>
+  <node name="failover_a_strip" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="failover_a_strip" table="outbound_routes" format="INT" />
+  </node>
+  <node name="failover_a_prepend" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="failover_a_prepend" table="outbound_routes" format="VARCHAR" />
+  </node>
+  <node name="failover_b_trunk_index" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="failover_b_trunk_index" table="outbound_routes" format="INT" />
+  </node>
+  <node name="failover_b_trunk_sequence" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="failover_b_trunk_sequence" table="outbound_routes" format="INT" />
+  </node>
+  <node name="failover_b_strip" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="failover_b_strip" table="outbound_routes" format="INT" />
+  </node>
+  <node name="failover_b_prepend" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="failover_b_prepend" table="outbound_routes" format="VARCHAR" />
+  </node>
+  <node name="failover_c_trunk_index" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="failover_c_trunk_index" table="outbound_routes" format="INT" />
+  </node>
+  <node name="failover_c_trunk_sequence" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="failover_c_trunk_sequence" table="outbound_routes" format="INT" />
+  </node>
+  <node name="failover_c_strip" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="failover_c_strip" table="outbound_routes" format="INT" />
+  </node>
+  <node name="failover_c_prepend" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="failover_c_prepend" table="outbound_routes" format="VARCHAR" />
+  </node>
+  <node name="enable_wlist" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="enable_wlist" table="outbound_routes" format="VARCHAR" />
+  </node>
+  <node name="custom_member" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="custom_member" table="outbound_routes" format="VARCHAR" />
+  </node>
+  <node name="limitime" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="limitime" table="outbound_routes" format="VARCHAR" />
+  </node>
+  <node name="pattern" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="match" table="outbound_rt_dial_patterns" format="VARCHAR" />
+    <path type="sql" key="allow" table="outbound_rt_dial_patterns" format="VARCHAR" />
+  </node>
+  <node name="members" function="getOutboundRoute,updateOutboundRoute,addOutboundRoute" default="">
+    <path type="sql" key="member_extension" table="outrt_wlist_members" format="VARCHAR" />
+    <path type="sql" key="outbound_rt_index" table="outrt_wlist_members" format="VARCHAR" />
+  </node>
+  
+  <node name="trunk" function="listDODVoIPTrunk,updateDODVoIPTrunk,addDODVoIPTrunk,deleteDODVoIPTrunk" default="">
+    <path type="sql" key="trunk_index" table="dod_voip_trunks" format="INT" />
+  </node>
+  <node name="number" function="updateDODVoIPTrunk,addDODVoIPTrunk,deleteDODVoIPTrunk" default="">
+    <path type="sql" key="number" table="dod_voip_trunks" format="VARCHAR" />
+  </node>
+  <node name="dod" function="listDODVoIPTrunk" default="">
+    <path type="sql" key="extension" table="dod_voip_trunks" format="VARCHAR" />
+    <path type="sql" key="number" table="dod_voip_trunks" format="VARCHAR" />
+  </node>
+  <node name="members" function="updateDODVoIPTrunk,addDODVoIPTrunk" default="">
+    <path type="sql" key="extension" table="dod_voip_trunks" format="VARCHAR" />
+  </node>
+  <!-->Outbound ROute end <!--> 
+
+  <!-->Inbound Routes start<!-->
+  <node name="inbound_route" function="deleteInboundRoute,listInboundRoute" default="">
+    <path type="sql" key="inbound_rt_index" table="inbound_routes" format="INT" />
+  </node>
+  <node name="inbound_route" function="updateInboundRoute,getInboundRoute" default="">
+    <path type="sql" key="inbound_rt_index" table="inbound_routes" format="INT" />
+    <path type="sql" key="inbound_rt_index" table="inbound_did_destination" format="INT" />
+  </node>
+  <node name="inbound_route" function="getInboundRoutePrivilege" default="">
+    <path type="sql" key="inbound_rt_index" table="inbound_routes" format="INT" />
+    <path type="sql" key="inbound_rt_index" table="inbound_did_destination" format="INT" />
+    <path type="sql" key="enable" table="inbound_blacklist_settings" format="VARCHAR" />
+    <path type="sql" key="inbound_rt_index" table="inbound_time_conditions" format="INT" />
+  </node>
+  <node name="inbound_rt_index" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="inbound_rt_index" table="inbound_routes" format="INT" />
+    <path type="sql" key="inbound_rt_index" table="inbound_did_destination" format="INT" />
+  </node>
+  <node name="trunk_index" function="getInboundRoute,updateInboundRoute,addInboundRoute,listInboundRoute" default="">
+    <path type="sql" key="trunk_index" table="inbound_routes" format="INT" />
+  </node>
+  <node name="did_pattern_match" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="did_pattern_match" table="inbound_routes" format="VARCHAR" />
+  </node>
+  <node name="did_pattern_allow" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="did_pattern_allow" table="inbound_routes" format="VARCHAR" />
+  </node>
+  <node name="destination_type" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="byDID">
+    <path type="sql" key="destination_type" table="inbound_routes" format="VARCHAR" />
+  </node>
+  <node name="account" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="account" table="inbound_routes" format="VARCHAR" />
+  </node>
+  <node name="voicemail" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="voicemail" table="inbound_routes" format="VARCHAR" />
+  </node>
+  <node name="conference" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="conference" table="inbound_routes" format="VARCHAR" />
+  </node>
+  <node name="vmgroup" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="vmgroup" table="inbound_routes" format="VARCHAR" />
+  </node>
+  <node name="ivr" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="ivr" table="inbound_routes" format="VARCHAR" />
+  </node>
+  <node name="ringgroup" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="ringgroup" table="inbound_routes" format="VARCHAR" />
+  </node>
+  <node name="queue" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="queue" table="inbound_routes" format="VARCHAR" />
+  </node>
+  <node name="paginggroup" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="paginggroup" table="inbound_routes" format="VARCHAR" />
+  </node>
+  <node name="fax" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="fax" table="inbound_routes" format="VARCHAR" />
+  </node>
+  <node name="disa" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="disa" table="inbound_routes" format="VARCHAR" />
+  </node>
+  <node name="directory" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="directory" table="inbound_routes" format="VARCHAR" />
+  </node>
+   <node name="did_strip" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="0">
+    <path type="sql" key="did_strip" table="inbound_routes" format="INT" />
+  </node>
+  <node name="permission" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="internal-local-national-international">
+    <path type="sql" key="permission" table="inbound_routes" format="VARCHAR" />
+  </node>
+  <node name="prepend_trunk_name" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="prepend_trunk_name" table="inbound_routes" format="VARCHAR" />
+  </node> 
+
+  <!-->Inbound Routes end<!-->
+
+  <!-->Inbound Routes DID destination start<!-->
+  <node name="dial_trunk" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="dial_trunk" table="inbound_did_destination" format="VARCHAR" />
+  </node>
+  <node name="ext_local" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="ext_local" table="inbound_did_destination" format="VARCHAR" />
+  </node>
+  <node name="ext_fax" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="ext_fax" table="inbound_did_destination" format="VARCHAR" />
+  </node>
+  <node name="voicemailgroups" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="voicemailgroups" table="inbound_did_destination" format="VARCHAR" />
+  </node>
+  <node name="voicemenus" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="voicemenus" table="inbound_did_destination" format="VARCHAR" />
+  </node>
+  <node name="ext_conference" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="ext_conference" table="inbound_did_destination" format="VARCHAR" />
+  </node>
+  <node name="ext_queues" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="ext_queues" table="inbound_did_destination" format="VARCHAR" />
+  </node>
+  <node name="ext_group" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="ext_group" table="inbound_did_destination" format="VARCHAR" />
+  </node>
+  <node name="ext_paging" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="ext_paging" table="inbound_did_destination" format="VARCHAR" />
+  </node>
+  <node name="ext_directory" function="getInboundRoute,updateInboundRoute,addInboundRoute" default="">
+    <path type="sql" key="ext_directory" table="inbound_did_destination" format="VARCHAR" />
+  </node>
+   <!-->Inbound Routes DID destination End<!-->
+
+  <!-->Inbound Routes Blacklist Settings Start<!-->
+  <node name="enable" function="getInboundBlacklistSettings,updateInboundBlacklistSettings" default="">
+    <path type="sql" key="enable" table="inbound_blacklist_settings" format="VARCHAR" />
+  </node>
+  <!-->Inbound Routes Blacklist Settings End<!-->
+
+  <!-->Inbound Routes Blacklist Start<!-->
+  <node name="origin_number" function="updateInboundBlacklist" default="">
+    <path type="sql" key="number" table="inbound_blacklist" format="VARCHAR" />
+  </node>
+  <node name="number" function="listInboundBlacklist,updateInboundBlacklist,addInboundBlacklist,deleteInboundBlacklist" default="">
+    <path type="sql" key="number" table="inbound_blacklist" format="VARCHAR" />
+  </node>
+  <!-->Inbound Routes Blacklist End<!-->
+
+  <!-->Inbound Time Condition start<!-->
+  <node name="inbound_route" function="listInboundTimeCondition" default="">
+    <path type="sql" key="inbound_rt_index" table="inbound_time_conditions" format="INT" />
+  </node>
+  <node name="time_condition" function="listInboundTimeCondition,addInboundRoute,updateInboundRoute" default="">
+    <path type="sql" key="condition_index" table="inbound_time_conditions" format="INT" />
+    <path type="sql" key="inbound_rt_index" table="inbound_time_conditions" format="INT" />
+    <path type="sql" key="condition_index" table="inbound_time_conditions" format="INT" />
+    <path type="sql" key="sequence" table="inbound_time_conditions" format="INT" />
+    <path type="sql" key="start_hour" table="inbound_time_conditions" format="INT" />
+    <path type="sql" key="start_min" table="inbound_time_conditions" format="INT" />
+    <path type="sql" key="end_hour" table="inbound_time_conditions" format="INT" />
+    <path type="sql" key="end_min" table="inbound_time_conditions" format="INT" />
+    <path type="sql" key="mode" table="inbound_time_conditions" format="VARCHAR" />
+    <path type="sql" key="week_day" table="inbound_time_conditions" format="VARCHAR" />
+    <path type="sql" key="month" table="inbound_time_conditions" format="VARCHAR" />
+    <path type="sql" key="day" table="inbound_time_conditions" format="VARCHAR" />
+    <path type="sql" key="destination_type" table="inbound_time_conditions" format="VARCHAR" />
+    <path type="sql" key="destination" table="inbound_time_conditions" format="VARCHAR" />
+    <path type="sql" key="did_strip" table="inbound_time_conditions" format="INT" />
+  </node>
+  
+
+  <!-->Inbound Time Condition end<!-->
+
+
+  <!-->Apply Interface<!-->
+  <node name="settings" function="applyChanges" default="">
+    <path type="cmd" key="python /app/asterisk/var/DB2File_PY/gen_conf_files.py"/>
+  </node>
+
+  <!-->SIP global settings  <!-->
+  <node name="realm" function="getSIPGenSettings,updateSIPGenSettings,getSIPGenSettingsPrivilege" default="">
+    <path type="sql" key="realm" table="sip_general_settings" format="VARCHAR" />
+  </node>
+  <node name="bindaddr" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="bindaddr" table="sip_general_settings" format="VARCHAR" />
+  </node>
+  <node name="bindport" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="bindport" table="sip_general_settings" format="INT" />
+  </node>
+  <node name="allowguest" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="allowguest" table="sip_general_settings" format="VARCHAR" />
+  </node>
+  <node name="allowoverlap" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="allowoverlap" table="sip_general_settings" format="VARCHAR" />
+  </node>
+  <node name="allowtransfer" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="allowtransfer" table="sip_general_settings" format="VARCHAR" />
+  </node>
+  <node name="srvlookup" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="srvlookup" table="sip_general_settings" format="VARCHAR" />
+  </node>
+  <node name="mwi_from" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="mwi_from" table="sip_general_settings" format="VARCHAR" />
+  </node>
+  <node name="domain0" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="domain0" table="sip_general_settings" format="VARCHAR" />
+  </node>
+  <node name="domain1" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="domain1" table="sip_general_settings" format="VARCHAR" />
+  </node>
+  <node name="domain2" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="domain2" table="sip_general_settings" format="VARCHAR" />
+  </node>
+  <node name="domain3" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="domain3" table="sip_general_settings" format="VARCHAR" />
+  </node>
+  <node name="domain4" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="domain4" table="sip_general_settings" format="VARCHAR" />
+  </node>
+  <node name="domain5" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="domain5" table="sip_general_settings" format="VARCHAR" />
+  </node>
+  <node name="domain6" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="domain6" table="sip_general_settings" format="VARCHAR" />
+  </node>
+  <node name="domain7" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="domain7" table="sip_general_settings" format="VARCHAR" />
+  </node>
+  <node name="domain8" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="domain8" table="sip_general_settings" format="VARCHAR" />
+  </node>
+  <node name="domain9" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="domain9" table="sip_general_settings" format="VARCHAR" />
+  </node>
+  <node name="fromdomain" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="fromdomain" table="sip_general_settings" format="VARCHAR" />
+  </node>
+  <node name="autodomain" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="autodomain" table="sip_general_settings" format="VARCHAR" />
+  </node>
+  <node name="allowexternaldomains" function="getSIPGenSettings,updateSIPGenSettings" default="">
+    <path type="sql" key="allowexternaldomains" table="sip_general_settings" format="VARCHAR" />
+  </node>
+
+  <node name="registertimeout" function="getSIPMiscSettings,updateSIPMiscSettings,getSIPMiscSettingsPrivilege" default="">
+    <path type="sql" key="registertimeout" table="sip_misc_settings" format="INT" />
+  </node>
+  <node name="registerattempts" function="getSIPMiscSettings,updateSIPMiscSettings" default="">
+    <path type="sql" key="registerattempts" table="sip_misc_settings" format="INT" />
+  </node>
+  <node name="maxcallbitrate" function="getSIPMiscSettings,updateSIPMiscSettings" default="">
+    <path type="sql" key="maxcallbitrate" table="sip_misc_settings" format="INT" />
+  </node>
+  <node name="videosupport" function="getSIPMiscSettings,updateSIPMiscSettings" default="">
+    <path type="sql" key="videosupport" table="sip_misc_settings" format="VARCHAR" />
+  </node>
+  <node name="callevents" function="getSIPMiscSettings,updateSIPMiscSettings" default="">
+    <path type="sql" key="callevents" table="sip_misc_settings" format="VARCHAR" />
+  </node>
+  <node name="alwaysauthreject" function="getSIPMiscSettings,updateSIPMiscSettings" default="">
+    <path type="sql" key="alwaysauthreject" table="sip_misc_settings" format="VARCHAR" />
+  </node>
+  
+  <node name="session_refresher" function="getSIPSSTimerSettings,updateSIPSSTimerSettings,getSIPSSTimerSettingsPrivilege" default="">
+    <path type="sql" key="session_refresher" table="sip_sessiontimer_settings" format="VARCHAR" />
+  </node>
+  <node name="session_minse" function="getSIPSSTimerSettings,updateSIPSSTimerSettings" default="">
+    <path type="sql" key="session_minse" table="sip_sessiontimer_settings" format="INT" />
+  </node>
+  <node name="session_expires" function="getSIPSSTimerSettings,updateSIPSSTimerSettings" default="">
+    <path type="sql" key="session_expires" table="sip_sessiontimer_settings" format="INT" />
+  </node>
+  <node name="session_timers" function="getSIPSSTimerSettings,updateSIPSSTimerSettings" default="">
+    <path type="sql" key="session_timers" table="sip_sessiontimer_settings" format="VARCHAR" />
+  </node>
+
+  <node name="tcpenable" function="getSIPTCPSettings,updateSIPTCPSettings,getSIPTCPSettingsPrivilege" default="">
+    <path type="sql" key="tcpenable" table="sip_tcp_settings" format="VARCHAR" />
+  </node>
+  <node name="tcpbindaddr" function="getSIPTCPSettings,updateSIPTCPSettings" default="">
+    <path type="sql" key="tcpbindaddr" table="sip_tcp_settings" format="VARCHAR" />
+  </node>
+  <node name="tlsenable" function="getSIPTCPSettings,updateSIPTCPSettings" default="">
+    <path type="sql" key="tlsenable" table="sip_tcp_settings" format="VARCHAR" />
+  </node>
+  <node name="tlsbindaddr" function="getSIPTCPSettings,updateSIPTCPSettings" default="">
+    <path type="sql" key="tlsbindaddr" table="sip_tcp_settings" format="VARCHAR" />
+  </node>
+  <node name="tlsclientmethod" function="getSIPTCPSettings,updateSIPTCPSettings" default="">
+    <path type="sql" key="tlsclientmethod" table="sip_tcp_settings" format="VARCHAR" />
+  </node>
+  <node name="tlsdontverifyserver" function="getSIPTCPSettings,updateSIPTCPSettings" default="">
+    <path type="sql" key="tlsdontverifyserver" table="sip_tcp_settings" format="VARCHAR" />
+  </node>
+  <node name="tlscertfile" function="getSIPTCPSettings" default="">
+    <path type="sql" key="tlscertfile" table="sip_tcp_settings" format="VARCHAR" />
+  </node>
+  <node name="tlscafile" function="getSIPTCPSettings" default="">
+    <path type="sql" key="tlscafile" table="sip_tcp_settings" format="VARCHAR" />
+  </node>
+  <node name="tlscadir" function="getSIPTCPSettings" default="">
+    <path type="sql" key="tlscadir" table="sip_tcp_settings" format="VARCHAR" />
+  </node>
+
+  <node name="externip" function="getSIPNATSettings,updateSIPNATSettings,getSIPNATSettingsPrivilege" default="">
+    <path type="sql" key="externip" table="sip_nat_settings" format="VARCHAR" />
+  </node>
+  <node name="externhost" function="getSIPNATSettings,updateSIPNATSettings" default="">
+    <path type="sql" key="externhost" table="sip_nat_settings" format="VARCHAR" />
+  </node>
+  <node name="externrefresh" function="getSIPNATSettings,updateSIPNATSettings" default="">
+    <path type="sql" key="externrefresh" table="sip_nat_settings" format="INT" />
+  </node>
+  <node name="externtcpport" function="getSIPNATSettings,updateSIPNATSettings" default="">
+    <path type="sql" key="externtcpport" table="sip_nat_settings" format="INT" />
+  </node>
+  <node name="externtlsport" function="getSIPNATSettings,updateSIPNATSettings" default="">
+    <path type="sql" key="externtlsport" table="sip_nat_settings" format="INT" />
+  </node>
+  <node name="localnetaddr" function="getSIPNATSettings,getSIPNATSettingsPrivilege" default="">
+    <path type="sql" key="localnetaddr" table="sip_nat_netaddr_settings" format="VARCHAR" />
+  </node>
+  <node name="localnetlen" function="getSIPNATSettings" default="">
+    <path type="sql" key="localnetlen" table="sip_nat_netaddr_settings" format="INT" />
+  </node>
+  <node name="localnet" function="updateSIPNATSettings" default="">
+    <path type="sql" key="localnetaddr" table="sip_nat_netaddr_settings" format="VARCHAR" />
+    <path type="sql" key="localnetlen" table="sip_nat_netaddr_settings" format="INT" />
+  </node>  
+  <node name="nat" function="getSIPNATSettings,updateSIPNATSettings" default="">
+    <path type="sql" key="nat" table="sip_nat_settings" format="VARCHAR" />
+  </node>
+  <node name="canreinvite" function="getSIPNATSettings,updateSIPNATSettings" default="">
+    <path type="sql" key="canreinvite" table="sip_nat_settings" format="VARCHAR" />
+  </node>
+
+  <!-->IAX global settings  <!-->
+  <node name="bindaddr" function="getIAXGenSettings,updateIAXGenSettings,getIAXGenSettingsPrivilege" default="">
+    <path type="sql" key="bindaddr" table="iax_general_settings" format="VARCHAR" />
+  </node>
+  <node name="bindport" function="getIAXGenSettings,updateIAXGenSettings" default="">
+    <path type="sql" key="bindport" table="iax_general_settings" format="INT" />
+  </node>
+  <node name="iaxcompat" function="getIAXGenSettings,updateIAXGenSettings" default="">
+    <path type="sql" key="iaxcompat" table="iax_general_settings" format="VARCHAR" />
+  </node>
+  <node name="nochecksums" function="getIAXGenSettings,updateIAXGenSettings" default="">
+    <path type="sql" key="nochecksums" table="iax_general_settings" format="VARCHAR" />
+  </node>
+  <node name="delayreject" function="getIAXGenSettings,updateIAXGenSettings" default="">
+    <path type="sql" key="delayreject" table="iax_general_settings" format="VARCHAR" />
+  </node>
+  <node name="adsi" function="getIAXGenSettings,updateIAXGenSettings" default="">
+    <path type="sql" key="adsi" table="iax_general_settings" format="VARCHAR" />
+  </node>
+  <node name="mohinterpret" function="getIAXGenSettings,updateIAXGenSettings" default="">
+    <path type="sql" key="mohinterpret" table="iax_general_settings" format="VARCHAR" />
+  </node>
+  <node name="mohsuggest" function="getIAXGenSettings,updateIAXGenSettings" default="">
+    <path type="sql" key="mohsuggest" table="iax_general_settings" format="VARCHAR" />
+  </node>
+  <node name="bandwidth" function="getIAXGenSettings,updateIAXGenSettings" default="">
+    <path type="sql" key="bandwidth" table="iax_general_settings" format="VARCHAR" />
+  </node>
+
+  <node name="maxregexpire" function="getIAXRegSettings,updateIAXRegSettings,getIAXRegSettingsPrivilege" default="">
+    <path type="sql" key="maxregexpire" table="iax_reg_settings" format="INT" />
+  </node>
+  <node name="minregexpire" function="getIAXRegSettings,updateIAXRegSettings" default="">
+    <path type="sql" key="minregexpire" table="iax_reg_settings" format="INT" />
+  </node>
+  <node name="iaxthreadcount" function="getIAXRegSettings,updateIAXRegSettings" default="">
+    <path type="sql" key="iaxthreadcount" table="iax_reg_settings" format="INT" />
+  </node>
+  <node name="iaxmaxthreadcount" function="getIAXRegSettings,updateIAXRegSettings" default="">
+    <path type="sql" key="iaxmaxthreadcount" table="iax_reg_settings" format="INT" />
+  </node>
+  <node name="autokill" function="getIAXRegSettings,updateIAXRegSettings" default="">
+    <path type="sql" key="autokill" table="iax_reg_settings" format="VARCHAR" />
+  </node>
+  <node name="authdebug" function="getIAXRegSettings,updateIAXRegSettings" default="">
+    <path type="sql" key="authdebug" table="iax_reg_settings" format="VARCHAR" />
+  </node>
+  <node name="codecpriority" function="getIAXRegSettings,updateIAXRegSettings" default="">
+    <path type="sql" key="codecpriority" table="iax_reg_settings" format="VARCHAR" />
+  </node>
+  <node name="tos" function="getIAXRegSettings,updateIAXRegSettings" default="">
+    <path type="sql" key="tos" table="iax_reg_settings" format="VARCHAR" />
+  </node>
+  <node name="trunkfreq" function="getIAXRegSettings,updateIAXRegSettings" default="">
+    <path type="sql" key="trunkfreq" table="iax_reg_settings" format="INT" />
+  </node>
+  <node name="trunktimestamps" function="getIAXRegSettings,updateIAXRegSettings" default="">
+    <path type="sql" key="trunktimestamps" table="iax_reg_settings" format="VARCHAR" />
+  </node>
+
+  <node name="calltokenoptional" function="getIAXSecSettings,updateIAXSecSettings,getIAXSecSettingsPrivilege" default="">
+    <path type="sql" key="calltokenoptional" table="iax_security_settings" format="VARCHAR" />
+  </node>
+  <node name="maxcallnumbers" function="getIAXSecSettings,updateIAXSecSettings" default="">
+    <path type="sql" key="maxcallnumbers" table="iax_security_settings" format="INT" />
+  </node>
+  <node name="maxcallnumbers_nonvalidated" function="getIAXSecSettings,updateIAXSecSettings" default="">
+    <path type="sql" key="maxcallnumbers_nonvalidated" table="iax_security_settings" format="INT" />
+  </node>
+  <node name="callnumberlimits" function="getIAXSecSettings,updateIAXSecSettings,getIAXSecSettingsPrivilege" default="">
+    <path type="sql" key="callnumberlimits" table="iax_security_calllimit_settings" format="VARCHAR" />
+  </node>
+  <!-- LDAP phonebooks start -->
+  <node name="phonebook_dn" function="listLDAPContacts,getPhonebooksPrivilege" default="">
+      <path type="sql" key="phonebook_dn" table="phonebooks" format="VARCHAR" />
+  </node>
+  <node name="ldap_contacts" function="getContact,updateContact,deleteContact" default="">
+      <path type="sql" key="accountnumber" table="phonebooks" format="VARCHAR" />
+      <path type="sql" key="phonebook_dn" table="phonebooks" format="VARCHAR" />
+  </node>
+  <node name="phonebook_dn" function="addContact,getContact,updateContact" default="">
+      <path type="sql" key="phonebook_dn" table="phonebooks" format="VARCHAR" />
+  </node>
+  <node name="accountnumber" function="addContact,getContact,updateContact" default="">
+      <path type="sql" key="accountnumber" table="phonebooks" format="VARCHAR" />
+  </node>
+  <node name="calleridname" function="addContact,getContact,updateContact" default="">
+      <path type="sql" key="calleridname" table="phonebooks" format="VARCHAR" />
+  </node>
+  <node name="email" function="addContact,getContact,updateContact" default="">
+      <path type="sql" key="email" table="phonebooks" format="VARCHAR" />
+  </node>
+  <node name="firstname" function="addContact,getContact,updateContact" default="">
+      <path type="sql" key="firstname" table="phonebooks" format="VARCHAR" />
+  </node>
+  <node name="lastname" function="addContact,getContact,updateContact" default="">
+      <path type="sql" key="lastname" table="phonebooks" format="VARCHAR" />
+  </node>
+  <node name="department" function="addContact,getContact,updateContact" default="">
+      <path type="sql" key="department" table="phonebooks" format="VARCHAR" />
+  </node>
+  <node name="mobilenumber" function="addContact,getContact,updateContact" default="">
+      <path type="sql" key="mobilenumber" table="phonebooks" format="VARCHAR" />
+  </node>
+  <node name="homenumber" function="addContact,getContact,updateContact" default="">
+      <path type="sql" key="homenumber" table="phonebooks" format="VARCHAR" />
+  </node>
+  <node name="fax" function="addContact,getContact,updateContact" default="">
+      <path type="sql" key="fax" table="phonebooks" format="VARCHAR" />
+  </node>
+
+  <node name="ldap_phonebooks" function="listPhonebookDn,addPhonebook,deletePhonebook,getPhonebookDnPrivilege" default="">
+      <path type="sql" key="dn" table="phonebook_dn" format="VARCHAR" />
+  </node>
+  <node name="phonebook_prefix" function="addPhonebook" default="">
+      <path type="sql" key="prefix" table="phonebook_dn" format="VARCHAR" />
+  </node>
+  <node name="dn_id" function="addPhonebook" default="">
+      <path type="sql" key="id" table="phonebook_dn" format="INT" />
+  </node>
+
+  <node name="basedn" function="getLDAPConfig,updateLDAPConfig,getLDAPConfigsPrivilege" default="">
+      <path type="sql" key="basedn" table="ldap_configs" format="VARCHAR" />
+  </node>
+  <node name="rootdn" function="getLDAPConfig,updateLDAPConfig" default="">
+      <path type="sql" key="rootdn" table="ldap_configs" format="VARCHAR" />
+  </node>
+  <node name="pbxdn" function="getLDAPConfig,updateLDAPConfig" default="">
+      <path type="sql" key="pbxdn" table="ldap_configs" format="VARCHAR" />
+  </node>
+  <node name="root_passwd" function="getLDAPConfig,updateLDAPConfig" default="">
+      <path type="sql" key="root_passwd" table="ldap_configs" format="VARCHAR" />
+  </node>
+  <node name="prefix_attr" function="getLDAPConfig,updateLDAPConfig" default="">
+      <path type="sql" key="prefix_attr" table="ldap_configs" format="VARCHAR" />
+  </node>
+
+  <node name="ldap_configs" function="getLDAPConfig" default="">
+      <path type="sql" key="basedn" table="ldap_configs" format="VARCHAR" />
+  </node>
+
+
+  <node name="pbx_contacts" function="listPBXContacts" default="">
+      <path type="sql" key="extension" table="numbers" format="VARCHAR" />
+  </node>
+  <node name="reload_ldap" function="reloadLDAP" default="">
+      <path type="cmd" key="/app/asterisk/bin/ldap_updatedb.sh reload"/>
+  </node>
+  <node name="reload_pbx_phonebook" function="reloadPBXPhonebook" default="">
+      <path type="cmd" key="/app/asterisk/bin/ldap_updatedb.sh pbxphonebook_reload"/>
+  </node>
+  <node name="phonebook_update" function="phonebookUpdate" default="">
+    <path type="cmd" key="/app/asterisk/bin/ldap_updatedb.sh phonebook_update "/>
+  </node>
+  <node name="phonebook_add" function="phonebookAdd" default="">
+    <path type="cmd" key="/app/asterisk/bin/ldap_updatedb.sh phonebook_add "/>
+  </node>
+  <node name="phonebook_del" function="phonebookDel" default="">
+    <path type="cmd" key="/app/asterisk/bin/ldap_updatedb.sh phonebook_del "/>
+  </node>
+
+  <!-- LDAP phonebooks end -->
+
+  <!-- PAYLOAD settings start -->
+  <node name="payload_settings" function="getPayloadSettings" default="">
+      <path type="sql" key="ast_format_ilbc" table="payload_settings" format="VARCHAR" />
+  </node>
+
+  <node name="ast_format_ilbc" function="getPayloadSettings,updatePayloadSettings" default="">
+      <path type="sql" key="ast_format_ilbc" table="payload_settings" format="VARCHAR" />
+  </node>
+  <node name="ast_format_h264" function="getPayloadSettings,updatePayloadSettings" default="">
+      <path type="sql" key="ast_format_h264" table="payload_settings" format="VARCHAR" />
+  </node>
+  <node name="ast_format_h263_plus" function="getPayloadSettings,updatePayloadSettings" default="">
+      <path type="sql" key="ast_format_h263_plus" table="payload_settings" format="VARCHAR" />
+  </node>
+  <node name="ast_rtp_dtmf" function="getPayloadSettings,updatePayloadSettings" default="">
+      <path type="sql" key="ast_rtp_dtmf" table="payload_settings" format="VARCHAR" />
+  </node>
+  <node name="ast_format_g726" function="getPayloadSettings,updatePayloadSettings" default="">
+      <path type="sql" key="ast_format_g726" table="payload_settings" format="VARCHAR" />
+  </node>
+  <node name="ast_format_g726_aal2" function="getPayloadSettings,updatePayloadSettings" default="">
+      <path type="sql" key="ast_format_g726_aal2" table="payload_settings" format="VARCHAR" />
+  </node>
+  <!-- PAYLOAD settings end -->
+
+  <!-->bridged_channels<!-->
+  <node name="channel" function="listBridgedChannels,getBridgedChannelsList" default="">
+    <path type="sql" key="channel1" table="bridged_channels" format="VARCHAR"/>
+  </node>
+  <node name="callerid1" function="getBridgedChannelsList" default="">
+    <path type="sql" key="callerid1" table="bridged_channels" format="VARCHAR"/>
+  </node>
+  <node name="channel1" function="getBridgedChannelsList" default="">
+    <path type="sql" key="channel1" table="bridged_channels" format="VARCHAR"/>
+  </node>
+  <node name="callerid2" function="getBridgedChannelsList" default="">
+    <path type="sql" key="callerid2" table="bridged_channels" format="VARCHAR"/>
+  </node>
+  <node name="channel2" function="getBridgedChannelsList" default="">
+    <path type="sql" key="channel2" table="bridged_channels" format="VARCHAR"/>
+  </node>
+  <node name="bridge_time" function="getBridgedChannelsList" default="">
+    <path type="sql" key="bridge_time" table="bridged_channels" format="TIMESTAMP"/>
+  </node>
+
+  <!-->unbridged_channels<!-->
+  <node name="channel" function="listUnBridgedChannels,getUnBridgedChannelsList" default="">
+    <path type="sql" key="channel" table="unbridged_channels" format="VARCHAR"/>
+  </node>
+  <node name="state" function="getUnBridgedChannelsList" default="">
+    <path type="sql" key="state" table="unbridged_channels" format="VARCHAR"/>
+  </node>
+  <node name="callername" function="getUnBridgedChannelsList" default="">
+    <path type="sql" key="callername" table="unbridged_channels" format="VARCHAR"/>
+  </node>
+  <node name="callernum" function="getUnBridgedChannelsList" default="">
+    <path type="sql" key="callernum" table="unbridged_channels" format="VARCHAR"/>
+  </node>
+  <node name="connectedname" function="getUnBridgedChannelsList" default="">
+    <path type="sql" key="connectedname" table="unbridged_channels" format="VARCHAR"/>
+  </node>
+  <node name="connectednum" function="getUnBridgedChannelsList" default="">
+    <path type="sql" key="connectednum" table="unbridged_channels" format="VARCHAR"/>
+  </node>
+  <node name="alloc_time" function="getUnBridgedChannelsList" default="">
+    <path type="sql" key="alloc_time" table="unbridged_channels" format="TIMESTAMP"/>
+  </node>
+  <!-->sip_extension_status<!-->  
+  <node name="extension" function="listSipExtenStatus,getSipExtenStatus,getSipExtenStatusList" default="">
+    <path type="sql" key="extension" table="sip_extension_status" format="VARCHAR"/>
+  </node>
+  <node name="status" function="getSipExtenStatus,getSipExtenStatusList" default="">
+    <path type="sql" key="status" table="sip_extension_status" format="VARCHAR"/>
+  </node>
+  <node name="addr" function="getSipExtenStatus,getSipExtenStatusList" default="">
+    <path type="sql" key="addr" table="sip_extension_status" format="VARCHAR"/>
+  </node>
+  <node name="urgemsg" function="getSipExtenStatus,getSipExtenStatusList" default="">
+    <path type="sql" key="urgemsg" table="sip_extension_status" format="INT"/>
+  </node>
+  <node name="newmsg" function="getSipExtenStatus,getSipExtenStatusList" default="">
+    <path type="sql" key="newmsg" table="sip_extension_status" format="INT"/>
+  </node>
+  <node name="oldmsg" function="getSipExtenStatus,getSipExtenStatusList" default="">
+    <path type="sql" key="oldmsg" table="sip_extension_status" format="INT"/>
+  </node>
+
+  <!-->iax_extension_status<!-->  
+  <node name="extension" function="getIAXExtenStatus,getIAXExtenStatusList" default="">
+    <path type="sql" key="extension" table="iax_extension_status" format="VARCHAR"/>
+  </node>
+  <node name="status" function="getIAXExtenStatus,getIAXExtenStatusList" default="">
+    <path type="sql" key="status" table="iax_extension_status" format="VARCHAR"/>
+  </node>
+  <node name="addr" function="getIAXExtenStatus,getIAXExtenStatusList" default="">
+    <path type="sql" key="addr" table="iax_extension_status" format="VARCHAR"/>
+  </node>
+  <node name="urgemsg" function="getIAXExtenStatus,getIAXExtenStatusList" default="">
+    <path type="sql" key="urgemsg" table="iax_extension_status" format="INT"/>
+  </node>
+  <node name="newmsg" function="getIAXExtenStatus,getIAXExtenStatusList" default="">
+    <path type="sql" key="newmsg" table="iax_extension_status" format="INT"/>
+  </node>
+  <node name="oldmsg" function="getIAXExtenStatus,getIAXExtenStatusList" default="">
+    <path type="sql" key="oldmsg" table="iax_extension_status" format="INT"/>
+  </node>
+
+  <!-->queue_members status<!-->
+  <node name="extension" function="getQueueMembersStatus,getQueueMembersStatusList" default="">
+    <path type="sql" key="extension" table="queue_members_status" format="VARCHAR"/>
+  </node>
+  <node name="member_extension" function="getQueueMembersStatus,getQueueMembersStatusList" default="">
+    <path type="sql" key="member_extension" table="queue_members_status" format="VARCHAR"/>
+  </node>
+  <node name="status" function="getQueueMembersStatus,getQueueMembersStatusList" default="">
+    <path type="sql" key="status" table="queue_members_status" format="VARCHAR"/>
+  </node>
+  <node name="is_dynamic" function="getQueueMembersStatus,getQueueMembersStatusList" default="">
+    <path type="sql" key="is_dynamic" table="queue_members_status" format="INT"/>
+  </node>
+
+
+  <!-->queue_status<!-->
+  <node name="extension" function="getQueueStatus,getQueueStatusList" default="">
+    <path type="sql" key="extension" table="queue_status" format="VARCHAR"/>
+  </node>
+  <node name="strategy" function="getQueueStatus,getQueueStatusList" default="">
+    <path type="sql" key="strategy" table="queue_status" format="VARCHAR"/>
+  </node>
+  <node name="callcount" function="getQueueStatus,getQueueStatusList" default="">
+    <path type="sql" key="callcount" table="queue_status" format="INT"/>
+  </node>
+  <node name="callscomplete" function="getQueueStatus,getQueueStatusList" default="">
+    <path type="sql" key="callscomplete" table="queue_status" format="INT"/>
+  </node>
+  <node name="callsabandoned" function="getQueueStatus,getQueueStatusList" default="">
+    <path type="sql" key="callsabandoned" table="queue_status" format="INT"/>
+  </node>
+  <node name="sevicelevel" function="getQueueStatus,getQueueStatusList" default="">
+    <path type="sql" key="sevicelevel" table="queue_status" format="VARCHAR"/>
+  </node>
+
+  <!-->queue_callers<!-->
+  <node name="extension" function="getQueueCallers,getQueueCallersList" default="">
+    <path type="sql" key="extension" table="queue_callers" format="VARCHAR"/>
+  </node>
+  <node name="callerid" function="getQueueCallers,getQueueCallersList" default="">
+    <path type="sql" key="callerid" table="queue_callers" format="VARCHAR"/>
+  </node>
+  <node name="callername" function="getQueueCallers,getQueueCallersList" default="">
+    <path type="sql" key="callername" table="queue_callers" format="VARCHAR"/>
+  </node>
+  <node name="starttime" function="getQueueCallers,getQueueCallersList" default="">
+    <path type="sql" key="starttime" table="queue_callers" format="TIMESTAMP"/>
+  </node>
+
+  <!-->parking_lot_status<!-->
+  <node name="exten" function="listParkingLotStatus,getParkingLotStatusList" default="">
+    <path type="sql" key="exten" table="parking_lot_status" format="VARCHAR"/>
+  </node>
+  <node name="channel" function="getParkingLotStatusList" default="">
+    <path type="sql" key="channel" table="parking_lot_status" format="VARCHAR"/>
+  </node>
+  <node name="callerid" function="getParkingLotStatusList" default="">
+    <path type="sql" key="callerid" table="parking_lot_status" format="VARCHAR"/>
+  </node>
+  <node name="park_time" function="getParkingLotStatusList" default="">
+    <path type="sql" key="park_time" table="parking_lot_status" format="TIMESTAMP"/>
+  </node>
+
+  <!-->conference_status<!-->
+  <node name="conference" function="listConfStatus,getConfStatus,getConfStatusList">
+    <path type="sql" key="extension" table="conference_status" format="VARCHAR" />
+  </node>
+  <node name="extension" function="getConfStatus,getConfStatusList" default="">
+    <path type="sql" key="extension" table="conference_status" format="VARCHAR"/>
+  </node>
+  <node name="attend_count" function="getConfStatus,getConfStatusList" default="">
+    <path type="sql" key="attend_count" table="conference_status" format="INT"/>
+  </node>
+  <node name="admin_count" function="getConfStatus,getConfStatusList" default="">
+    <path type="sql" key="admin_count" table="conference_status" format="INT"/>
+  </node>
+  <node name="is_locked" function="getConfStatus,getConfStatusList" default="">
+    <path type="sql" key="is_locked" table="conference_status" format="INT"/>
+  </node>
+  <node name="start_time" function="getConfStatus,getConfStatusList" default="">
+    <path type="sql" key="start_time" table="conference_status" format="TIMESTAMP"/>
+  </node>
+
+  <!-->conf_members_status<!-->
+  <node name="conference" function="listConfMemberStatus,getConfMemberStatus,getConfMemberStatusList" default="">
+    <path type="sql" key="extension" table="conf_members_status" format="VARCHAR"/>
+  </node>
+  <node name="user_no" function="getConfMemberStatus,getConfMemberStatusList" default="">
+    <path type="sql" key="user_no" table="conf_members_status" format="INT"/>
+  </node>
+  <node name="extension" function="getConfMemberStatus,getConfMemberStatusList" default="">
+    <path type="sql" key="extension" table="conf_members_status" format="VARCHAR"/>
+  </node>
+  <node name="caller_id" function="getConfMemberStatus,getConfMemberStatusList" default="">
+    <path type="sql" key="caller_id" table="conf_members_status" format="VARCHAR"/>
+  </node>
+  <node name="caller_name" function="getConfMemberStatus,getConfMemberStatusList" default="">
+    <path type="sql" key="caller_name" table="conf_members_status" format="VARCHAR"/>
+  </node>
+  <node name="channel_name" function="getConfMemberStatus,getConfMemberStatusList" default="">
+    <path type="sql" key="channel_name" table="conf_members_status" format="VARCHAR"/>
+  </node>
+  <node name="join_time" function="getConfMemberStatus,getConfMemberStatusList" default="">
+    <path type="sql" key="join_time" table="conf_members_status" format="TIMESTAMP"/>
+  </node>
+  <node name="is_admin" function="getConfMemberStatus,getConfMemberStatusList" default="">
+    <path type="sql" key="is_admin" table="conf_members_status" format="INT"/>
+  </node>
+  <node name="is_talking" function="getConfMemberStatus,getConfMemberStatusList" default="">
+    <path type="sql" key="is_talking" table="conf_members_status" format="INT"/>
+  </node>
+  <node name="is_request" function="getConfMemberStatus,getConfMemberStatusList" default="">
+    <path type="sql" key="is_request" table="conf_members_status" format="INT"/>
+  </node>
+  <node name="is_muted" function="getConfMemberStatus,getConfMemberStatusList" default="">
+    <path type="sql" key="is_muted" table="conf_members_status" format="INT"/>
+  </node>
+
+  <!-->eventlist_subscriber<!-->
+  <node name="uri" function="getEventlistSubs,getEventlistSubsList" default="">
+    <path type="sql" key="uri" table="eventlist_subscriber" format="VARCHAR"/>
+  </node>
+  <node name="extension" function="getEventlistSubs,getEventlistSubsList" default="">
+    <path type="sql" key="extension" table="eventlist_subscriber" format="VARCHAR"/>
+  </node>
+
+  <!-->eventlist_extens<!-->
+  <node name="uri" function="getEventlistExtens,getEventlistExtenList" default="">
+    <path type="sql" key="uri" table="eventlist_extens" format="VARCHAR"/>
+  </node>
+  <node name="extension" function="getEventlistExtens,getEventlistExtenList" default="">
+    <path type="sql" key="extension" table="eventlist_extens" format="VARCHAR"/>
+  </node>
+  <node name="location" function="getEventlistExtens,getEventlistExtenList" default="">
+    <path type="sql" key="location" table="eventlist_extens" format="VARCHAR"/>
+  </node>
+  <node name="status" function="getEventlistExtens,getEventlistExtenList" default="">
+    <path type="sql" key="status" table="eventlist_extens" format="VARCHAR"/>
+  </node>
+  <node name="trunk" function="getEventlistExtens,getEventlistExtenList" default="">
+    <path type="sql" key="trunk" table="eventlist_extens" format="VARCHAR"/>
+  </node>
+
+  <!-- syslog start -->
+  <node name="log_switch_static" function="updateLogSwitchStatic,listLogSwitchStatic" default="">
+    <path type="sql" key="id" table="astlog_switch_static" format="INT"/>
+  </node>
+  <node name="module_name" function="updateLogSwitchStatic" default="">
+    <path type="sql" key="module_name" table="astlog_switch_static" format="VARCHAR"/>
+  </node>
+  <node name="ERROR" function="updateLogSwitchStatic" default="">
+    <path type="sql" key="ERROR" table="astlog_switch_static" format="INT"/>
+  </node>
+  <node name="WARN" function="updateLogSwitchStatic" default="">
+    <path type="sql" key="WARN" table="astlog_switch_static" format="INT"/>
+  </node>
+  <node name="NOTIC" function="updateLogSwitchStatic" default="">
+    <path type="sql" key="NOTIC" table="astlog_switch_static" format="INT"/>
+  </node>
+  <node name="VERB" function="updateLogSwitchStatic" default="">
+    <path type="sql" key="VERB" table="astlog_switch_static" format="INT"/>
+  </node>
+  <node name="DEBUG" function="updateLogSwitchStatic" default="">
+    <path type="sql" key="DEBUG" table="astlog_switch_static" format="INT"/>
+  </node>
+
+  <node name="log_switch_dynamic" function="updateLogSwitchDynamic,listLogSwitchDynamic" default="">
+    <path type="sql" key="id" table="astlog_switch_dynamic" format="INT"/>
+  </node>
+  <node name="dlevel" function="updateLogSwitchDynamic" default="">
+    <path type="sql" key="dlevel" table="astlog_switch_dynamic" format="VARCHAR"/>
+  </node>
+  <node name="switch" function="updateLogSwitchDynamic" default="">
+    <path type="sql" key="switch" table="astlog_switch_dynamic" format="INT"/>
+  </node>
+  <!-- syslog end -->
+
+  <!--Begin:add backup mechanism by bchfu-->
+  <node name="file-backup" function="backupUCMConfig" default="">
+      <path type="file" key="etc/backup_info.db" table="ast_modules" format="VARCHAR" />
+  </node>
+  <node name="file-restore" function="restoreUCMConfig" default="">
+      <path type="file" key="etc/backup_info.db" table="ast_modules" format="VARCHAR" />
+  </node>
+  <node name="backup_conf" function="updateBackupDB" default="">
+      <path type="file" key="etc/backup_info.db" table="ast_modules" format="VARCHAR" />
+  </node>
+  <node name="list_backup_conf" function="listBackupDB" default="">
+      <path type="file" key="etc/backup_info.db" table="ast_modules" format="VARCHAR" />
+  </node>
+   <!--End:add backup mechanism by bchfu-->
+
+  <!-->File Operator Start<!-->
+  <node name="type" function="checkFile,listFile,uploadFile,downloadFile,removeFile,mkDir,getFilePrivilege" default="">
+  </node>
+  <node name="data" function="checkFile,listFile,uploadFile,downloadFile,removeFile,mkDir,getFilePrivilege" default="">
+  </node>
+  <!-->File Operator End<!-->
+
+  <!-->fxs_extension_status<!-->  
+  <node name="extension" function="getFXSExtenStatusList,getFXSExtenStatus" default="">
+    <path type="sql" key="extension" table="fxs_extension_status" format="VARCHAR"/>
+  </node>
+  <node name="chan" function="getFXSExtenStatusList,getFXSExtenStatus" default="">
+    <path type="sql" key="chan" table="fxs_extension_status" format="INT"/>
+  </node>
+  <node name="status" function="getFXSExtenStatusList,getFXSExtenStatus" default="">
+    <path type="sql" key="status" table="fxs_extension_status" format="VARCHAR"/>
+  </node>
+  <node name="urgemsg" function="getFXSExtenStatusList,getFXSExtenStatus" default="">
+    <path type="sql" key="urgemsg" table="fxs_extension_status" format="INT"/>
+  </node>
+  <node name="newmsg" function="getFXSExtenStatusList,getFXSExtenStatus" default="">
+    <path type="sql" key="newmsg" table="fxs_extension_status" format="INT"/>
+  </node>
+  <node name="oldmsg" function="getFXSExtenStatusList,getFXSExtenStatus" default="">
+    <path type="sql" key="oldmsg" table="fxs_extension_status" format="INT"/>
+  </node>  
+
+  <!-->analog_trunk_status<!-->  
+  <node name="analogtrunk" function="getAnalogTrunkStatusList,getAnalogTrunkStatus" default="">
+    <path type="sql" key="trunk_index" table="analog_trunk_status" format="INT"/>
+  </node>
+  <node name="trunk_name" function="getAnalogTrunkStatusList,getAnalogTrunkStatus" default="">
+    <path type="sql" key="trunk_name" table="analog_trunk_status" format="VARCHAR"/>
+  </node>
+  <node name="status" function="getAnalogTrunkStatusList,getAnalogTrunkStatus" default="">
+    <path type="sql" key="status" table="analog_trunk_status" format="VARCHAR"/>
+  </node>  
+
+  <!-->fxs_port_status<!-->  
+  <node name="chan" function="getFXSStatusList,getFXSStatus" default="">
+    <path type="sql" key="chan" table="fxs_port_status" format="INT"/>
+  </node>
+  <node name="status" function="getFXSStatusList,getFXSStatus" default="">
+    <path type="sql" key="status" table="fxs_port_status" format="VARCHAR"/>
+  </node>
+
+  <!-->fxo_port_status<!-->  
+  <node name="chan" function="getFXOStatusList,getFXOStatus" default="">
+    <path type="sql" key="chan" table="fxo_port_status" format="INT"/>
+  </node>
+  <node name="status" function="getFXOStatusList,getFXOStatus" default="">
+    <path type="sql" key="status" table="fxo_port_status" format="VARCHAR"/>
+  </node>
+
+  <!-->Interface status<!-->
+  <node name="interface-sdcard" function="getInterfaceStatus" default="">
+    <path type="cmd" key="" table="" format="VARCHAR"/>
+  </node>
+  <node name="interface-usbdisk" function="getInterfaceStatus" default="">
+    <path type="cmd" key="" table="" format="VARCHAR"/>
+  </node>
+  <node name="interface-network" function="getInterfaceStatus" default="">
+    <path type="cmd" key="" table="" format="VARCHAR"/>
+  </node>
+
+  <!-->Reboot<!-->
+  <node name="reboot" function="rebootSystem" default="">
+    <path type="cmd" key="" table="" format="VARCHAR"/>
+  </node>
+
+  <!-->Factory Reset<!-->
+  <node name="type" function="factoryReset" default="">
+    <path type="cmd" key="" table="" format="VARCHAR"/>
+  </node>
+
+  <!-->Time Settings<!-->
+  <node name="setTime" function="setTimeManual" default="">
+    <path type="cmd" key="/usr/bin/ntpd_service.sh setsystime " table="" format="VARCHAR"/>
+  </node>
+
+  <!-->NTP Server<!-->
+  <node name="startNTP" function="startNTPServer" default="">
+    <path type="cmd" key="/usr/bin/ntpd_service.sh start" table="" format="VARCHAR"/>
+  </node>
+
+  <node name="stopNTP" function="stopNTPServer" default="">
+    <path type="cmd" key="/usr/bin/ntpd_service.sh stop" table="" format="VARCHAR"/>
+  </node>
+
+  <node name="NTPStatus" function="checkNTPServerStatus" default="">
+    <path type="cmd" key="/usr/bin/ntpd_service.sh status" table="" format="VARCHAR"/>
+  </node>
+
+  <!-->System status<!-->
+  <node name="systemStatusLeft" function="setPValue,getPValue" default="">
+    <path type="pvalue" key="systemStatusLeft" format="VARCHAR"/>
+  </node>
+  <node name="systemStatusRight" function="setPValue,getPValue" default="">
+    <path type="pvalue" key="systemStatusRight" format="VARCHAR"/>
+  </node> 
+  <node name="type" function="importExtension" default="">
+    <path type="cmd" key="python /app/asterisk/var/lib/asterisk/scripts/export_import_extension.py import /tmp/import_extensions.csv "/>
+  </node>
+
+  <!-- added by jklou><!-->
+  <node name="mac-address" function="getSystemStatus" default="00:0B:82:00:00:00">
+    <path type="file" key="/proc/gxvboard/dev_info/dev_mac"/>
+  </node>
+  <node name="ip-address" function="getNetworkSettings" default="0.0.0.0">
+    <path type="pvalue" key="12" />
+    <path type="pvalue" key="11" />
+    <path type="pvalue" key="10" />
+    <path type="pvalue" key="9" />
+  </node>
+  <node name="gateway" function="getNetworkSettings" default="0.0.0.0">
+    <path type="pvalue" key="20" />
+    <path type="pvalue" key="19" />
+    <path type="pvalue" key="18" />
+    <path type="pvalue" key="17" />
+  </node>
+  <node name="subnet-mask" function="getNetworkSettings" default="0.0.0.0">
+    <path type="pvalue" key="16" />
+    <path type="pvalue" key="15" />
+    <path type="pvalue" key="14" />
+    <path type="pvalue" key="13" />
+  </node>
+  <node name="dns" function="getSystemStatus" default="0.0.0.0">
+    <path type="file" key="/etc/resolv.conf"/>
+  </node>
+
+  <node name="product-model" function="getPValue," default="GXE51XX">
+    <path type="pvalue" key="89" format="VARCHAR"/>
+  </node>
+  <node name="part-number" function="getSystemStatus" default="000000000">
+    <path type="file" key="/proc/gxvboard/dev_info/PN" />
+  </node>
+  <node name="up-time" function="getSystemStatus" default="0">
+    <path type="file" key="/proc/uptime" regex="^[0-9.]+"/>
+  </node>
+  <node name="idle-time" function="getSystemStatus" default="0">
+    <path type="file" key="/proc/uptime" regex="[0-9.]+$"/>
+  </node>
+  <node name="system-time" function="getSystemStatus" default="">
+    <path type="cmd" key="date" />
+  </node>
+
+  <node name="base-version" function="getPValue" default="0.0.0.0">
+    <path type="pvalue" key="45" format="VARCHAR"/>
+  </node>
+  <node name="prog-version" function="getPValue" default="0.0.0.0">
+    <path type="pvalue" key="68" format="VARCHAR"/>
+  </node>
+  <node name="boot-version" function="getPValue" default="0.0.0.0">
+    <path type="pvalue" key="69" format="VARCHAR"/>
+  </node>
+  <node name="core-version" function="getPValue" default="0.0.0.0">
+    <path type="pvalue" key="70" format="VARCHAR"/>
+  </node>
+  <node name="rcvr-version" function="getPValue" default="0.0.0.0">
+    <path type="pvalue" key="7033" format="VARCHAR"/>
+  </node>
+
+  <!-->Maintenance>>Upgrade>>Upgrade<!-->
+  <node name="P212" function="getPValue,setPValue" default="1">
+    <path type="pvalue" key="212" format="VARCHAR"/>
+  </node>
+  <node name="P192" function="getPValue,setPValue" default="fw.ipvideotalk.com/gs">
+    <path type="pvalue" key="192" format="VARCHAR"/>
+  </node>
+  <node name="P232" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="232" format="VARCHAR"/>
+  </node>
+  <node name="P233" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="233" format="VARCHAR"/>
+  </node>
+  <node name="P1360" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="1360" format="VARCHAR"/>
+  </node>
+  <node name="P1361" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="1361" format="VARCHAR"/>
+  </node>
+  <node name="P237" function="getPValue,setPValue" default="fw.ipvideotalk.com/gs">
+    <path type="pvalue" key="237" format="VARCHAR"/>
+  </node>
+  <node name="P234" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="234" format="VARCHAR"/>
+  </node>
+  <node name="P235" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="235" format="VARCHAR"/>
+  </node>
+  <node name="fileUrl" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="fileUrl" format="VARCHAR"/>
+  </node>
+  <node name=":skip_cookie_timeout" function="getPValue,setPValue" default="">
+    <path type="pvalue" key=":skip_cookie_timeout" format="VARCHAR"/>
+  </node>
+
+  <!-->Maintenance>>Backup>>Data sync<!-->
+  <node name="Pen_auto_backup" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="en_auto_backup" format="VARCHAR"/>
+  </node>
+  <node name="Psftp_account" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="sftp_account" format="VARCHAR"/>
+  </node>
+  <node name="Psftp_pass" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="sftp_pass" format="VARCHAR"/>
+  </node>
+  <node name="Psftp_address" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="sftp_address" format="VARCHAR"/>
+  </node>
+  <node name="Phour_backup" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="hour_backup" format="VARCHAR"/>
+  </node>
+
+  <!-->Maintenance>>Cleaner>>Cleaner<!-->
+  <node name="Pen_auto_clean_cdr" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="en_auto_clean_cdr" format="VARCHAR"/>
+  </node>
+  <node name="Phour_clean_cdr" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="hour_clean_cdr" format="VARCHAR"/>
+  </node>
+  <node name="Pclean_cdr_interval" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="clean_cdr_interval" format="VARCHAR"/>
+  </node>
+  <node name="Pen_auto_clean_vr" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="en_auto_clean_vr" format="VARCHAR"/>
+  </node>
+  <node name="Phour_clean_vr" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="hour_clean_vr" format="VARCHAR"/>
+  </node>
+  <node name="Pclean_record_interval" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="clean_record_interval" format="VARCHAR"/>
+  </node>
+  <node name="Pclean_record_threshold" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="clean_record_threshold" format="VARCHAR"/>
+  </node>
+
+  <!-->Maintenance>>Syslog>>Syslog<!-->
+  <node name="P207" function="getPValue,setPValue" default="">
+    <path type="pvalue" key="207" format="VARCHAR"/>
+  </node>
+
+  <!-->Maintenance>>troubleshooting<!-->
+  <node name="capture" function="getTroubleShooting,startTroubleShooting,stopTroubleShooting" default="WAN">
+    <path type="cmd" key="tcpdump" table=" -s0 -C 5 -W 5 -w /data/troubleshooting/capture.pcap" format=""/>
+  </node>
+  <node name="capture-filter" function="getTroubleShooting,startTroubleShooting" default="">
+    <path type="cmd" key="tcpdump" table="" format=""/>
+  </node>
+  <node name="ping" function="getTroubleShooting,startTroubleShooting,stopTroubleShooting" default="">
+    <path type="cmd" key="ping" format=""/>
+  </node>
+  <node name="traceroute" function="getTroubleShooting,startTroubleShooting,stopTroubleShooting" default="">
+    <path type="cmd" key="traceroute" table="" format=""/>
+  </node>
+  <node name="shooting-state" function="getTroubleShooting" default="">
+    <path type="cmd" key="" table="" format=""/>
+  </node>
+
+  <node name="eventname" function="" default="">
+    <path type="sql" key="id" table="warning_log" format="INT" />
+  </node>
+  <node name="action" function="" default="">
+    <path type="sql" key="action" table="warning_log" format="VARCHAR" />
+  </node>
+  <node name="content" function="" default="">
+    <path type="sql" key="content" table="warning_log" format="" />
+  </node>
+  <node name="time" function="" default="">
+    <path type="sql" key="time" table="warning_log" format="" />
+  </node>
+
+  <node name="eventname" function="" default="">
+    <path type="sql" key="id" table="warning_general" format="INT"/>
+  </node>
+  <node name="item" function="" default="">
+    <path type="sql" key="item" table="warning_general" format="VARCHAR"/>
+  </node>
+  <node name="value" function="" default="">
+    <path type="sql" key="value" table="warning_general" format=""/>
+  </node>
+  <node name="type" function="" default="">
+    <path type="sql" key="type" table="warning_general" format="VARCHAR"/>
+  </node>
+
+  <node name="eventname" function="" default="">
+    <path type="sql" key="id" table="warning_config" foramt="INT"/>
+  </node>
+  <node name="item" function="" default="">
+    <path type="sql" key="item" table="warning_config" foramt="VARCHAR"/>
+  </node>
+  <node name="value" function="" default="">
+    <path type="sql" key="value" table="warning_config" foramt=""/>
+  </node>
+  <node name="type" function="" default="">
+    <path type="sql" key="type" table="warning_config" foramt="VARCHAR"/>
+  </node>
+  <node name="validation," function="" default="">
+    <path type="sql" key="validation," table="warning_config" foramt=""/>
+  </node>
+  <node name="defaultVal" function="" default="0.8">
+    <path type="sql" key="defaultVal" table="warning_config" foramt=""/>
+  </node>
+
+  <!-- added by jklou><!-->
+</root>
+

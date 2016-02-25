@@ -1,0 +1,1 @@
+cmd_/home/jklou/mylou/mo/hello.ko := ld -r -m elf_i386 -T /usr/src/linux-headers-3.2.0-57-generic-pae/scripts/module-common.lds --build-id  -o /home/jklou/mylou/mo/hello.ko /home/jklou/mylou/mo/hello.o /home/jklou/mylou/mo/hello.mod.o

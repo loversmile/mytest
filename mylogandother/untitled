@@ -1,0 +1,1070 @@
+
+[20140110 085959.698] ERROR[05955] chan_sip.c:29504: handle status is 1
+
+
+[20140110 085959.700] SECURITY[05907] res_security_log.c:138: SecurityEvent="ChallengeSent",EventTV="1389315599-700029",Severity="Informational",Service="SIP"
+
+
+[20140110 085959.790] VERB [05955] cdr.c:767: [SIP/5001-00000106]ast_cdr_start(0x42f24160) src[5001] dst[5000] ... 
+[20140110 085959.797] ERROR[05955] chan_sip.c:29504: handle status is 0
+
+
+[20140110 085959.798] SECURITY[05907] res_security_log.c:138: SecurityEvent="SuccessfulAuth",EventTV="1389315599-798704",Severity="Informational",Service="SI"
+
+
+[20140110 085959.800] VERB [27787] cdr.c:1225: [SIP/5001-00000106]ast_cdr_update(0x42f13690) ... 
+[20140110 085959.802] DEBUG[27787] pbx.c:4485: Launching 'Macro'
+
+
+[20140110 085959.803] VERB [27787] pbx.c:4493:     -- Executing [5000@from-internal:1] Macro("SIP/5001-00000106", "exten-vm,novm,5000") in new stack
+
+
+[20140110 085959.807] DEBUG[27787] pbx.c:4485: Launching 'Macro'
+
+
+[20140110 085959.809] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:1] Macro("SIP/5001-00000106", "user-callerid") in new stack
+
+
+[20140110 085959.816] DEBUG[27787] pbx.c:3491: Result of 'AAUSER' is NULL
+
+
+[20140110 085959.819] DEBUG[27787] pbx.c:4381: Expression result is '1'
+
+
+[20140110 085959.819] DEBUG[27787] pbx.c:4313: Function result is '5001'
+
+
+[20140110 085959.820] DEBUG[27787] pbx.c:3491: Result of 'AAUSER' is NULL
+
+
+[20140110 085959.821] DEBUG[27787] pbx.c:4313: Function result is '5001'
+
+
+[20140110 085959.822] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+
+[20140110 085959.822] VERB [27787] pbx.c:4493:     -- Executing [s@macro-user-callerid:1] Set("SIP/5001-00000106", "_AAUSER=5001") in new stack
+
+
+[20140110 085959.824] DEBUG[27787] pbx.c:3494: Result of 'CHANNEL' is 'SIP/5001-00000106'
+
+
+[20140110 085959.825] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+
+[20140110 085959.826] DEBUG[27787] pbx.c:4485: Launching 'GotoIf'
+
+
+[20140110 085959.826] VERB [27787] pbx.c:4493:     -- Executing [s@macro-user-callerid:2] GotoIf("SIP/5001-00000106", "0?report") in new stack
+
+
+[20140110 085959.827] DEBUG[27787] pbx.c:10544: Not taking any branch
+
+
+[20140110 085959.828] DEBUG[27787] pbx.c:3491: Result of 'REALCALLERIDNUM' is NULL
+
+
+[20140110 085959.828] DEBUG[27787] pbx.c:4381: Expression result is '1'
+
+
+[20140110 085959.828] DEBUG[27787] pbx.c:4313: Function result is '5001'
+
+
+[20140110 085959.828] DEBUG[27787] pbx.c:4485: Launching 'ExecIf'
+
+
+[20140110 085959.828] VERB [27787] pbx.c:4493:     -- Executing [s@macro-user-callerid:3] ExecIf("SIP/5001-00000106", "1?Set(REALCALLERIDNUM=5001)") in new sk
+
+
+[20140110 085959.833] DEBUG[27787] pbx.c:4080: Evaluating 'REALCALLERIDNUM:1:2' (from 'REALCALLERIDNUM:1:2}" = ""' len 19)
+
+
+[20140110 085959.833] DEBUG[27787] pbx.c:3494: Result of 'REALCALLERIDNUM' is '5001'
+
+
+[20140110 085959.833] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+
+[20140110 085959.833] DEBUG[27787] pbx.c:4080: Evaluating 'CALLERID(number)' (from 'CALLERID(number)})' len 16)
+
+
+[20140110 085959.833] DEBUG[27787] pbx.c:4114: Function result is '5001'
+
+
+[20140110 085959.835] DEBUG[27787] pbx.c:3494: Result of 'AAUSER' is '5001'
+
+[20140110 085959.835] DEBUG[27787] pbx.c:4313: Function result is ''
+
+[20140110 085959.835] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.835] VERB [27787] pbx.c:4493:     -- Executing [s@macro-user-callerid:4] Set("SIP/5001-00000106", "AAUSERCIDNAME=") in new stack
+
+[20140110 085959.837] DEBUG[27787] pbx.c:3491: Result of 'FROM_TRUNK' is NULL
+
+[20140110 085959.837] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.837] DEBUG[27787] pbx.c:4313: Function result is 'aaa'
+
+[20140110 085959.837] DEBUG[27787] pbx.c:4485: Launching 'ExecIf'
+
+[20140110 085959.837] VERB [27787] pbx.c:4493:     -- Executing [s@macro-user-callerid:5] ExecIf("SIP/5001-00000106", "0?Set(AAUSERCIDNAME=aaa)") in new stack
+
+[20140110 085959.838] DEBUG[27787] pbx.c:4080: Evaluating 'FROM_TRUNK' (from 'FROM_TRUNK}" = "yes"' len 10)
+
+[20140110 085959.838] DEBUG[27787] pbx.c:3491: Result of 'FROM_TRUNK' is NULL
+
+[20140110 085959.838] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.838] DEBUG[27787] pbx.c:4080: Evaluating 'CALLERID(name)' (from 'CALLERID(name)})' len 14)
+
+[20140110 085959.838] DEBUG[27787] pbx.c:4114: Function result is 'aaa'
+
+[20140110 085959.840] DEBUG[27787] pbx.c:3494: Result of 'AAUSERCIDNAME' is ''
+
+[20140110 085959.840] DEBUG[27787] pbx.c:4381: Expression result is '1'
+
+[20140110 085959.840] DEBUG[27787] pbx.c:4485: Launching 'GotoIf'
+
+[20140110 085959.840] VERB [27787] pbx.c:4493:     -- Executing [s@macro-user-callerid:6] GotoIf("SIP/5001-00000106", "1?report") in new stack
+
+[20140110 085959.841] VERB [27787] pbx.c:10233:     -- Goto (macro-user-callerid,s,11)
+
+[20140110 085959.842] DEBUG[27787] pbx.c:3494: Result of 'AAUSER' is '5001'
+
+[20140110 085959.842] DEBUG[27787] pbx.c:4313: Function result is ''
+
+[20140110 085959.842] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.842] VERB [27787] pbx.c:4493:     -- Executing [s@macro-user-callerid:11] Set("SIP/5001-00000106", "OUTBOUNDCID=") in new stack
+
+[20140110 085959.844] DEBUG[27787] pbx.c:3494: Result of 'OUTBOUNDCID' is ''
+
+[20140110 085959.844] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.844] DEBUG[27787] pbx.c:3494: Result of 'OUTBOUNDCID' is ''
+
+[20140110 085959.844] DEBUG[27787] pbx.c:4485: Launching 'ExecIf'
+
+[20140110 085959.844] VERB [27787] pbx.c:4493:     -- Executing [s@macro-user-callerid:12] ExecIf("SIP/5001-00000106", "0?Set(CALLERID(all)=)") in new stack
+
+[20140110 085959.845] DEBUG[27787] pbx.c:4080: Evaluating 'OUTBOUNDCID' (from 'OUTBOUNDCID}" != ""' len 11)
+
+[20140110 085959.845] DEBUG[27787] pbx.c:3494: Result of 'OUTBOUNDCID' is ''
+
+[20140110 085959.845] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.845] DEBUG[27787] pbx.c:4080: Evaluating 'OUTBOUNDCID' (from 'OUTBOUNDCID})' len 11)
+
+[20140110 085959.845] DEBUG[27787] pbx.c:3494: Result of 'OUTBOUNDCID' is ''
+
+[20140110 085959.846] DEBUG[27787] pbx.c:3494: Result of 'ARG1' is 'novm'
+
+[20140110 085959.846] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.846] DEBUG[27787] pbx.c:4485: Launching 'GotoIf'
+
+[20140110 085959.846] VERB [27787] pbx.c:4493:     -- Executing [s@macro-user-callerid:13] GotoIf("SIP/5001-00000106", "0?continue") in new stack
+
+[20140110 085959.847] DEBUG[27787] pbx.c:10544: Not taking any branch
+
+[20140110 085959.848] DEBUG[27787] pbx.c:3491: Result of 'TTL' is NULL
+
+[20140110 085959.848] DEBUG[27787] pbx.c:4381: Expression result is '1'
+
+[20140110 085959.848] DEBUG[27787] pbx.c:3491: Result of 'TTL' is NULL
+
+[20140110 085959.848] DEBUG[27787] pbx.c:4381: Expression result is '-1'
+
+[20140110 085959.848] DEBUG[27787] pbx.c:4313: Function result is '64'
+
+[20140110 085959.848] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.848] VERB [27787] pbx.c:4493:     -- Executing [s@macro-user-callerid:14] Set("SIP/5001-00000106", "__TTL=64") in new stack
+
+[20140110 085959.850] DEBUG[27787] pbx.c:3494: Result of 'TTL' is '64'
+
+[20140110 085959.850] DEBUG[27787] pbx.c:4381: Expression result is '1'
+
+[20140110 085959.850] DEBUG[27787] pbx.c:4485: Launching 'GotoIf'
+
+[20140110 085959.850] VERB [27787] pbx.c:4493:     -- Executing [s@macro-user-callerid:15] GotoIf("SIP/5001-00000106", "1?continue") in new stack
+
+[20140110 085959.851] VERB [27787] pbx.c:10233:     -- Goto (macro-user-callerid,s,22)
+
+[20140110 085959.852] DEBUG[27787] pbx.c:4313: Function result is '"aaa" <5001>'
+
+[20140110 085959.852] DEBUG[27787] pbx.c:4485: Launching 'Log'
+
+[20140110 085959.852] VERB [27787] pbx.c:4493:     -- Executing [s@macro-user-callerid:22] Log("SIP/5001-00000106", "NOTICE, "Using CallerID "aaa" <5001>"") k
+
+[20140110 085959.855] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.855] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:2] Set("SIP/5001-00000106", "CDR(userfield)=EXT") in new stack
+
+[20140110 085959.855] VERB [27787] cdr.c:1195: [SIP/5001-00000106]ast_cdr_setuserfield(0x42f13690:0x42f24160, 0x43275f6f) src[5001] dst[5000] ... 
+[20140110 085959.856] DEBUG[27787] pbx.c:3494: Result of 'ARG1' is 'novm'
+
+[20140110 085959.856] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.856] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:3] Set("SIP/5001-00000106", "VMBOX=novm") in new stack
+
+[20140110 085959.857] DEBUG[27787] pbx.c:3494: Result of 'ARG2' is '5000'
+
+[20140110 085959.857] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.857] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:4] Set("SIP/5001-00000106", "EXTTOCALL=5000") in new stack
+
+[20140110 085959.859] DEBUG[27787] pbx.c:3494: Result of 'EXTTOCALL' is '5000'
+
+[20140110 085959.859] DEBUG[27787] pbx.c:4313: Function result is ''
+
+[20140110 085959.859] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.859] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:5] Set("SIP/5001-00000106", "DNDON=") in new stack
+
+[20140110 085959.860] DEBUG[27787] pbx.c:3494: Result of 'EXTTOCALL' is '5000'
+
+[20140110 085959.862] DEBUG[27787] pbx.c:4313: Function result is ''
+
+[20140110 085959.862] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.862] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:6] Set("SIP/5001-00000106", "CFBEXT=") in new stack
+
+[20140110 085959.863] DEBUG[27787] pbx.c:3494: Result of 'EXTTOCALL' is '5000'
+
+[20140110 085959.864] DEBUG[27787] pbx.c:4313: Function result is ''
+
+[20140110 085959.864] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.864] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:7] Set("SIP/5001-00000106", "CFNEXT=") in new stack
+
+[20140110 085959.865] DEBUG[27787] pbx.c:3494: Result of 'EXTTOCALL' is '5000'
+
+[20140110 085959.866] DEBUG[27787] pbx.c:4313: Function result is ''
+
+[20140110 085959.866] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.866] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:8] Set("SIP/5001-00000106", "CFUEXT=") in new stack
+
+[20140110 085959.868] DEBUG[27787] pbx.c:3491: Result of 'IN_FOLLOWME' is NULL
+
+[20140110 085959.868] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.868] DEBUG[27787] pbx.c:3491: Result of 'NODEST' is NULL
+
+[20140110 085959.868] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.868] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.868] DEBUG[27787] pbx.c:4485: Launching 'ExecIf'
+
+[20140110 085959.868] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:9] ExecIf("SIP/5001-00000106", "0?Set(DNDON=no)") in new stack
+
+[20140110 085959.869] DEBUG[27787] pbx.c:4080: Evaluating 'IN_FOLLOWME' (from 'IN_FOLLOWME}" == "yes"' len 11)
+
+[20140110 085959.869] DEBUG[27787] pbx.c:3491: Result of 'IN_FOLLOWME' is NULL
+
+[20140110 085959.869] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.869] DEBUG[27787] pbx.c:4080: Evaluating 'NODEST' (from 'NODEST}" != ""' len 6)
+
+[20140110 085959.869] DEBUG[27787] pbx.c:3491: Result of 'NODEST' is NULL
+
+[20140110 085959.869] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.869] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.871] DEBUG[27787] pbx.c:3491: Result of 'IN_FOLLOWME' is NULL
+
+[20140110 085959.871] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.871] DEBUG[27787] pbx.c:3491: Result of 'NODEST' is NULL
+
+[20140110 085959.871] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.871] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.871] DEBUG[27787] pbx.c:4485: Launching 'ExecIf'
+
+[20140110 085959.871] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:10] ExecIf("SIP/5001-00000106", "0?Set(CFBEXT=)") in new stack
+
+[20140110 085959.872] DEBUG[27787] pbx.c:4080: Evaluating 'IN_FOLLOWME' (from 'IN_FOLLOWME}" == "yes"' len 11)
+
+[20140110 085959.872] DEBUG[27787] pbx.c:3491: Result of 'IN_FOLLOWME' is NULL
+
+[20140110 085959.872] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.872] DEBUG[27787] pbx.c:4080: Evaluating 'NODEST' (from 'NODEST}" != ""' len 6)
+
+[20140110 085959.872] DEBUG[27787] pbx.c:3491: Result of 'NODEST' is NULL
+
+[20140110 085959.872] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.872] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.873] DEBUG[27787] pbx.c:3491: Result of 'IN_FOLLOWME' is NULL
+
+[20140110 085959.874] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.874] DEBUG[27787] pbx.c:3491: Result of 'NODEST' is NULL
+
+[20140110 085959.874] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.874] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.874] DEBUG[27787] pbx.c:4485: Launching 'ExecIf'
+
+[20140110 085959.874] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:11] ExecIf("SIP/5001-00000106", "0?Set(CFNEXT=)") in new stack
+
+[20140110 085959.875] DEBUG[27787] pbx.c:4080: Evaluating 'IN_FOLLOWME' (from 'IN_FOLLOWME}" == "yes"' len 11)
+
+[20140110 085959.875] DEBUG[27787] pbx.c:3491: Result of 'IN_FOLLOWME' is NULL
+
+[20140110 085959.875] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.875] DEBUG[27787] pbx.c:4080: Evaluating 'NODEST' (from 'NODEST}" != ""' len 6)
+
+[20140110 085959.875] DEBUG[27787] pbx.c:3491: Result of 'NODEST' is NULL
+
+[20140110 085959.876] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.876] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.877] DEBUG[27787] pbx.c:3491: Result of 'IN_FOLLOWME' is NULL
+
+[20140110 085959.877] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.877] DEBUG[27787] pbx.c:3491: Result of 'NODEST' is NULL
+
+[20140110 085959.877] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.877] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.877] DEBUG[27787] pbx.c:4485: Launching 'ExecIf'
+
+[20140110 085959.877] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:12] ExecIf("SIP/5001-00000106", "0?Set(CFUEXT=)") in new stack
+
+[20140110 085959.878] DEBUG[27787] pbx.c:4080: Evaluating 'IN_FOLLOWME' (from 'IN_FOLLOWME}" == "yes"' len 11)
+
+[20140110 085959.878] DEBUG[27787] pbx.c:3491: Result of 'IN_FOLLOWME' is NULL
+
+[20140110 085959.878] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.878] DEBUG[27787] pbx.c:4080: Evaluating 'NODEST' (from 'NODEST}" != ""' len 6)
+
+[20140110 085959.878] DEBUG[27787] pbx.c:3491: Result of 'NODEST' is NULL
+
+[20140110 085959.878] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.878] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.879] DEBUG[27787] pbx.c:3494: Result of 'DNDON' is ''
+
+[20140110 085959.879] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.880] DEBUG[27787] pbx.c:4485: Launching 'ExecIf'
+
+[20140110 085959.880] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:13] ExecIf("SIP/5001-00000106", "0?Set(DIALSTATUS=BUSY)") in new stack
+
+[20140110 085959.880] DEBUG[27787] pbx.c:4080: Evaluating 'DNDON' (from 'DNDON}" = "yes"' len 5)
+
+[20140110 085959.880] DEBUG[27787] pbx.c:3494: Result of 'DNDON' is ''
+
+[20140110 085959.880] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.882] DEBUG[27787] pbx.c:3494: Result of 'DNDON' is ''
+
+[20140110 085959.882] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.882] DEBUG[27787] pbx.c:4485: Launching 'GotoIf'
+
+[20140110 085959.882] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:14] GotoIf("SIP/5001-00000106", "0?sent2vm") in new stack
+
+[20140110 085959.883] DEBUG[27787] pbx.c:10544: Not taking any branch
+
+[20140110 085959.883] DEBUG[27787] pbx.c:3494: Result of 'CFUEXT' is ''
+
+[20140110 085959.884] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.884] DEBUG[27787] pbx.c:4485: Launching 'GotoIf'
+
+[20140110 085959.884] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:15] GotoIf("SIP/5001-00000106", "0?docfu,1") in new stack
+
+[20140110 085959.884] DEBUG[27787] pbx.c:10544: Not taking any branch
+
+[20140110 085959.885] DEBUG[27787] pbx.c:3494: Result of 'RINGTIME' is '60'
+
+[20140110 085959.885] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.885] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:16] Set("SIP/5001-00000106", "CALL_RT=60") in new stack
+
+[20140110 085959.886] DEBUG[27787] pbx.c:3494: Result of 'EXTTOCALL' is '5000'
+
+[20140110 085959.887] DEBUG[27787] pbx.c:4313: Function result is ''
+
+[20140110 085959.887] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.887] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:17] Set("SIP/5001-00000106", "USER_RT=") in new stack
+
+[20140110 085959.888] DEBUG[27787] pbx.c:3494: Result of 'USER_RT' is ''
+
+[20140110 085959.889] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.889] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.889] DEBUG[27787] pbx.c:3494: Result of 'USER_RT' is ''
+
+[20140110 085959.889] DEBUG[27787] pbx.c:4485: Launching 'ExecIf'
+
+[20140110 085959.889] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:18] ExecIf("SIP/5001-00000106", "0?Set(CALL_RT=)") in new stack
+
+[20140110 085959.889] DEBUG[27787] pbx.c:4080: Evaluating 'USER_RT' (from 'USER_RT}" != ""' len 7)
+
+[20140110 085959.889] DEBUG[27787] pbx.c:3494: Result of 'USER_RT' is ''
+
+[20140110 085959.890] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.890] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.890] DEBUG[27787] pbx.c:4080: Evaluating 'USER_RT' (from 'USER_RT})' len 7)
+
+[20140110 085959.890] DEBUG[27787] pbx.c:3494: Result of 'USER_RT' is ''
+
+[20140110 085959.891] DEBUG[27787] pbx.c:3494: Result of 'AAUSER' is '5001'
+
+[20140110 085959.891] DEBUG[27787] pbx.c:3494: Result of 'EXTTOCALL' is '5000'
+
+[20140110 085959.891] DEBUG[27787] pbx.c:4485: Launching 'Macro'
+
+[20140110 085959.891] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:19] Macro("SIP/5001-00000106", "record-check,5001-5000,") in new stack
+
+[20140110 085959.895] DEBUG[27787] pbx.c:3494: Result of 'ARG1' is '5001-5000'
+
+[20140110 085959.895] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.895] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:1] Set("SIP/5001-00000106", "USER_LIST=5001-5000") in new stack
+
+[20140110 085959.896] DEBUG[27787] pbx.c:3494: Result of 'ARG2' is ''
+
+[20140110 085959.896] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.896] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:2] Set("SIP/5001-00000106", "TRUNK_IND=") in new stack
+
+[20140110 085959.897] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.897] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:3] Set("SIP/5001-00000106", "REC_ENABLE=no") in new stack
+
+[20140110 085959.898] DEBUG[27787] pbx.c:3491: Result of 'CONF_ROOM' is NULL
+
+[20140110 085959.898] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.898] DEBUG[27787] pbx.c:4485: Launching 'GotoIf'
+
+[20140110 085959.898] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:4] GotoIf("SIP/5001-00000106", "0?final") in new stack
+
+[20140110 085959.899] DEBUG[27787] pbx.c:10544: Not taking any branch
+
+[20140110 085959.900] DEBUG[27787] pbx.c:3491: Result of 'BLINDTRANSFER' is NULL
+
+[20140110 085959.900] DEBUG[27787] pbx.c:4381: Expression result is '1'
+
+[20140110 085959.900] DEBUG[27787] pbx.c:4485: Launching 'GotoIf'
+
+[20140110 085959.900] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:5] GotoIf("SIP/5001-00000106", "1?check") in new stack
+
+[20140110 085959.901] VERB [27787] pbx.c:10233:     -- Goto (macro-record-check,s,8)
+
+[20140110 085959.901] DEBUG[27787] pbx.c:4485: Launching 'Log'
+
+[20140110 085959.901] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:8] Log("SIP/5001-00000106", "NOTICE, "Check auto record settings."") ink
+
+[20140110 085959.903] DEBUG[27787] pbx.c:3494: Result of 'TRUNK_IND' is ''
+
+[20140110 085959.903] DEBUG[27787] pbx.c:3491: Result of 'OUT_AUTORECORD_' is NULL
+
+[20140110 085959.903] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.903] DEBUG[27787] pbx.c:4485: Launching 'ExecIf'
+
+[20140110 085959.903] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:9] ExecIf("SIP/5001-00000106", "0?Set(REC_ENABLE=yes)") in new stack
+
+[20140110 085959.904] DEBUG[27787] pbx.c:4080: Evaluating 'OUT_AUTORECORD_${TRUNK_IND}' (from 'OUT_AUTORECORD_${TRUNK_IND}}" = "yes"' len 27)
+
+[20140110 085959.904] DEBUG[27787] pbx.c:4080: Evaluating 'TRUNK_IND' (from 'TRUNK_IND}' len 9)
+
+[20140110 085959.904] DEBUG[27787] pbx.c:3494: Result of 'TRUNK_IND' is ''
+
+[20140110 085959.904] DEBUG[27787] pbx.c:3491: Result of 'OUT_AUTORECORD_' is NULL
+
+[20140110 085959.904] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.905] DEBUG[27787] pbx.c:3494: Result of 'TRUNK_IND' is ''
+
+[20140110 085959.905] DEBUG[27787] pbx.c:3491: Result of 'OUT_AUTORECORD_' is NULL
+
+[20140110 085959.905] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.905] DEBUG[27787] pbx.c:4485: Launching 'GotoIf'
+
+[20140110 085959.905] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:10] GotoIf("SIP/5001-00000106", "0?final") in new stack
+
+[20140110 085959.906] DEBUG[27787] pbx.c:10544: Not taking any branch
+
+[20140110 085959.907] DEBUG[27787] pbx.c:3491: Result of 'FROM_TRUNK' is NULL
+
+[20140110 085959.907] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.907] DEBUG[27787] pbx.c:4485: Launching 'GotoIf'
+
+[20140110 085959.907] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:11] GotoIf("SIP/5001-00000106", "0?check_trunk:norext") in new stack
+
+[20140110 085959.908] VERB [27787] pbx.c:10233:     -- Goto (macro-record-check,s,22)
+
+[20140110 085959.908] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.908] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:22] Set("SIP/5001-00000106", "i=1") in new stack
+
+[20140110 085959.909] DEBUG[27787] pbx.c:3494: Result of 'i' is '1'
+
+[20140110 085959.909] DEBUG[27787] pbx.c:4381: Expression result is '1'
+
+[20140110 085959.909] DEBUG[27787] pbx.c:4485: Launching 'While'
+
+[20140110 085959.909] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:23] While("SIP/5001-00000106", "1") in new stack
+
+[20140110 085959.912] DEBUG[27787] pbx.c:3494: Result of 'i' is '1'
+
+[20140110 085959.912] DEBUG[27787] pbx.c:4080: Evaluating 'USER_LIST' (from 'USER_LIST}' len 9)
+
+[20140110 085959.912] DEBUG[27787] pbx.c:3494: Result of 'USER_LIST' is '5001-5000'
+
+[20140110 085959.912] DEBUG[27787] pbx.c:4313: Function result is '5001'
+
+[20140110 085959.912] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.912] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:24] Set("SIP/5001-00000106", "CUR_USER=5001") in new stack
+
+[20140110 085959.914] DEBUG[27787] pbx.c:3494: Result of 'CUR_USER' is '5001'
+
+[20140110 085959.914] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.914] DEBUG[27787] pbx.c:4485: Launching 'GotoIf'
+
+[20140110 085959.914] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:25] GotoIf("SIP/5001-00000106", "0?break") in new stack
+
+[20140110 085959.915] DEBUG[27787] pbx.c:10544: Not taking any branch
+
+[20140110 085959.916] DEBUG[27787] pbx.c:3494: Result of 'CUR_USER' is '5001'
+
+[20140110 085959.917] DEBUG[27787] pbx.c:4313: Function result is 'no'
+
+[20140110 085959.917] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.917] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:26] Set("SIP/5001-00000106", "REC_ENABLE=no") in new stack
+
+[20140110 085959.918] DEBUG[27787] pbx.c:3494: Result of 'REC_ENABLE' is 'no'
+
+[20140110 085959.918] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.918] DEBUG[27787] pbx.c:4485: Launching 'GotoIf'
+
+[20140110 085959.918] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:27] GotoIf("SIP/5001-00000106", "0?break:continue") in new stack
+
+[20140110 085959.919] VERB [27787] pbx.c:10233:     -- Goto (macro-record-check,s,28)
+
+[20140110 085959.920] DEBUG[27787] pbx.c:3494: Result of 'i' is '1'
+
+[20140110 085959.920] DEBUG[27787] pbx.c:4381: Expression result is '2'
+
+[20140110 085959.920] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.920] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:28] Set("SIP/5001-00000106", "i=2") in new stack
+
+[20140110 085959.922] DEBUG[27787] pbx.c:4485: Launching 'EndWhile'
+
+[20140110 085959.922] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:29] EndWhile("SIP/5001-00000106", "") in new stack
+
+[20140110 085959.924] DEBUG[27787] pbx.c:3494: Result of 'i' is '2'
+
+[20140110 085959.924] DEBUG[27787] pbx.c:4381: Expression result is '2'
+
+[20140110 085959.924] DEBUG[27787] pbx.c:4485: Launching 'While'
+
+[20140110 085959.924] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:23] While("SIP/5001-00000106", "2") in new stack
+
+[20140110 085959.925] DEBUG[27787] pbx.c:3494: Result of 'i' is '2'
+
+[20140110 085959.925] DEBUG[27787] pbx.c:4080: Evaluating 'USER_LIST' (from 'USER_LIST}' len 9)
+
+[20140110 085959.925] DEBUG[27787] pbx.c:3494: Result of 'USER_LIST' is '5001-5000'
+
+[20140110 085959.925] DEBUG[27787] pbx.c:4313: Function result is '5000'
+
+[20140110 085959.925] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.925] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:24] Set("SIP/5001-00000106", "CUR_USER=5000") in new stack
+
+[20140110 085959.927] DEBUG[27787] pbx.c:3494: Result of 'CUR_USER' is '5000'
+
+[20140110 085959.927] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.927] DEBUG[27787] pbx.c:4485: Launching 'GotoIf'
+
+[20140110 085959.927] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:25] GotoIf("SIP/5001-00000106", "0?break") in new stack
+
+[20140110 085959.928] DEBUG[27787] pbx.c:10544: Not taking any branch
+
+[20140110 085959.929] DEBUG[27787] pbx.c:3494: Result of 'CUR_USER' is '5000'
+
+[20140110 085959.930] DEBUG[27787] pbx.c:4313: Function result is 'no'
+
+[20140110 085959.930] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.930] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:26] Set("SIP/5001-00000106", "REC_ENABLE=no") in new stack
+
+[20140110 085959.931] DEBUG[27787] pbx.c:3494: Result of 'REC_ENABLE' is 'no'
+
+[20140110 085959.932] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.932] DEBUG[27787] pbx.c:4485: Launching 'GotoIf'
+
+[20140110 085959.932] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:27] GotoIf("SIP/5001-00000106", "0?break:continue") in new stack
+
+[20140110 085959.932] VERB [27787] pbx.c:10233:     -- Goto (macro-record-check,s,28)
+
+[20140110 085959.933] DEBUG[27787] pbx.c:3494: Result of 'i' is '2'
+
+[20140110 085959.933] DEBUG[27787] pbx.c:4381: Expression result is '3'
+
+[20140110 085959.933] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.933] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:28] Set("SIP/5001-00000106", "i=3") in new stack
+
+[20140110 085959.935] DEBUG[27787] pbx.c:4485: Launching 'EndWhile'
+
+[20140110 085959.935] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:29] EndWhile("SIP/5001-00000106", "") in new stack
+
+[20140110 085959.936] DEBUG[27787] pbx.c:3494: Result of 'i' is '3'
+
+[20140110 085959.936] DEBUG[27787] pbx.c:4381: Expression result is '3'
+
+[20140110 085959.936] DEBUG[27787] pbx.c:4485: Launching 'While'
+
+[20140110 085959.936] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:23] While("SIP/5001-00000106", "3") in new stack
+
+[20140110 085959.938] DEBUG[27787] pbx.c:3494: Result of 'i' is '3'
+
+[20140110 085959.938] DEBUG[27787] pbx.c:4080: Evaluating 'USER_LIST' (from 'USER_LIST}' len 9)
+
+[20140110 085959.938] DEBUG[27787] pbx.c:3494: Result of 'USER_LIST' is '5001-5000'
+
+[20140110 085959.938] DEBUG[27787] pbx.c:4313: Function result is ''
+
+[20140110 085959.938] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.938] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:24] Set("SIP/5001-00000106", "CUR_USER=") in new stack
+
+[20140110 085959.940] DEBUG[27787] pbx.c:3494: Result of 'CUR_USER' is ''
+
+[20140110 085959.940] DEBUG[27787] pbx.c:4381: Expression result is '1'
+
+[20140110 085959.940] DEBUG[27787] pbx.c:4485: Launching 'GotoIf'
+
+[20140110 085959.940] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:25] GotoIf("SIP/5001-00000106", "1?break") in new stack
+
+[20140110 085959.940] VERB [27787] pbx.c:10233:     -- Goto (macro-record-check,s,30)
+
+[20140110 085959.941] DEBUG[27787] pbx.c:4485: Launching 'Goto'
+
+[20140110 085959.941] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:30] Goto("SIP/5001-00000106", "final") in new stack
+
+[20140110 085959.942] VERB [27787] pbx.c:10233:     -- Goto (macro-record-check,s,31)
+
+[20140110 085959.943] DEBUG[27787] pbx.c:3494: Result of 'REC_ENABLE' is 'no'
+
+[20140110 085959.943] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.943] DEBUG[27787] pbx.c:4485: Launching 'GotoIf'
+
+[20140110 085959.943] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:31] GotoIf("SIP/5001-00000106", "0?record") in new stack
+
+[20140110 085959.944] DEBUG[27787] pbx.c:10544: Not taking any branch
+
+[20140110 085959.944] DEBUG[27787] pbx.c:4485: Launching 'MacroExit'
+
+[20140110 085959.944] VERB [27787] pbx.c:4493:     -- Executing [s@macro-record-check:32] MacroExit("SIP/5001-00000106", "") in new stack
+
+[20140110 085959.947] DEBUG[27787] pbx.c:3494: Result of 'EXTTOCALL' is '5000'
+
+[20140110 085959.947] DEBUG[27787] pbx.c:3494: Result of 'CALL_RT' is '60'
+
+[20140110 085959.947] DEBUG[27787] pbx.c:4485: Launching 'Macro'
+
+[20140110 085959.947] VERB [27787] pbx.c:4493:     -- Executing [s@macro-exten-vm:20] Macro("SIP/5001-00000106", "dial,5000,60") in new stack
+
+[20140110 085959.950] DEBUG[27787] pbx.c:3491: Result of 'MOHCLASS' is NULL
+
+[20140110 085959.950] DEBUG[27787] pbx.c:4381: Expression result is '1'
+
+[20140110 085959.950] DEBUG[27787] pbx.c:4485: Launching 'GotoIf'
+
+[20140110 085959.950] VERB [27787] pbx.c:4493:     -- Executing [s@macro-dial:1] GotoIf("SIP/5001-00000106", "1?dial") in new stack
+
+[20140110 085959.951] VERB [27787] pbx.c:10233:     -- Goto (macro-dial,s,3)
+
+[20140110 085959.952] DEBUG[27787] pbx.c:3494: Result of 'ARG1' is '5000'
+
+[20140110 085959.953] DEBUG[27787] pbx.c:4313: Function result is 'SIP/5000'
+
+[20140110 085959.953] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.953] VERB [27787] pbx.c:4493:     -- Executing [s@macro-dial:3] Set("SIP/5001-00000106", "DIAL_STR=SIP/5000") in new stack
+
+[20140110 085959.955] DEBUG[27787] pbx.c:3494: Result of 'ARG2' is '60'
+
+[20140110 085959.955] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.955] VERB [27787] pbx.c:4493:     -- Executing [s@macro-dial:4] Set("SIP/5001-00000106", "CALL_RT=60") in new stack
+
+[20140110 085959.956] DEBUG[27787] pbx.c:3491: Result of 'DISA_HANGUP' is NULL
+
+[20140110 085959.956] DEBUG[27787] pbx.c:4485: Launching 'Macro'
+
+[20140110 085959.956] VERB [27787] pbx.c:4493:     -- Executing [s@macro-dial:5] Macro("SIP/5001-00000106", "set-call-options,") in new stack
+
+[20140110 085959.959] DEBUG[27787] pbx.c:3494: Result of 'ARG1' is ''
+
+[20140110 085959.959] DEBUG[27787] pbx.c:3494: Result of 'DIAL_OPTIONS' is ''
+
+[20140110 085959.959] DEBUG[27787] pbx.c:4485: Launching 'Set'
+
+[20140110 085959.959] VERB [27787] pbx.c:4493:     -- Executing [s@macro-set-call-options:1] Set("SIP/5001-00000106", "CALL_OPTIONS=") in new stack
+
+[20140110 085959.961] DEBUG[27787] pbx.c:3491: Result of 'FROM_TRUNK' is NULL
+
+[20140110 085959.961] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.961] DEBUG[27787] pbx.c:3494: Result of 'ARG1' is ''
+
+[20140110 085959.961] DEBUG[27787] pbx.c:3494: Result of 'FROM_TRUNK_OPTIONS' is ''
+
+[20140110 085959.961] DEBUG[27787] pbx.c:4485: Launching 'ExecIf'
+
+[20140110 085959.961] VERB [27787] pbx.c:4493:     -- Executing [s@macro-set-call-options:2] ExecIf("SIP/5001-00000106", "0?Set(CALL_OPTIONS=)") in new stack
+
+[20140110 085959.962] DEBUG[27787] pbx.c:4080: Evaluating 'FROM_TRUNK' (from 'FROM_TRUNK}" = "yes"' len 10)
+
+[20140110 085959.962] DEBUG[27787] pbx.c:3491: Result of 'FROM_TRUNK' is NULL
+
+[20140110 085959.962] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.962] DEBUG[27787] pbx.c:4080: Evaluating 'ARG1' (from 'ARG1}${FROM_TRUNK_OPTIONS})' len 4)
+
+[20140110 085959.962] DEBUG[27787] pbx.c:3494: Result of 'ARG1' is ''
+
+[20140110 085959.962] DEBUG[27787] pbx.c:4080: Evaluating 'FROM_TRUNK_OPTIONS' (from 'FROM_TRUNK_OPTIONS})' len 18)
+
+[20140110 085959.962] DEBUG[27787] pbx.c:3494: Result of 'FROM_TRUNK_OPTIONS' is ''
+
+[20140110 085959.963] DEBUG[27787] pbx.c:3491: Result of 'AUTO_RECORDING' is NULL
+
+[20140110 085959.964] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.964] DEBUG[27787] pbx.c:3494: Result of 'RECORD_PROMPT' is 'no'
+
+[20140110 085959.964] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.964] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.964] DEBUG[27787] pbx.c:3494: Result of 'CALL_OPTIONS' is ''
+
+[20140110 085959.964] DEBUG[27787] pbx.c:4485: Launching 'ExecIf'
+
+[20140110 085959.964] VERB [27787] pbx.c:4493:     -- Executing [s@macro-set-call-options:3] ExecIf("SIP/5001-00000106", "0?Set(CALL_OPTIONS=A(dialog-being-rk
+
+[20140110 085959.965] DEBUG[27787] pbx.c:4080: Evaluating 'AUTO_RECORDING' (from 'AUTO_RECORDING}" = "ON"' len 14)
+
+[20140110 085959.965] DEBUG[27787] pbx.c:3491: Result of 'AUTO_RECORDING' is NULL
+
+[20140110 085959.965] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.965] DEBUG[27787] pbx.c:4080: Evaluating 'RECORD_PROMPT' (from 'RECORD_PROMPT}" = "yes"' len 13)
+
+[20140110 085959.965] DEBUG[27787] pbx.c:3494: Result of 'RECORD_PROMPT' is 'no'
+
+[20140110 085959.965] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.965] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.965] DEBUG[27787] pbx.c:4080: Evaluating 'CALL_OPTIONS' (from 'CALL_OPTIONS}A(dialog-being-recorded)m(rbt))' len 12)
+
+[20140110 085959.965] DEBUG[27787] pbx.c:3494: Result of 'CALL_OPTIONS' is ''
+
+[20140110 085959.968] DEBUG[27787] pbx.c:3491: Result of 'FROM_IVR' is NULL
+
+[20140110 085959.968] DEBUG[27787] pbx.c:4381: Expression result is '0'
+
+[20140110 085959.968] DEBUG[27787] pbx.c:3494: Result of 'CALL_OPTIONS' is ''
+
+[20140110 085959.968] DEBUG[27787] pbx.c:4485: Launching 'ExecIf'
+
+[20140110 085959.968] VERB [27787] pbx.c:4493:     -- Executing [s@macro-dial:6] ExecIf("SIP/5001-00000106", "0?Set(CALL_OPTIONS=m(rbt))") in new stack
+
+[20140110 085959.969] DEBUG[27787] pbx.c:4080: Evaluating 'FROM_IVR' (from 'FROM_IVR}" != ""' len 8)
+
+[20140110 085959.969] DEBUG[27787] pbx.c:3491: Result of 'FROM_IVR' is NULL
+
+[20140110 085959.969] DEBUG[27787] pbx.c:4172: Expression result is '0'
+
+[20140110 085959.969] DEBUG[27787] pbx.c:4080: Evaluating 'CALL_OPTIONS' (from 'CALL_OPTIONS}m(rbt))' len 12)
+
+[20140110 085959.969] DEBUG[27787] pbx.c:3494: Result of 'CALL_OPTIONS' is ''
+
+[20140110 085959.970] DEBUG[27787] pbx.c:3494: Result of 'DIAL_STR' is 'SIP/5000'
+
+[20140110 085959.970] DEBUG[27787] pbx.c:3494: Result of 'CALL_RT' is '60'
+
+[20140110 085959.970] DEBUG[27787] pbx.c:3494: Result of 'CALL_OPTIONS' is ''
+
+[20140110 085959.970] DEBUG[27787] pbx.c:4485: Launching 'Dial'
+
+[20140110 085959.970] VERB [27787] pbx.c:4493:     -- Executing [s@macro-dial:7] Dial("SIP/5001-00000106", "SIP/5000,60,") in new stack
+
+[20140110 085959.973] CC   [27787] ccss.c:2189: Agent policy for SIP/5001-00000106 is 'never'. CC not possible
+
+[20140110 085959.976] VERB [27787] cdr.c:767: [SIP/5000-00000107]ast_cdr_start(0x9348c8) src[] dst[s] ... 
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable DIALEDTIME.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable ANSWEREDTIME.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable DIALEDPEERNAME.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable DIALEDPEERNUMBER.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable DIALSTATUS.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable MACRO_DEPTH.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable MACRO_PRIORITY.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable MACRO_CONTEXT.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable MACRO_EXTEN.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable ARG1.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable CALL_OPTIONS.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable CALL_RT.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable DIAL_STR.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable DB_RESULT.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable ARG2.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable CUR_USER.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable i.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable REC_ENABLE.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable END_WHILE_0.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable WHILE_0.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable macro-record-check_s_23.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable TRUNK_IND.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable USER_LIST.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable USER_RT.
+
+[20140110 085959.980] DEBUG[27787] channel.c:6319: Not copying variable CFUEXT.
+
+[20140110 085959.981] DEBUG[27787] channel.c:6319: Not copying variable CFNEXT.
+
+[20140110 085959.981] DEBUG[27787] channel.c:6319: Not copying variable CFBEXT.
+
+[20140110 085959.981] DEBUG[27787] channel.c:6319: Not copying variable DNDON.
+
+[20140110 085959.981] DEBUG[27787] channel.c:6319: Not copying variable EXTTOCALL.
+
+[20140110 085959.981] DEBUG[27787] channel.c:6319: Not copying variable VMBOX.
+
+[20140110 085959.981] DEBUG[27787] channel.c:6315: Copying hard-transferable variable TTL.
+
+[20140110 085959.981] DEBUG[27787] channel.c:6319: Not copying variable OUTBOUNDCID.
+
+[20140110 085959.981] DEBUG[27787] channel.c:6319: Not copying variable AAUSERCIDNAME.
+
+[20140110 085959.981] DEBUG[27787] channel.c:6319: Not copying variable REALCALLERIDNUM.
+
+[20140110 085959.981] DEBUG[27787] channel.c:6308: Copying soft-transferable variable AAUSER.
+
+[20140110 085959.981] DEBUG[27787] channel.c:6319: Not copying variable SIPCALLID.
+
+[20140110 085959.981] DEBUG[27787] channel.c:6319: Not copying variable SIPDOMAIN.
+
+[20140110 085959.981] DEBUG[27787] channel.c:6319: Not copying variable SIPURI.
+
+[20140110 085959.982] VERB [27787] cdr.c:1001: [SIP/5000-00000107]ast_cdr_setcid(0x9348c8, 0x9496c8) chan[SIP/5000-00000107] ... 
+[20140110 085959.985] VERB [27787] cdr.c:911: [SIP/5001-00000106]ast_cdr_setdestchan(0x42f24160, 0x90f3ee) dst: 5000 -> SIP/5000-00000107  ... 
+[20140110 085959.986] VERB [27787] app_dial.c:2520:     -- Called SIP/5000
+
+[20140110 090000.385] VERB [27787] app_dial.c:1354:     -- SIP/5000-00000107 is ringing
+
+[20140110 090001.269] VERB [27787] app_dial.c:1262:     -- SIP/5000-00000107 answered SIP/5001-00000106
+
+[20140110 090001.270] VERB [27787] cdr.c:911: [SIP/5001-00000106]ast_cdr_setdestchan(0x42f24160, 0x90f3ee) dst: 5000 -> SIP/5000-00000107  ... 
+[20140110 090001.270] VERB [27787] cdr.c:943: [SIP/5001-00000106]ast_cdr_setanswer(0x42f24160, t) src[5001] dst[5000] ... 
+[20140110 090001.271] VERB [27787] cdr.c:787: [SIP/5001-00000106]ast_cdr_answer(0x42f24160) src[5001] dst[5000] ... 
+[20140110 090001.271] VERB [27787] cdr.c:1225: [SIP/5001-00000106]ast_cdr_update(0x42f13690) ... 
+[20140110 090001.271] DEBUG[27787] features.c:4208: bridge answer set, chan answer set
+
+[20140110 090001.271] VERB [27787] cdr.c:943: [SIP/5001-00000106]ast_cdr_setanswer(0x84d560, t) src[5001] dst[5000] ... 
+[20140110 090001.271] VERB [27787] cdr.c:957: ast_cdr_setdisposition(0x84d560, 8) ... 
+[20140110 090001.271] VERB [27787] cdr.c:943: [SIP/5001-00000106]ast_cdr_setanswer(0x42f24160, t) src[5001] dst[5000] ... 
+[20140110 090001.271] VERB [27787] cdr.c:957: ast_cdr_setdisposition(0x42f24160, 8) ... 
+[20140110 090001.271] DEBUG[27787] features.c:4026: Removing dialed interfaces datastore on SIP/5000-00000107 since we're bridging
+
+[20140110 090003.435] DEBUG[27787] channel.c:7724: Returning from native bridge, channels: SIP/5001-00000106, SIP/5000-00000107
+
+[20140110 090003.436] VERB [27787] cdr.c:1059: [SIP/5001-00000106]ast_cdr_end(0x84d560) src[5001] dst[5000] ... 
+[20140110 090003.443] VERB [27787] cdr.c:1268: [SIP/5001-00000106]post_cdr(0x84d560) src[5001] dst[5000] ... 
+[20140110 090003.443] DEBUG[27787] pbx.c:4313: Function result is '(null)'
+
+[20140110 090003.444] DEBUG[27787] pbx.c:4313: Function result is '5001'
+
+[20140110 090003.445] DEBUG[27787] pbx.c:4313: Function result is '5000'
+
+[20140110 090003.445] DEBUG[27787] pbx.c:4313: Function result is 'from-internal'
+
+[20140110 090003.445] DEBUG[27787] pbx.c:4313: Function result is '"aaa" <5001>'
+
+[20140110 090003.446] DEBUG[27787] pbx.c:4313: Function result is 'SIP/5001-00000106'
+
+[20140110 090003.446] DEBUG[27787] pbx.c:4313: Function result is 'SIP/5000-00000107'
+
+[20140110 090003.446] DEBUG[27787] pbx.c:4313: Function result is 'Dial'
+
+[20140110 090003.446] DEBUG[27787] pbx.c:4313: Function result is 'SIP/5000,60,'
+
+[20140110 090003.446] DEBUG[27787] pbx.c:4313: Function result is '2014-01-10 08:59:59'
+
+[20140110 090003.446] DEBUG[27787] pbx.c:4313: Function result is '2014-01-10 09:00:01'
+
+[20140110 090003.446] DEBUG[27787] pbx.c:4313: Function result is '2014-01-10 09:00:03'
+
+[20140110 090003.446] DEBUG[27787] pbx.c:4313: Function result is '4'
+
+[20140110 090003.446] DEBUG[27787] pbx.c:4313: Function result is '2'
+
+[20140110 090003.446] DEBUG[27787] pbx.c:4313: Function result is 'ANSWERED'
+
+[20140110 090003.446] DEBUG[27787] pbx.c:4313: Function result is 'DOCUMENTATION'
+
+[20140110 090003.446] DEBUG[27787] pbx.c:4313: Function result is '1389315599.262'
+
+[20140110 090003.447] DEBUG[27787] pbx.c:4313: Function result is 'EXT'
+
+[20140110 090003.447] DEBUG[27787] pbx.c:4313: Function result is '(null)'
+
+[20140110 090003.447] DEBUG[27787] cdr_sqlite3_custom.c:267: About to log: INSERT INTO cdr (accountcode,src,dst,dcontext,clid,channel,dstchannel,lastapp,last)
+
+[20140110 090003.496] VERB [27787] cdr.c:1362: [SIP/5001-00000106]ast_cdr_specialized_reset(0x42f24160, (nil)) src[5001] dst[5000] ... 
+[20140110 090003.497] VERB [27787] cdr.c:767: [SIP/5001-00000106]ast_cdr_start(0x42f24160) src[5001] dst[5000] ... 
+[20140110 090003.497] VERB [27787] cdr.c:1362: [SIP/5000-00000107]ast_cdr_specialized_reset(0x9348c8, (nil)) src[5000] dst[s] ... 
+[20140110 090003.497] VERB [27787] cdr.c:767: [SIP/5000-00000107]ast_cdr_start(0x9348c8) src[5000] dst[s] ... 
+[20140110 090003.497] DEBUG[27787] channel.c:2900: Hanging up channel 'SIP/5000-00000107'
+
+[20140110 090003.501] DEBUG[27787] app_dial.c:3082: Exiting with DIALSTATUS=ANSWER.
+
+[20140110 090003.503] DEBUG[27787] pbx.c:5410: Spawn extension (from-internal,5000,1) exited non-zero on 'SIP/5001-00000106'
+
+[20140110 090003.503] VERB [27787] pbx.c:5411:   == Spawn extension (from-internal, 5000, 1) exited non-zero on 'SIP/5001-00000106'
+
+[20140110 090003.503] VERB [27787] cdr.c:1225: [SIP/5001-00000106]ast_cdr_update(0x42f13690) ... 
+[20140110 090003.503] DEBUG[27787] channel.c:2900: Hanging up channel 'SIP/5001-00000106'
+
+
+
+
+
+
+
+
+
+
+
+[20140110 140420.759] DEBUG[28636] app_voicemail.c:10150: After vm_authenticate
+
+
+[20140110 140420.760] DEBUG[28636] app_voicemail.c:10197: Before open_mailbox
+
+
+[20140110 140420.761] DEBUG[28636] app_voicemail.c:4124: /app/asterisk/var/spool/asterisk/voicemail/default/5001/Old map[0] = 1, count = 1
+
+
+[20140110 140420.762] DEBUG[28636] app_voicemail.c:4124: /app/asterisk/var/spool/asterisk/voicemail/default/5001/Old map[1] = 1, count = 2
+
+
+[20140110 140420.763] DEBUG[28636] app_voicemail.c:10202: Number of old messages: 2
+
+
+[20140110 140420.765] DEBUG[28636] app_voicemail.c:4124: /app/asterisk/var/spool/asterisk/voicemail/default/5001/INBOX map[0] = 1, count = 1
+
+
+[20140110 140420.766] DEBUG[28636] app_voicemail.c:4124: /app/asterisk/var/spool/asterisk/voicemail/default/5001/INBOX map[2] = 1, count = 2
+
+
+[20140110 140420.766] DEBUG[28636] app_voicemail.c:4124: /app/asterisk/var/spool/asterisk/voicemail/default/5001/INBOX map[3] = 1, count = 3
+
+
+[20140110 140420.767] DEBUG[28636] app_voicemail.c:4124: /app/asterisk/var/spool/asterisk/voicemail/default/5001/INBOX map[1] = 1, count = 4
+
+
+[20140110 140420.768] DEBUG[28636] app_voicemail.c:10208: Number of new messages: 4
+
+
+[20140110 140420.769] DEBUG[28636] app_voicemail.c:4124: /app/asterisk/var/spool/asterisk/voicemail/default/5001/Urgent map[0] = 1, count = 1
+
+
+[20140110 140420.770] DEBUG[28636] app_voicemail.c:10215: Number of urgent messages: 1
+
+
+[20140110 140434.521] DEBUG[28636] app_voicemail.c:4124: /app/asterisk/var/spool/asterisk/voicemail/default/5001/Urgent map[0] = 1, count = 1
+
+
+
+
+41] DEBUG[28637] app_voicemail.c:5737: Before find_user
+
+[20140110 141140.244] DEBUG[28637] app_voicemail.c:5850: /app/asterisk/var/spool/asterisk/voicemail/default/5001/busy doesn't exist, doing what we can
+
+
+[20140110 141152.094] VERB [28637] app_voicemail.c:13633:     -- Recording the message
+
+
+
+
+
+[20140110 141202.761] VERB [28637] app_voicemail.c:13610:     -- Saving message as is
+
+
+[20140110 141204.706] DEBUG[28637] app_voicemail.c:4124: /app/asterisk/var/spool/asterisk/voicemail/default/5001/INBOX map[0] = 1, count = 1
+
+
+[20140110 141204.707] DEBUG[28637] app_voicemail.c:4124: /app/asterisk/var/spool/asterisk/voicemail/default/5001/INBOX map[2] = 1, count = 2
+
+
+[20140110 141204.708] DEBUG[28637] app_voicemail.c:4124: /app/asterisk/var/spool/asterisk/voicemail/default/5001/INBOX map[3] = 1, count = 3
+
+
+[20140110 141204.709] DEBUG[28637] app_voicemail.c:4124: /app/asterisk/var/spool/asterisk/voicemail/default/5001/INBOX map[1] = 1, count = 4
+
+
+[20140110 141221.422] ERROR[05955] chan_sip.c:29504: handle status is 1
+
+

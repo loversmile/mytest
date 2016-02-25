@@ -1,0 +1,78 @@
+Jul 23 16:41:59 UCM6116 user.info UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cgi.c:315]Query header is [action=listAccount&options=status%2Cextension%2Cfullname%2Curgemsg%2Cnewmsg%2Coldmsg%2Caccount_type%2Cout_of_service&account_type=ringgroup&item_num=10&page=1&sidx=status&sord=asc]
+Jul 23 16:41:59 UCM6116 user.info UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cgi.c:346]Query buffer is [action=listAccount&options=status%2Cextension%2Cfullname%2Curgemsg%2Cnewmsg%2Coldmsg%2Caccount_type%2Cout_of_service&account_type=ringgroup&item_num=10&page=1&sidx=status&sord=asc]
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/utility.c:632]getCookieData: Cookie is {TRACKID=0ebe1259f29752ed737bad079bc34335; session-identify=sid1620178673-1406099355; username=test; user_id=1; position=home; locale=zh-CN; jumpMenu=welcome.html; needApplyChange=yes}
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/utility.c:634]Identify: {session-identify=sid1620178673-1406099355; username=test; user_id=1; position=home; locale=zh-CN; jumpMenu=welcome.html; needApplyChange=yes}
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/utility.c:641]getCookieData: Cookie DATA is {sid1620178673-1406099355}
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cgi.c:614]A request from 192.168.124.27(UNKNOW), user:UNKNOW cookie:With Cookie!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cgi.c:765]isAvoidRefreshCookieFunction (listAccount)!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cgi.c:777]isAvoidRefreshCookieFunction result is(-9)!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cgi.c:793]isPublicAction (listAccount)!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cgi.c:806]isPublicAction result is(-9)!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/users.c:553]getUserByCookie:  Cookie is sid1620178673-1406099355
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cgi.c:503]QUERY is {action=listAccount&options=status%2Cextension%2Cfullname%2Curgemsg%2Cnewmsg%2Coldmsg%2Caccount_type%2Cout_of_service&account_type=ringgroup&item_num=10&page=1&sidx=status&sord=asc}!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cgi.c:540]Key is {action}, value is {listAccount}!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cgi.c:540]Key is {options}, value is {status,extension,fullname,urgemsg,newmsg,oldmsg,account_type,out_of_service}!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cgi.c:540]Key is {account_type}, value is {ringgroup}!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cgi.c:540]Key is {item_num}, value is {10}!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cgi.c:540]Key is {page}, value is {1}!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cgi.c:540]Key is {sidx}, value is {status}!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cgi.c:540]Key is {sord}, value is {asc}!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/utility.c:632]getCookieData: Cookie is {TRACKID=0ebe1259f29752ed737bad079bc34335; session-identify=sid1620178673-1406099355; username=test; user_id=1; position=home; locale=zh-CN; jumpMenu=welcome.html; needApplyChange=yes}
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/utility.c:634]Identify: {session-identify=sid1620178673-1406099355; username=test; user_id=1; position=home; locale=zh-CN; jumpMenu=welcome.html; needApplyChange=yes}
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/utility.c:641]getCookieData: Cookie DATA is {sid1620178673-1406099355}
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cgi.c:793]isPublicAction (listAccount)!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cgi.c:806]isPublicAction result is(-9)!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cookie.c:199]Enter cookieCheck !!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cookie.c:212]cookie : [sid1620178673-1406099355] VS [sid1620178673-1406099355]
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cookie.c:216]cookie time: [1406104919] VS [1406104910] ==== [9]
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/users.c:553]getUserByCookie:  Cookie is sid1620178673-1406099355
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/utility.c:810]time_t2LocalTimestamp: The timestamp is: 2014-07-23 16:41:59.
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/utility.c:763]timestamp2Time_t: The timestamp is: [2014-07-23 16:41:59] / {1406104919}.
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/database.c:1006]Enter runSQLCmd : cmd is {UPDATE users SET login_time='2014-07-23 16:41:59' WHERE cookie='sid1620178673-1406099355'}
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/database.c:1014]Update success !
+Jul 23 16:41:59 UCM6116 user.info UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cookie.c:251]cookieCheck: Update the admin's cookie
+Jul 23 16:41:59 UCM6116 user.info UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/pvalue_functions.c:43]SET NVRAM [:web_timeout1] => [1406104919]
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cookie.c:264]Exit cookieCheck !!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/cgi.c:876]A request from 192.168.124.27(UNKNOW) user: UNKNOW, calling (listAccount) with a good cookie!
+Jul 23 16:41:59 UCM6116 user.info UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/cgi.c:1132]TaskProcess[0]:<----------------------- Start a new task ---------------------> 
+Jul 23 16:41:59 UCM6116 user.info UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/database.c:205]beginTransaction ! ID is [0]
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/cgi.c:1170]Process the tasks!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/handlers.c:1000]Get the extensions list !
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/handlers.c:1071]cmd = (SELECT * FROM (SELECT extension as tmp, 'RingGroup' as account_type,ringgroup_name as fullname,'no' as out_of_service FROM ringgroups) LEFT JOIN (SELECT * FROM ringgroups_status)  WHERE tmp=extension) LEFT JOIN (SELECT extension AS b FROM numbers LEFT JOIN (SELECT user_id AS a FROM users WHERE users.privilege IN (SELECT privilege_id FROM privilege WHERE level < (SELECT level FROM privilege WHERE privilege_id=0)) OR user_id=1) WHERE user_id=a) WHERE extension=b 
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/database.c:3449]List the item of account!!!!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/database.c:3461]The page is 1!!!!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/database.c:3466]The number of every page is 10!!!!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/database.c:3485]The option is status,extension,fullname,urgemsg,newmsg,oldmsg,account_type,out_of_service!!!!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/database.c:3490]The sidx is status!!!!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/database.c:3496]The sord is asc!!!!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/database.c:540]Enter runSQLGetAllItem : cmd is {SELECT status,extension,fullname,urgemsg,newmsg,oldmsg,account_type,out_of_service FROM (SELECT * FROM (SELECT extension as tmp, 'RingGroup' as account_type,ringgroup_name as fullname,'no' as out_of_service FROM ringgroups) LEFT JOIN (SELECT * FROM ringgroups_status)  WHERE tmp=extension) LEFT JOIN (SELECT extension AS b FROM numbers LEFT JOIN (SELECT user_id AS a FROM users WHERE users.privilege IN (SELECT privilege_id FROM privilege WHERE level < (SELECT level FROM privilege WHERE privilege_id=0)) OR user_id=1) WHERE user_id=a) WHERE extension=b ORDER BY status asc LIMIT 0,10}
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/database.c:629]Exit runSQLGetAllItem : result is <[ ]>
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/database.c:640]EXIT runSQLGetAllItem
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/database.c:3520]Get result and returen !
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/database.c:953]Enter runSQLGetItemNumber : cmd is {SELECT COUNT(*) AS item FROM (SELECT * FROM (SELECT extension as tmp, 'RingGroup' as account_type,ringgroup_name as fullname,'no' as out_of_service FROM ringgroups) LEFT JOIN (SELECT * FROM ringgroups_status)  WHERE tmp=extension) LEFT JOIN (SELECT extension AS b FROM numbers LEFT JOIN (SELECT user_id AS a FROM users WHERE users.privilege IN (SELECT privilege_id FROM privilege WHERE level < (SELECT level FROM privilege WHERE privilege_id=0)) OR user_id=1) WHERE user_id=a) WHERE extension=b }
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/database.c:976]item is {0}
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/database.c:3532]Total item is 0, total page is 0!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/cgi.c:984]Enter markParametersChanged!!!!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/cgi.c:1019]Exit markParametersChanged!!!!
+Jul 23 16:41:59 UCM6116 user.info UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/database.c:301]commitTransaction ! ID is [0]
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/cgi.c:1212]Package the result!
+Jul 23 16:41:59 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <0> [../src/cgi.c:960]package_result : buffer is [Status: 200 OK^M Content-Type: application/json;charset=UTF-8^M Server: Asterisk/1.8.9^M ^M { "response": { "account": [ ], "total_item": 0, "total_page": 0, "page": 1 }, "status": 0 }]!
+Jul 23 16:42:00 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/pvalue_monitor.c:328]Receive message OK:1,:web_timeout1!
+Jul 23 16:42:00 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/pvalue_monitor.c:309]Notification received: :web_timeout1 1
+Jul 23 16:42:00 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/users.c:524]getUserByUserIDInList: ID is 0
+Jul 23 16:42:00 UCM6116 user.info UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/pvalue_monitor.c:253]Cookie changed : Cookie is [sid2006722292-1406017494], update the timeout of admin
+Jul 23 16:42:00 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/utility.c:810]time_t2LocalTimestamp: The timestamp is: 2014-07-23 16:41:59.
+Jul 23 16:42:00 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-9> [../src/utility.c:763]timestamp2Time_t: The timestamp is: [2014-07-23 16:41:59] / {1406104919}.
+Jul 23 16:42:17 UCM6116 user.debug asterisk:  [20140723 164217.585] SECURITY[06172] res_security_log.c:138: SecurityEvent="ChallengeSent",EventTV="1406104937-585448",Severity="Informational",Service="SIP",EventVersion="1",AccountID="5005",SessionID="0x40b751b0",LocalAddress="IPV4/UDP/192.168.124.157/5060",RemoteAddress="IPV4/UDP/192.168.124.123/5060",Challenge="49b35c17",RequestType="REGISTER"
+Jul 23 16:42:17 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-1> [../src/ami.c:6511]recvbuf[Event: PeerStatus^M Privilege: system,all^M ChannelType: SIP^M Peer: SIP/5005^M PeerStatus: Registered^M Address: 192.168.124.123:5060^M ^M ], ret=133
+Jul 23 16:42:17 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-1> [../src/ami.c:6542]proc buf[Event: PeerStatus^M Privilege: system,all^M ChannelType: SIP^M Peer: SIP/5005^M PeerStatus: Registered^M Address: 192.168.124.123:5060]
+Jul 23 16:42:17 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-1> [../src/ami.c:255]Item is Event:  PeerStatus
+Jul 23 16:42:17 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-1> [../src/ami.c:6271]amiEventProc, start to proc event[PeerStatus][0]
+Jul 23 16:42:17 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-1> [../src/ami.c:255]Item is Peer:  SIP/5005
+Jul 23 16:42:17 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-1> [../src/ami.c:255]Item is PeerStatus:  Registered
+Jul 23 16:42:17 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-1> [../src/ami.c:255]Item is Address:  192.168.124.123:5060
+Jul 23 16:42:17 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-1> [../src/database.c:1006]Enter runSQLCmd : cmd is {UPDATE sip_extension_status SET addr='192.168.124.123:5060' WHERE extension='5005' AND addr!='192.168.124.123:5060'}
+Jul 23 16:42:17 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-1> [../src/database.c:1014]Update success !
+Jul 23 16:42:17 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-1> [../src/database.c:1006]Enter runSQLCmd : cmd is {UPDATE sip_extension_status SET status='Idle' WHERE extension='5005' AND status='Unavailable'}
+Jul 23 16:42:17 UCM6116 user.debug UCM6116_cgi: [cgi 1.0.0.3] <-1> [../src/database.c:1014]Update success !
+Jul 23 16:42:17 UCM6116 user.debug asterisk:  [20140723 164217.655] SECURITY[06172] res_security_log.c:138: SecurityEvent="SuccessfulAuth",EventTV="1406104937-654798",Severity="Informational",Service="SIP",EventVersion="1",AccountID="5005",SessionID="0x40b751b0",LocalAddress="IPV4/UDP/192.168.124.157/5060",RemoteAddress="IPV4/UDP/192.168.124.123/5060",UsingPassword="1",RequestType="REGISTER"

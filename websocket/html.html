@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <input id="msg" type="text" /> 
+    <button id="connect" onclick="connect();">Connect</button> 
+    <button id="send" onclick="send();">Send</button> 
+    <button id="close" onclick="close();">Close</button>
+    <script type="text/javascript">
+        var socket;
+ 
+        function connect()
+        {
+            try{
+                socket = new WebSocket('ws://192.168.124.27:9880');
+            }catch(e){
+                alert('error');
+                return;
+            }
+            socket.onopen = sOpen;
+            socket.onerror = sError;
+            socket.onmessage = sMessage;
+            socket.onclose = sClose;
+        }
+ 
+        function sOpen()
+        {
+            alert('connect success!');
+        }
+ 
+        function sError()
+        {
+            alert('connect error');
+        }
+ 
+        function sMessage(msg)
+        {
+            alert('server says:'+msg);
+        }
+ 
+        function sClose()
+        {
+            alert('connect close!');
+        }
+ 
+        function send()
+        {
+            socket.send('hello,i am maskwang');
+        }
+ 
+        function close()
+        {
+            socket.close();
+        }
+    </script>
+</body>
+</html>

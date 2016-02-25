@@ -1,0 +1,598 @@
+[20140126 181253.656] VERB [24343] pbx.c:4493:     -- Executing [1@conf-inv-menu:1] ExecIf("SIP/5001-000001aa", "1)?playback(dialog-being-recorded") in new stack
+
+
+[20140126 181255.861] VERB [24343] pbx.c:4493:     -- Executing [1@conf-inv-menu:2] Goto("SIP/5001-000001aa", "ext-conference,6300,1") in new stack
+
+
+[20140126 181255.863] VERB [24343] pbx.c:10235:     -- Goto (ext-conference,6300,1)
+
+
+[20140126 181255.864] VERB [24343] pbx.c:4493:     -- Executing [6300@ext-conference:1] Macro("SIP/5001-000001aa", "user-callerid,") in new stack
+
+
+[20140126 181255.867] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:1] Set("SIP/5001-000001aa", "_AAUSER=6300") in new stack
+
+
+[20140126 181255.869] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:2] NoOp("SIP/5001-000001aa", "6300") in new stack
+
+
+[20140126 181255.871] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:3] NoOp("SIP/5001-000001aa", "6300") in new stack
+
+
+[20140126 181255.873] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:4] GotoIf("SIP/5001-000001aa", "0?report") in new stack
+
+
+[20140126 181255.876] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:5] ExecIf("SIP/5001-000001aa", "0?Set(CHANNEL(language)=):Set(CHANNEL(language)=zh)") in new stack
+
+
+[20140126 181255.878] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:6] ExecIf("SIP/5001-000001aa", "0?Set(CHANNEL(language)=)") in new stack
+
+
+[20140126 181255.880] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:7] ExecIf("SIP/5001-000001aa", "1?Set(REALCALLERIDNUM=6300)") in new stack
+
+
+[20140126 181255.883] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:8] Set("SIP/5001-000001aa", "AAUSERCIDNAME=") in new stack
+
+
+[20140126 181255.886] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:9] ExecIf("SIP/5001-000001aa", "0?Set(AAUSERCIDNAME=Meeting invitation)") in new stack
+
+
+[20140126 181255.888] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:10] GotoIf("SIP/5001-000001aa", "1?report") in new stack
+
+
+[20140126 181255.889] VERB [24343] pbx.c:10235:     -- Goto (macro-user-callerid,s,13)
+
+
+[20140126 181255.891] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:13] Set("SIP/5001-000001aa", "OUTBOUNDCID=") in new stack
+
+
+[20140126 181255.894] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:14] ExecIf("SIP/5001-000001aa", "0?Set(CALLERID(all)=)") in new stack
+
+
+[20140126 181255.896] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:15] GotoIf("SIP/5001-000001aa", "0?continue") in new stack
+
+
+[20140126 181255.898] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:16] Set("SIP/5001-000001aa", "__TTL=63") in new stack
+
+
+[20140126 181255.900] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:17] GotoIf("SIP/5001-000001aa", "1?continue") in new stack
+
+
+[20140126 181255.901] VERB [24343] pbx.c:10235:     -- Goto (macro-user-callerid,s,24)
+
+
+[20140126 181255.903] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:24] Log("SIP/5001-000001aa", "NOTICE, "Using CallerID "Meeting invitation" <6300>"") in new stack
+
+
+[20140126 181255.905] VERB [24343] pbx.c:4493:     -- Executing [6300@ext-conference:2] Macro("SIP/5001-000001aa", "dial-conference,6300,rX,,,") in new stack
+
+
+[20140126 181255.908] VERB [24343] pbx.c:4493:     -- Executing [s@macro-dial-conference:1] Set("SIP/5001-000001aa", "NOCDR=") in new stack
+
+
+[20140126 181255.910] VERB [24343] pbx.c:4493:     -- Executing [s@macro-dial-conference:2] Macro("SIP/5001-000001aa", "user-callerid,") in new stack
+
+
+[20140126 181255.914] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:1] Set("SIP/5001-000001aa", "_AAUSER=6300") in new stack
+
+
+[20140126 181255.916] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:2] NoOp("SIP/5001-000001aa", "6300") in new stack
+
+
+[20140126 181255.918] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:3] NoOp("SIP/5001-000001aa", "6300") in new stack
+
+
+[20140126 181255.919] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:4] GotoIf("SIP/5001-000001aa", "0?report") in new stack
+
+
+[20140126 181255.922] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:5] ExecIf("SIP/5001-000001aa", "0?Set(CHANNEL(language)=):Set(CHANNEL(language)=zh)") in new stack
+
+
+[20140126 181255.925] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:6] ExecIf("SIP/5001-000001aa", "0?Set(CHANNEL(language)=)") in new stack
+
+
+[20140126 181255.927] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:7] ExecIf("SIP/5001-000001aa", "0?Set(REALCALLERIDNUM=6300)") in new stack
+
+
+[20140126 181255.929] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:8] Set("SIP/5001-000001aa", "AAUSERCIDNAME=") in new stack
+
+
+[20140126 181255.931] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:9] ExecIf("SIP/5001-000001aa", "0?Set(AAUSERCIDNAME=Meeting invitation)") in new stack
+
+
+[20140126 181255.934] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:10] GotoIf("SIP/5001-000001aa", "1?report") in new stack
+
+
+[20140126 181255.936] VERB [24343] pbx.c:10235:     -- Goto (macro-user-callerid,s,13)
+
+
+[20140126 181255.937] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:13] Set("SIP/5001-000001aa", "OUTBOUNDCID=") in new stack
+
+
+[20140126 181255.939] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:14] ExecIf("SIP/5001-000001aa", "0?Set(CALLERID(all)=)") in new stack
+
+
+[20140126 181255.941] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:15] GotoIf("SIP/5001-000001aa", "0?continue") in new stack
+
+
+[20140126 181255.944] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:16] Set("SIP/5001-000001aa", "__TTL=62") in new stack
+
+
+[20140126 181255.946] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:17] GotoIf("SIP/5001-000001aa", "1?continue") in new stack
+
+
+[20140126 181255.947] VERB [24343] pbx.c:10235:     -- Goto (macro-user-callerid,s,24)
+
+
+[20140126 181255.949] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:24] Log("SIP/5001-000001aa", "NOTICE, "Using CallerID "Meeting invitation" <6300>"") in new stack
+
+
+[20140126 181255.951] VERB [24343] pbx.c:4493:     -- Executing [s@macro-dial-conference:3] Set("SIP/5001-000001aa", "CDR(userfield)=CONF") in new stack
+
+
+[20140126 181255.954] VERB [24343] pbx.c:4493:     -- Executing [s@macro-dial-conference:4] GotoIf("SIP/5001-000001aa", "1?resetted") in new stack
+
+
+[20140126 181255.956] VERB [24343] pbx.c:10235:     -- Goto (macro-dial-conference,s,7)
+
+
+[20140126 181255.957] VERB [24343] pbx.c:4493:     -- Executing [s@macro-dial-conference:7] Answer("SIP/5001-000001aa", "") in new stack
+
+
+[20140126 181255.959] VERB [24343] pbx.c:4493:     -- Executing [s@macro-dial-conference:8] GotoIf("SIP/5001-000001aa", "1?joined") in new stack
+
+
+[20140126 181255.961] VERB [24343] pbx.c:10235:     -- Goto (macro-dial-conference,s,27)
+
+
+[20140126 181255.962] VERB [24343] pbx.c:4493:     -- Executing [s@macro-dial-conference:27] MeetMe("SIP/5001-000001aa", "6300,rXJ") in new stack
+
+UCM6116*CLI> 
+UCM6116*CLI> 
+UCM6116*CLI> 
+UCM6116*CLI> 
+UCM6116*CLI> 
+UCM6116*CLI> 
+UCM6116*CLI> 
+UCM6116*CLI> 
+UCM6116*CLI> 
+UCM6116*CLI> 
+UCM6116*CLI> 
+UCM6116*CLI> 
+UCM6116*CLI> 
+UCM6116*CLI> 
+UCM6116*CLI> 
+UCM6116*CLI> 
+UCM6116*CLI> 
+UCM6116*CLI> 
+
+[20140126 181303.280] DTMF [24343] channel.c:4179: DTMF begin '0' received on SIP/5001-000001aa
+
+
+[20140126 181303.281] DTMF [24343] channel.c:4189: DTMF begin passthrough '0' on SIP/5001-000001aa
+
+
+[20140126 181303.459] DTMF [24343] channel.c:4094: DTMF end '0' received on SIP/5001-000001aa, duration 160 ms
+
+
+[20140126 181303.460] DTMF [24343] channel.c:4134: DTMF end accepted with begin '0' on SIP/5001-000001aa
+
+
+[20140126 181303.461] DTMF [24343] channel.c:4163: DTMF end passthrough '0' on SIP/5001-000001aa
+
+
+[20140126 181303.483] ERROR[24343] chan_dahdi.c:6836: [fd:39]Unable to set the hardware gain, is_tx:1, gain:0.000000, res:-1, errno:25(Inappropriate ioctl for device) !!
+[20140126 181303.485] ERROR[24343] chan_dahdi.c:6836: [fd:39]Unable to set the hardware gain, is_tx:0, gain:0.000000, res:-1, errno:25(Inappropriate ioctl for device) !!
+[20140126 181303.527] ERROR[24343] chan_dahdi.c:6836: [fd:37]Unable to set the hardware gain, is_tx:1, gain:0.000000, res:-1, errno:25(Inappropriate ioctl for device) !!
+[20140126 181303.528] ERROR[24343] chan_dahdi.c:6836: [fd:37]Unable to set the hardware gain, is_tx:0, gain:0.000000, res:-1, errno:25(Inappropriate ioctl for device) !!
+[20140126 181303.557] VERB [24343] pbx.c:4493:     -- Executing [0@conf-tools:1] Wait("SIP/5001-000001aa", "1") in new stack
+
+
+[20140126 181304.560] VERB [24343] pbx.c:4493:     -- Executing [0@conf-tools:2] Set("SIP/5001-000001aa", "__CONF_INV_CONFIRM=yes") in new stack
+
+
+[20140126 181304.562] VERB [24343] pbx.c:4493:     -- Executing [0@conf-tools:3] Set("SIP/5001-000001aa", "CONF_LOCKED=0") in new stack
+
+
+[20140126 181304.564] VERB [24343] pbx.c:4493:     -- Executing [0@conf-tools:4] GotoIf("SIP/5001-000001aa", "0?locked") in new stack
+
+
+[20140126 181304.566] VERB [24343] pbx.c:4493:     -- Executing [0@conf-tools:5] Read("SIP/5001-000001aa", "DEST_EXT,conf-invite,,i") in new stack
+
+
+[20140126 181309.885] DTMF [24343] channel.c:4179: DTMF begin '5' received on SIP/5001-000001aa
+
+
+[20140126 181309.887] DTMF [24343] channel.c:4183: DTMF begin ignored '5' on SIP/5001-000001aa
+
+
+[20140126 181310.065] DTMF [24343] channel.c:4094: DTMF end '5' received on SIP/5001-000001aa, duration 160 ms
+
+
+[20140126 181310.066] DTMF [24343] channel.c:4163: DTMF end passthrough '5' on SIP/5001-000001aa
+
+
+[20140126 181310.205] DTMF [24343] channel.c:4179: DTMF begin '0' received on SIP/5001-000001aa
+
+
+[20140126 181310.206] DTMF [24343] channel.c:4183: DTMF begin ignored '0' on SIP/5001-000001aa
+
+
+[20140126 181310.385] DTMF [24343] channel.c:4094: DTMF end '0' received on SIP/5001-000001aa, duration 160 ms
+
+
+[20140126 181310.386] DTMF [24343] channel.c:4163: DTMF end passthrough '0' on SIP/5001-000001aa
+
+
+[20140126 181310.612] DTMF [24343] channel.c:4179: DTMF begin '0' received on SIP/5001-000001aa
+
+
+[20140126 181310.614] DTMF [24343] channel.c:4183: DTMF begin ignored '0' on SIP/5001-000001aa
+
+
+[20140126 181310.792] DTMF [24343] channel.c:4094: DTMF end '0' received on SIP/5001-000001aa, duration 160 ms
+
+
+[20140126 181310.793] DTMF [24343] channel.c:4163: DTMF end passthrough '0' on SIP/5001-000001aa
+
+
+[20140126 181310.992] DTMF [24343] channel.c:4179: DTMF begin '0' received on SIP/5001-000001aa
+
+
+[20140126 181310.994] DTMF [24343] channel.c:4183: DTMF begin ignored '0' on SIP/5001-000001aa
+
+
+[20140126 181311.172] DTMF [24343] channel.c:4094: DTMF end '0' received on SIP/5001-000001aa, duration 160 ms
+
+
+[20140126 181311.174] DTMF [24343] channel.c:4163: DTMF end passthrough '0' on SIP/5001-000001aa
+
+
+[20140126 181316.176] VERB [24343] pbx.c:4493:     -- Executing [0@conf-tools:6] Dial("SIP/5001-000001aa", "local/5000@from-internal,,gG(conf-tools,conf-inv,1)m(rbt)") in new stack
+
+
+[20140126 181316.178] CC   [24343] ccss.c:2189: Agent policy for SIP/5001-000001aa is 'never'. CC not possible
+
+
+[20140126 181316.185] VERB [24345] pbx.c:4493:     -- Executing [5000@from-internal:1] Macro("Local/5000@from-internal-00000048;2", "exten-vm,5000,5000") in new stack
+
+
+[20140126 181316.188] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:1] Macro("Local/5000@from-internal-00000048;2", "user-callerid") in new stack
+
+
+[20140126 181316.190] VERB [24345] pbx.c:4493:     -- Executing [s@macro-user-callerid:1] Set("Local/5000@from-internal-00000048;2", "_AAUSER=6300") in new stack
+
+
+[20140126 181316.197] VERB [24345] pbx.c:4493:     -- Executing [s@macro-user-callerid:2] NoOp("Local/5000@from-internal-00000048;2", "6300") in new stack
+
+
+[20140126 181316.199] VERB [24345] pbx.c:4493:     -- Executing [s@macro-user-callerid:3] NoOp("Local/5000@from-internal-00000048;2", "6300") in new stack
+
+
+[20140126 181316.201] VERB [24345] pbx.c:4493:     -- Executing [s@macro-user-callerid:4] GotoIf("Local/5000@from-internal-00000048;2", "1?report") in new stack
+
+
+[20140126 181316.203] VERB [24345] pbx.c:10235:     -- Goto (macro-user-callerid,s,13)
+
+
+[20140126 181316.211] VERB [24345] pbx.c:4493:     -- Executing [s@macro-user-callerid:13] Set("Local/5000@from-internal-00000048;2", "OUTBOUNDCID=") in new stack
+
+
+[20140126 181316.213] VERB [24345] pbx.c:4493:     -- Executing [s@macro-user-callerid:14] ExecIf("Local/5000@from-internal-00000048;2", "0?Set(CALLERID(all)=)") in new stack
+
+
+[20140126 181316.216] VERB [24345] pbx.c:4493:     -- Executing [s@macro-user-callerid:15] GotoIf("Local/5000@from-internal-00000048;2", "0?continue") in new stack
+
+
+[20140126 181316.218] VERB [24345] pbx.c:4493:     -- Executing [s@macro-user-callerid:16] Set("Local/5000@from-internal-00000048;2", "__TTL=61") in new stack
+
+
+[20140126 181316.220] VERB [24345] pbx.c:4493:     -- Executing [s@macro-user-callerid:17] GotoIf("Local/5000@from-internal-00000048;2", "1?continue") in new stack
+
+
+[20140126 181316.222] VERB [24345] pbx.c:10235:     -- Goto (macro-user-callerid,s,24)
+
+
+[20140126 181316.224] VERB [24345] pbx.c:4493:     -- Executing [s@macro-user-callerid:24] Log("Local/5000@from-internal-00000048;2", "NOTICE, "Using CallerID "Meeting invitation" <6300>"") in new stack
+
+
+[20140126 181316.226] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:2] Set("Local/5000@from-internal-00000048;2", "CDR(userfield)=EXT") in new stack
+
+
+[20140126 181316.228] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:3] Set("Local/5000@from-internal-00000048;2", "VMBOX=5000") in new stack
+
+
+[20140126 181316.230] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:4] Set("Local/5000@from-internal-00000048;2", "EXTTOCALL=5000") in new stack
+
+
+[20140126 181316.233] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:5] Set("Local/5000@from-internal-00000048;2", "DNDON=") in new stack
+
+
+[20140126 181316.235] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:6] Set("Local/5000@from-internal-00000048;2", "CFBEXT=") in new stack
+
+
+[20140126 181316.238] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:7] Set("Local/5000@from-internal-00000048;2", "CFNEXT=") in new stack
+
+
+[20140126 181316.240] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:8] Set("Local/5000@from-internal-00000048;2", "CFUEXT=") in new stack
+
+
+[20140126 181316.242] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:9] ExecIf("Local/5000@from-internal-00000048;2", "1?Set(DNDON=no)") in new stack
+
+
+[20140126 181316.245] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:10] ExecIf("Local/5000@from-internal-00000048;2", "1?Set(CFBEXT=)") in new stack
+
+
+[20140126 181316.248] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:11] ExecIf("Local/5000@from-internal-00000048;2", "1?Set(CFNEXT=)") in new stack
+
+
+[20140126 181316.250] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:12] ExecIf("Local/5000@from-internal-00000048;2", "1?Set(CFUEXT=)") in new stack
+
+
+[20140126 181316.253] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:13] ExecIf("Local/5000@from-internal-00000048;2", "0?Set(DIALSTATUS=BUSY)") in new stack
+
+
+[20140126 181316.256] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:14] GotoIf("Local/5000@from-internal-00000048;2", "0?sent2vm") in new stack
+
+
+[20140126 181316.258] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:15] GotoIf("Local/5000@from-internal-00000048;2", "0?docfu,1") in new stack
+
+
+[20140126 181316.260] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:16] Set("Local/5000@from-internal-00000048;2", "CALL_RT=60") in new stack
+
+
+[20140126 181316.262] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:17] Set("Local/5000@from-internal-00000048;2", "USER_RT=") in new stack
+
+
+[20140126 181316.264] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:18] ExecIf("Local/5000@from-internal-00000048;2", "0?Set(CALL_RT=)") in new stack
+
+
+[20140126 181316.267] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:19] Macro("Local/5000@from-internal-00000048;2", "record-check,6300-5000,") in new stack
+
+
+[20140126 181316.269] VERB [24345] pbx.c:4493:     -- Executing [s@macro-record-check:1] Set("Local/5000@from-internal-00000048;2", "USER_LIST=6300-5000") in new stack
+
+
+[20140126 181316.272] VERB [24345] pbx.c:4493:     -- Executing [s@macro-record-check:2] NoOp("Local/5000@from-internal-00000048;2", "5000-5004") in new stack
+
+
+[20140126 181316.274] VERB [24345] pbx.c:4493:     -- Executing [s@macro-record-check:3] NoOp("Local/5000@from-internal-00000048;2", "5000") in new stack
+
+
+[20140126 181316.276] VERB [24345] pbx.c:4493:     -- Executing [s@macro-record-check:4] Set("Local/5000@from-internal-00000048;2", "RINGGROUP_NUMBER=5000") in new stack
+
+
+[20140126 181316.279] VERB [24345] pbx.c:4493:     -- Executing [s@macro-record-check:5] NoOp("Local/5000@from-internal-00000048;2", "") in new stack
+
+
+[20140126 181316.280] VERB [24345] pbx.c:4493:     -- Executing [s@macro-record-check:6] Set("Local/5000@from-internal-00000048;2", "TRUNK_IND=") in new stack
+
+
+[20140126 181316.282] VERB [24345] pbx.c:4493:     -- Executing [s@macro-record-check:7] Set("Local/5000@from-internal-00000048;2", "REC_ENABLE=no") in new stack
+
+
+[20140126 181316.284] VERB [24345] pbx.c:4493:     -- Executing [s@macro-record-check:8] GotoIf("Local/5000@from-internal-00000048;2", "1?final") in new stack
+
+
+[20140126 181316.286] VERB [24345] pbx.c:10235:     -- Goto (macro-record-check,s,35)
+
+
+[20140126 181316.288] VERB [24345] pbx.c:4493:     -- Executing [s@macro-record-check:35] GotoIf("Local/5000@from-internal-00000048;2", "0?record") in new stack
+
+
+[20140126 181316.290] VERB [24345] pbx.c:4493:     -- Executing [s@macro-record-check:36] MacroExit("Local/5000@from-internal-00000048;2", "") in new stack
+
+
+[20140126 181316.293] VERB [24345] pbx.c:4493:     -- Executing [s@macro-exten-vm:20] Macro("Local/5000@from-internal-00000048;2", "dial,5000,60") in new stack
+
+
+[20140126 181316.296] VERB [24345] pbx.c:4493:     -- Executing [s@macro-dial:1] GotoIf("Local/5000@from-internal-00000048;2", "1?dial") in new stack
+
+
+[20140126 181316.298] VERB [24345] pbx.c:10235:     -- Goto (macro-dial,s,3)
+
+
+[20140126 181316.300] VERB [24345] pbx.c:4493:     -- Executing [s@macro-dial:3] Set("Local/5000@from-internal-00000048;2", "DIAL_STR=SIP/5000") in new stack
+
+
+[20140126 181316.302] VERB [24345] pbx.c:4493:     -- Executing [s@macro-dial:4] Set("Local/5000@from-internal-00000048;2", "CALL_RT=60") in new stack
+
+
+[20140126 181316.304] VERB [24345] pbx.c:4493:     -- Executing [s@macro-dial:5] Macro("Local/5000@from-internal-00000048;2", "set-call-options,") in new stack
+
+
+[20140126 181316.307] VERB [24345] pbx.c:4493:     -- Executing [s@macro-set-call-options:1] Set("Local/5000@from-internal-00000048;2", "CALL_OPTIONS=xX") in new stack
+
+
+[20140126 181316.309] VERB [24345] pbx.c:4493:     -- Executing [s@macro-set-call-options:2] ExecIf("Local/5000@from-internal-00000048;2", "0?Set(CALL_OPTIONS=x)") in new stack
+
+
+[20140126 181316.311] VERB [24345] pbx.c:4493:     -- Executing [s@macro-set-call-options:3] ExecIf("Local/5000@from-internal-00000048;2", "0?Set(CALL_OPTIONS=xXA(dialog-being-recorded)m(rbt))") in new stack
+
+
+[20140126 181316.315] VERB [24345] pbx.c:4493:     -- Executing [s@macro-dial:6] ExecIf("Local/5000@from-internal-00000048;2", "0?Set(CALL_OPTIONS=xXm(rbt))") in new stack
+
+
+[20140126 181316.317] VERB [24345] pbx.c:4493:     -- Executing [s@macro-dial:7] Dial("Local/5000@from-internal-00000048;2", "SIP/5000,60,xX") in new stack
+
+
+[20140126 181316.319] CC   [24345] ccss.c:2189: Agent policy for Local/5000@from-internal-00000048;2 is 'never'. CC not possible
+
+UCM6116*CLI> 
+UCM6116*CLI> 
+UCM6116*CLI> 
+UCM6116*CLI> 
+
+[20140126 181320.119] VERB [24343] pbx.c:4493:     -- Executing [conf-inv@conf-tools:1] Goto("SIP/5001-000001aa", "ext-conference,6300,1") in new stack
+
+
+[20140126 181320.124] VERB [24343] pbx.c:10235:     -- Goto (ext-conference,6300,1)
+
+
+[20140126 181320.125] VERB [24343] pbx.c:4493:     -- Executing [6300@ext-conference:1] Macro("SIP/5001-000001aa", "user-callerid,") in new stack
+
+
+[20140126 181320.129] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:1] Set("SIP/5001-000001aa", "_AAUSER=6300") in new stack
+
+
+[20140126 181320.133] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:2] NoOp("SIP/5001-000001aa", "6300") in new stack
+
+
+[20140126 181320.135] VERB [24346] pbx.c:4493:     -- Executing [conf-inv@conf-tools:2] Set("Local/5000@from-internal-00000048;1", "__CONF_OPTIONS=rX") in new stack
+
+
+[20140126 181320.135] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:3] NoOp("SIP/5001-000001aa", "6300") in new stack
+
+
+[20140126 181320.139] VERB [24346] pbx.c:4493:     -- Executing [conf-inv@conf-tools:3] Goto("Local/5000@from-internal-00000048;1", "conf-inv-menu,s,1") in new stack
+
+
+[20140126 181320.140] VERB [24346] pbx.c:10235:     -- Goto (conf-inv-menu,s,1)
+
+
+[20140126 181320.139] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:4] GotoIf("SIP/5001-000001aa", "0?report") in new stack
+
+
+[20140126 181320.146] VERB [24346] pbx.c:4493:     -- Executing [s@conf-inv-menu:1] Wait("Local/5000@from-internal-00000048;1", "1") in new stack
+
+
+[20140126 181320.148] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:5] ExecIf("SIP/5001-000001aa", "0?Set(CHANNEL(language)=):Set(CHANNEL(language)=zh)") in new stack
+
+
+[20140126 181320.151] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:6] ExecIf("SIP/5001-000001aa", "0?Set(CHANNEL(language)=)") in new stack
+
+
+[20140126 181320.154] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:7] ExecIf("SIP/5001-000001aa", "0?Set(REALCALLERIDNUM=6300)") in new stack
+
+
+[20140126 181320.160] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:8] Set("SIP/5001-000001aa", "AAUSERCIDNAME=") in new stack
+
+
+[20140126 181320.165] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:9] ExecIf("SIP/5001-000001aa", "0?Set(AAUSERCIDNAME=Meeting invitation)") in new stack
+
+
+[20140126 181320.167] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:10] GotoIf("SIP/5001-000001aa", "1?report") in new stack
+
+
+[20140126 181320.169] VERB [24343] pbx.c:10235:     -- Goto (macro-user-callerid,s,13)
+
+
+[20140126 181320.171] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:13] Set("SIP/5001-000001aa", "OUTBOUNDCID=") in new stack
+
+
+[20140126 181320.174] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:14] ExecIf("SIP/5001-000001aa", "0?Set(CALLERID(all)=)") in new stack
+
+
+[20140126 181320.177] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:15] GotoIf("SIP/5001-000001aa", "0?continue") in new stack
+
+
+[20140126 181320.179] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:16] Set("SIP/5001-000001aa", "__TTL=61") in new stack
+
+
+[20140126 181320.181] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:17] GotoIf("SIP/5001-000001aa", "1?continue") in new stack
+
+
+[20140126 181320.183] VERB [24343] pbx.c:10235:     -- Goto (macro-user-callerid,s,24)
+
+
+[20140126 181320.185] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:24] Log("SIP/5001-000001aa", "NOTICE, "Using CallerID "Meeting invitation" <6300>"") in new stack
+
+
+[20140126 181320.187] VERB [24343] pbx.c:4493:     -- Executing [6300@ext-conference:2] Macro("SIP/5001-000001aa", "dial-conference,6300,rX,,,") in new stack
+
+
+[20140126 181320.190] VERB [24343] pbx.c:4493:     -- Executing [s@macro-dial-conference:1] Set("SIP/5001-000001aa", "NOCDR=") in new stack
+
+
+[20140126 181320.191] VERB [24343] pbx.c:4493:     -- Executing [s@macro-dial-conference:2] Macro("SIP/5001-000001aa", "user-callerid,") in new stack
+
+
+[20140126 181320.195] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:1] Set("SIP/5001-000001aa", "_AAUSER=6300") in new stack
+
+
+[20140126 181320.197] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:2] NoOp("SIP/5001-000001aa", "6300") in new stack
+
+
+[20140126 181320.199] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:3] NoOp("SIP/5001-000001aa", "6300") in new stack
+
+
+[20140126 181320.200] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:4] GotoIf("SIP/5001-000001aa", "0?report") in new stack
+
+
+[20140126 181320.203] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:5] ExecIf("SIP/5001-000001aa", "0?Set(CHANNEL(language)=):Set(CHANNEL(language)=zh)") in new stack
+
+
+[20140126 181320.205] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:6] ExecIf("SIP/5001-000001aa", "0?Set(CHANNEL(language)=)") in new stack
+
+
+[20140126 181320.208] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:7] ExecIf("SIP/5001-000001aa", "0?Set(REALCALLERIDNUM=6300)") in new stack
+
+
+[20140126 181320.210] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:8] Set("SIP/5001-000001aa", "AAUSERCIDNAME=") in new stack
+
+
+[20140126 181320.213] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:9] ExecIf("SIP/5001-000001aa", "0?Set(AAUSERCIDNAME=Meeting invitation)") in new stack
+
+
+[20140126 181320.215] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:10] GotoIf("SIP/5001-000001aa", "1?report") in new stack
+
+
+[20140126 181320.216] VERB [24343] pbx.c:10235:     -- Goto (macro-user-callerid,s,13)
+
+
+[20140126 181320.218] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:13] Set("SIP/5001-000001aa", "OUTBOUNDCID=") in new stack
+
+
+[20140126 181320.220] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:14] ExecIf("SIP/5001-000001aa", "0?Set(CALLERID(all)=)") in new stack
+
+
+[20140126 181320.222] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:15] GotoIf("SIP/5001-000001aa", "0?continue") in new stack
+
+
+[20140126 181320.225] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:16] Set("SIP/5001-000001aa", "__TTL=60") in new stack
+
+
+[20140126 181320.227] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:17] GotoIf("SIP/5001-000001aa", "1?continue") in new stack
+
+
+[20140126 181320.228] VERB [24343] pbx.c:10235:     -- Goto (macro-user-callerid,s,24)
+
+
+[20140126 181320.230] VERB [24343] pbx.c:4493:     -- Executing [s@macro-user-callerid:24] Log("SIP/5001-000001aa", "NOTICE, "Using CallerID "Meeting invitation" <6300>"") in new stack
+
+
+[20140126 181320.233] VERB [24343] pbx.c:4493:     -- Executing [s@macro-dial-conference:3] Set("SIP/5001-000001aa", "CDR(userfield)=CONF") in new stack
+
+
+[20140126 181320.235] VERB [24343] pbx.c:4493:     -- Executing [s@macro-dial-conference:4] GotoIf("SIP/5001-000001aa", "1?resetted") in new stack
+
+
+[20140126 181320.236] VERB [24343] pbx.c:10235:     -- Goto (macro-dial-conference,s,7)
+
+
+[20140126 181320.238] VERB [24343] pbx.c:4493:     -- Executing [s@macro-dial-conference:7] Answer("SIP/5001-000001aa", "") in new stack
+
+
+[20140126 181320.240] VERB [24343] pbx.c:4493:     -- Executing [s@macro-dial-conference:8] GotoIf("SIP/5001-000001aa", "1?joined") in new stack
+
+
+[20140126 181320.241] VERB [24343] pbx.c:10235:     -- Goto (macro-dial-conference,s,27)
+
+
+[20140126 181320.243] VERB [24343] pbx.c:4493:     -- Executing [s@macro-dial-conference:27] MeetMe("SIP/5001-000001aa", "6300,rXJ") in new stack
+
+
+[20140126 181320.848] VERB [24345] pbx.c:5413:   == Spawn extension (from-internal, 5000, 1) exited non-zero on 'Local/5000@from-internal-00000048;2'
+
+
+[20140126 181321.148] VERB [24346] pbx.c:4493:     -- Executing [s@conf-inv-menu:2] NoOp("SIP/5000-000001ab", "__CONF_ROOM=") in new stack
+
+[20140126 181321.149] VERB [24346] pbx.c:4493:     -- Executing [s@conf-inv-menu:3] NoOp("SIP/5000-000001ab", "CONF_ROOM=6300") in new stack
+
+[20140126 181321.149] VERB [24346] pbx.c:4493:     -- Executing [s@conf-inv-menu:4] NoOp("SIP/5000-000001ab", "6300") in new stack
+
+[20140126 181321.149] VERB [24346] pbx.c:4493:     -- Executing [s@conf-inv-menu:5] ExecIf("SIP/5000-000001ab", "0?Set(CHANNEL(language)=):Set(CHANNEL(language)=zh)") in new stack
+
+[20140126 181321.149] VERB [24346] pbx.c:4493:     -- Executing [s@conf-inv-menu:6] GotoIf("SIP/5000-000001ab", "0?bypass") in new stack
+
+[20140126 181321.150] VERB [24346] pbx.c:4493:     -- Executing [s@conf-inv-menu:7] BackGround("SIP/5000-000001ab", "this-call-may-be&to-join-a-meeting&followme/options,") in new stack

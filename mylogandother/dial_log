@@ -1,0 +1,28 @@
+CREATE TABLE ringgroups_status (
+  extension VARCHAR   NOT NULL PRIMARY KEY,
+  status    VARCHAR NOT NULL DEFAULT 'Unavailable',
+  addr      VARCHAR(60) NOT NULL DEFAULT '-',
+  urgemsg   INT  DEFAULT 0,
+  newmsg    INT  DEFAULT 0,
+  oldmsg    INT  DEFAULT 0,
+  CHECK (status IN ('Unavailable', 'Idle', 'InUse', 'Ringing')),
+  FOREIGN KEY (extension) REFERENCES  ringgroups(extension)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+INSERT INTO ringgroups_status('extension') values('6400');
+
+CREATE TABLE vmgroups_status (
+  extension VARCHAR   NOT NULL PRIMARY KEY,
+  status    VARCHAR NOT NULL DEFAULT 'Unavailable',
+  addr      VARCHAR(60) NOT NULL DEFAULT '-',
+  urgemsg   INT  DEFAULT 0,
+  newmsg    INT  DEFAULT 0,
+  oldmsg    INT  DEFAULT 0,
+  CHECK (status IN ('Unavailable', 'Idle', 'InUse', 'Ringing')),
+  FOREIGN KEY (extension) REFERENCES  vmgroups(extension)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+INSERT INTO vmgroups_status('extension') values('6600');
+

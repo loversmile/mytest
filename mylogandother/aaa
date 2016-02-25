@@ -1,0 +1,44 @@
+1||5001|5000|from-internal|"aaa" <5001>|SIP/5001-00000000|SIP/5000-00000001|Dial|SIP/5000,60,|2014-01-04 17:55:00|2014-01-04 17:55:05|2014-01-04 17:55:06|6|1|ANSWERED|DOCUMENTATION|1388829300.0|EXT|5001|5000|s|aaa|
+2||5001|5000|from-internal|"aaa" <5001>|SIP/5001-00000002|SIP/5000-00000003|Dial|SIP/5000,60,|2014-01-04 17:55:48|2014-01-04 17:55:51|2014-01-04 17:55:58|10|7|ANSWERED|DOCUMENTATION|1388829348.2|EXT|5001|5000|s|aaa|
+3||5001|5000|from-internal|"aaa" <5001>|SIP/5001-00000004|SIP/5000-00000005|Dial|SIP/5000,60,|2014-01-04 17:58:43|2014-01-04 17:58:44|2014-01-04 17:58:49|6|5|ANSWERED|DOCUMENTATION|1388829523.4|EXT|5001|5000|s|aaa|
+4||5000|5001|from-internal|"JXX" <5000>|SIP/5000-00000006|SIP/5001-00000007|Dial|SIP/5001,60,|2014-01-04 17:59:44|2014-01-04 17:59:45|2014-01-04 17:59:51|7|6|ANSWERED|DOCUMENTATION|1388829584.6|EXT|5000|5001|s|JXX|
+5||5001|5000|from-internal|"aaa" <5001>|SIP/5001-00000008|SIP/5000-00000009|Dial|SIP/5000,60,|2014-01-06 08:55:54|2014-01-06 08:56:04|2014-01-06 08:56:22|28|18|ANSWERED|DOCUMENTATION|1388969754.8|EXT|5001|5000|s|aaa|
+6||5001|5000|from-internal|"aaa" <5001>|SIP/5001-0000000a|SIP/5000-0000000b|Dial|SIP/5000,60,|2014-01-06 10:15:26||2014-01-06 10:15:34|8|0|NO ANSWER|DOCUMENTATION|1388974526.10|EXT|5001|5000|s|aaa|
+
+CREATE TABLE cdr (AcctId INTEGER PRIMARY KEY, accountcode, src, dst, dcontext, clid, channel, dstchannel, lastapp, lastdata, start, answer, end, duration, billsec, disposition, amaflags, uniqueid, userfield, channel_ext, dstchannel_ext, service , caller_name, recordfiles);
+
+
+[5001]
+username = 5001
+account_type = SIP
+mailbox = 5001
+hasvoicemail = yes
+context = from-internal
+secret = 1234aa
+vmsecret = 1111
+skip_vmsecret = no
+auto_record = no
+encryption = no
+faxdetect = no
+strategy_ipacl = 0
+bypass_outrt_auth = no
+type = peer
+disallow = all
+allow = ulaw,alaw,gsm,g726,g722,g729,h264
+permission = internal
+host = dynamic
+call_limit = 100
+callcounter = yes
+nat = yes
+directmedia = no
+dtmfmode = rfc2833
+insecure = port
+transport = udp,tcp,tls
+enable_qualify = yes
+qualify = 1000
+qualifyfreq = 60
+enablehotdesk = no
+
+5001 = 1111,5001,
+5000 = 089158,5000,
+5002 = 2005,5002

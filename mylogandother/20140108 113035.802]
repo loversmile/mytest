@@ -1,0 +1,1250 @@
+[20140108 113035.802] ERROR[05955] chan_sip.c:29504: handle status is 1
+
+
+[20140108 113035.804] SECURITY[05907] res_security_log.c:138: SecurityEvent="ChallengeSent",EventTV="1389151835-803877",Severity="Informational",Service="SIP"
+
+
+[20140108 113035.830] VERB [05955] cdr.c:767: [SIP/5000-00000088]ast_cdr_start(0x42f286e8) src[5000] dst[5001] ... 
+[20140108 113035.836] ERROR[05955] chan_sip.c:29504: handle status is 0
+
+
+[20140108 113035.838] SECURITY[05907] res_security_log.c:138: SecurityEvent="SuccessfulAuth",EventTV="1389151835-838102",Severity="Informational",Service="SI"
+
+
+[20140108 113035.840] VERB [20960] cdr.c:1225: [SIP/5000-00000088]ast_cdr_update(0x42f13948) ... 
+[20140108 113035.841] VERB [20960] pbx.c:4493:     -- Executing [5001@from-internal:1] Macro("SIP/5000-00000088", "exten-vm,5001,5001") in new stack
+
+
+[20140108 113035.849] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:1] Macro("SIP/5000-00000088", "user-callerid") in new stack
+
+
+[20140108 113035.852] VERB [20960] pbx.c:4493:     -- Executing [s@macro-user-callerid:1] Set("SIP/5000-00000088", "_AAUSER=5000") in new stack
+
+
+[20140108 113035.854] VERB [20960] pbx.c:4493:     -- Executing [s@macro-user-callerid:2] GotoIf("SIP/5000-00000088", "0?report") in new stack
+
+
+[20140108 113035.855] VERB [20960] pbx.c:4493:     -- Executing [s@macro-user-callerid:3] ExecIf("SIP/5000-00000088", "1?Set(REALCALLERIDNUM=5000)") in new sk
+
+
+[20140108 113035.857] VERB [20960] pbx.c:4493:     -- Executing [s@macro-user-callerid:4] Set("SIP/5000-00000088", "AAUSERCIDNAME=") in new stack
+
+
+[20140108 113035.861] VERB [20960] pbx.c:4493:     -- Executing [s@macro-user-callerid:5] ExecIf("SIP/5000-00000088", "0?Set(AAUSERCIDNAME=JXX)") in new stack
+
+
+[20140108 113035.862] VERB [20960] pbx.c:4493:     -- Executing [s@macro-user-callerid:6] GotoIf("SIP/5000-00000088", "1?report") in new stack
+
+
+[20140108 113035.864] VERB [20960] pbx.c:10233:     -- Goto (macro-user-callerid,s,11)
+
+
+[20140108 113035.865] VERB [20960] pbx.c:4493:     -- Executing [s@macro-user-callerid:11] Set("SIP/5000-00000088", "OUTBOUNDCID=") in new stack
+
+
+[20140108 113035.867] VERB [20960] pbx.c:4493:     -- Executing [s@macro-user-callerid:12] ExecIf("SIP/5000-00000088", "0?Set(CALLERID(all)=)") in new stack
+
+
+[20140108 113035.868] VERB [20960] pbx.c:4493:     -- Executing [s@macro-user-callerid:13] GotoIf("SIP/5000-00000088", "0?continue") in new stack
+
+
+[20140108 113035.870] VERB [20960] pbx.c:4493:     -- Executing [s@macro-user-callerid:14] Set("SIP/5000-00000088", "__TTL=64") in new stack
+
+
+[20140108 113035.871] VERB [20960] pbx.c:4493:     -- Executing [s@macro-user-callerid:15] GotoIf("SIP/5000-00000088", "1?continue") in new stack
+
+
+[20140108 113035.872] VERB [20960] pbx.c:10233:     -- Goto (macro-user-callerid,s,22)
+
+
+[20140108 113035.874] VERB [20960] pbx.c:4493:     -- Executing [s@macro-user-callerid:22] Log("SIP/5000-00000088", "NOTICE, "Using CallerID "JXX" <5000>"") k
+
+
+[20140108 113035.876] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:2] Set("SIP/5000-00000088", "CDR(userfield)=EXT") in new stack
+
+[20140108 113035.877] VERB [20960] cdr.c:1195: [SIP/5000-00000088]ast_cdr_setuserfield(0x42f13948:0x42f286e8, 0x43275f6f) src[5000] dst[5001] ... 
+[20140108 113035.878] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:3] Set("SIP/5000-00000088", "VMBOX=5001") in new stack
+
+[20140108 113035.879] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:4] Set("SIP/5000-00000088", "EXTTOCALL=5001") in new stack
+
+[20140108 113035.880] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:5] Set("SIP/5000-00000088", "DNDON=") in new stack
+
+[20140108 113035.882] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:6] Set("SIP/5000-00000088", "CFBEXT=") in new stack
+
+[20140108 113035.884] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:7] Set("SIP/5000-00000088", "CFNEXT=") in new stack
+
+[20140108 113035.885] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:8] Set("SIP/5000-00000088", "CFUEXT=") in new stack
+
+[20140108 113035.887] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:9] ExecIf("SIP/5000-00000088", "0?Set(DNDON=no)") in new stack
+
+[20140108 113035.888] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:10] ExecIf("SIP/5000-00000088", "0?Set(CFBEXT=)") in new stack
+
+[20140108 113035.889] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:11] ExecIf("SIP/5000-00000088", "0?Set(CFNEXT=)") in new stack
+
+[20140108 113035.891] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:12] ExecIf("SIP/5000-00000088", "0?Set(CFUEXT=)") in new stack
+
+[20140108 113035.892] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:13] ExecIf("SIP/5000-00000088", "0?Set(DIALSTATUS=BUSY)") in new stack
+
+[20140108 113035.894] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:14] GotoIf("SIP/5000-00000088", "0?sent2vm") in new stack
+
+[20140108 113035.895] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:15] GotoIf("SIP/5000-00000088", "0?docfu,1") in new stack
+
+[20140108 113035.897] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:16] Set("SIP/5000-00000088", "CALL_RT=60") in new stack
+
+[20140108 113035.898] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:17] Set("SIP/5000-00000088", "USER_RT=") in new stack
+
+[20140108 113035.899] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:18] ExecIf("SIP/5000-00000088", "0?Set(CALL_RT=)") in new stack
+
+[20140108 113035.901] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:19] Macro("SIP/5000-00000088", "record-check,5000-5001,") in new stack
+
+[20140108 113035.903] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:1] Set("SIP/5000-00000088", "USER_LIST=5000-5001") in new stack
+
+[20140108 113035.904] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:2] Set("SIP/5000-00000088", "TRUNK_IND=") in new stack
+
+[20140108 113035.905] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:3] Set("SIP/5000-00000088", "REC_ENABLE=no") in new stack
+
+[20140108 113035.906] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:4] GotoIf("SIP/5000-00000088", "0?final") in new stack
+
+[20140108 113035.908] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:5] GotoIf("SIP/5000-00000088", "1?check") in new stack
+
+[20140108 113035.908] VERB [20960] pbx.c:10233:     -- Goto (macro-record-check,s,8)
+
+[20140108 113035.909] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:8] Log("SIP/5000-00000088", "NOTICE, "Check auto record settings."") ink
+
+[20140108 113035.910] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:9] ExecIf("SIP/5000-00000088", "0?Set(REC_ENABLE=yes)") in new stack
+
+[20140108 113035.912] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:10] GotoIf("SIP/5000-00000088", "0?final") in new stack
+
+[20140108 113035.913] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:11] GotoIf("SIP/5000-00000088", "0?check_trunk:norext") in new stack
+
+[20140108 113035.914] VERB [20960] pbx.c:10233:     -- Goto (macro-record-check,s,22)
+
+[20140108 113035.915] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:22] Set("SIP/5000-00000088", "i=1") in new stack
+
+[20140108 113035.916] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:23] While("SIP/5000-00000088", "1") in new stack
+
+[20140108 113035.917] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:24] Set("SIP/5000-00000088", "CUR_USER=5000") in new stack
+
+[20140108 113035.919] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:25] GotoIf("SIP/5000-00000088", "0?break") in new stack
+
+[20140108 113035.920] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:26] Set("SIP/5000-00000088", "REC_ENABLE=no") in new stack
+
+[20140108 113035.921] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:27] GotoIf("SIP/5000-00000088", "0?break:continue") in new stack
+
+[20140108 113035.922] VERB [20960] pbx.c:10233:     -- Goto (macro-record-check,s,28)
+
+[20140108 113035.924] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:28] Set("SIP/5000-00000088", "i=2") in new stack
+
+[20140108 113035.925] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:29] EndWhile("SIP/5000-00000088", "") in new stack
+
+[20140108 113035.927] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:23] While("SIP/5000-00000088", "2") in new stack
+
+[20140108 113035.928] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:24] Set("SIP/5000-00000088", "CUR_USER=5001") in new stack
+
+[20140108 113035.929] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:25] GotoIf("SIP/5000-00000088", "0?break") in new stack
+
+[20140108 113035.931] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:26] Set("SIP/5000-00000088", "REC_ENABLE=no") in new stack
+
+[20140108 113035.932] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:27] GotoIf("SIP/5000-00000088", "0?break:continue") in new stack
+
+[20140108 113035.933] VERB [20960] pbx.c:10233:     -- Goto (macro-record-check,s,28)
+
+[20140108 113035.934] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:28] Set("SIP/5000-00000088", "i=3") in new stack
+
+[20140108 113035.935] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:29] EndWhile("SIP/5000-00000088", "") in new stack
+
+[20140108 113035.936] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:23] While("SIP/5000-00000088", "3") in new stack
+
+[20140108 113035.938] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:24] Set("SIP/5000-00000088", "CUR_USER=") in new stack
+
+[20140108 113035.939] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:25] GotoIf("SIP/5000-00000088", "1?break") in new stack
+
+[20140108 113035.940] VERB [20960] pbx.c:10233:     -- Goto (macro-record-check,s,30)
+
+[20140108 113035.941] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:30] Goto("SIP/5000-00000088", "final") in new stack
+
+[20140108 113035.942] VERB [20960] pbx.c:10233:     -- Goto (macro-record-check,s,31)
+
+[20140108 113035.942] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:31] GotoIf("SIP/5000-00000088", "0?record") in new stack
+
+[20140108 113035.944] VERB [20960] pbx.c:4493:     -- Executing [s@macro-record-check:32] MacroExit("SIP/5000-00000088", "") in new stack
+
+[20140108 113035.946] VERB [20960] pbx.c:4493:     -- Executing [s@macro-exten-vm:20] Macro("SIP/5000-00000088", "dial,5001,60") in new stack
+
+[20140108 113035.948] VERB [20960] pbx.c:4493:     -- Executing [s@macro-dial:1] GotoIf("SIP/5000-00000088", "1?dial") in new stack
+
+[20140108 113035.948] VERB [20960] pbx.c:10233:     -- Goto (macro-dial,s,3)
+
+[20140108 113035.950] VERB [20960] pbx.c:4493:     -- Executing [s@macro-dial:3] Set("SIP/5000-00000088", "DIAL_STR=SIP/5001") in new stack
+
+[20140108 113035.951] VERB [20960] pbx.c:4493:     -- Executing [s@macro-dial:4] Set("SIP/5000-00000088", "CALL_RT=60") in new stack
+
+[20140108 113035.952] VERB [20960] pbx.c:4493:     -- Executing [s@macro-dial:5] Macro("SIP/5000-00000088", "set-call-options,") in new stack
+
+[20140108 113035.954] VERB [20960] pbx.c:4493:     -- Executing [s@macro-set-call-options:1] Set("SIP/5000-00000088", "CALL_OPTIONS=") in new stack
+
+[20140108 113035.956] VERB [20960] pbx.c:4493:     -- Executing [s@macro-set-call-options:2] ExecIf("SIP/5000-00000088", "0?Set(CALL_OPTIONS=)") in new stack
+
+[20140108 113035.957] VERB [20960] pbx.c:4493:     -- Executing [s@macro-set-call-options:3] ExecIf("SIP/5000-00000088", "0?Set(CALL_OPTIONS=A(dialog-being-rk
+
+[20140108 113035.959] VERB [20960] pbx.c:4493:     -- Executing [s@macro-dial:6] ExecIf("SIP/5000-00000088", "0?Set(CALL_OPTIONS=m(rbt))") in new stack
+
+[20140108 113035.961] VERB [20960] pbx.c:4493:     -- Executing [s@macro-dial:7] Dial("SIP/5000-00000088", "SIP/5001,60,") in new stack
+
+[20140108 113035.962] CC   [20960] ccss.c:2189: Agent policy for SIP/5000-00000088 is 'never'. CC not possible
+
+[20140108 113035.964] VERB [20960] cdr.c:767: [SIP/5001-00000089]ast_cdr_start(0x956890) src[] dst[s] ... 
+[20140108 113035.968] VERB [20960] cdr.c:1001: [SIP/5001-00000089]ast_cdr_setcid(0x956890, 0x8e7628) chan[SIP/5001-00000089] ... 
+[20140108 113035.971] VERB [20960] cdr.c:911: [SIP/5000-00000088]ast_cdr_setdestchan(0x42f286e8, 0x926936) dst: 5001 -> SIP/5001-00000089  ... 
+[20140108 113035.972] VERB [20960] app_dial.c:2520:     -- Called SIP/5001
+
+[20140108 113036.061] VERB [20960] app_dial.c:1354:     -- SIP/5001-00000089 is ringing
+
+
+[20140108 113039.404] VERB [20960] app_dial.c:1262:     -- SIP/5001-00000089 answered SIP/5000-00000088
+
+
+[20140108 113039.406] VERB [20960] cdr.c:911: [SIP/5000-00000088]ast_cdr_setdestchan(0x42f286e8, 0x926936) dst: 5001 -> SIP/5001-00000089  ... 
+[20140108 113039.407] VERB [20960] cdr.c:943: [SIP/5000-00000088]ast_cdr_setanswer(0x42f286e8, t) src[5000] dst[5001] ... 
+[20140108 113039.407] VERB [20960] cdr.c:787: [SIP/5000-00000088]ast_cdr_answer(0x42f286e8) src[5000] dst[5001] ... 
+[20140108 113039.408] VERB [20960] cdr.c:1225: [SIP/5000-00000088]ast_cdr_update(0x42f13948) ... 
+[20140108 113039.408] VERB [20960] cdr.c:943: [SIP/5000-00000088]ast_cdr_setanswer(0x97d098, t) src[5000] dst[5001] ... 
+[20140108 113039.408] VERB [20960] cdr.c:957: ast_cdr_setdisposition(0x97d098, 8) ... 
+[20140108 113039.408] VERB [20960] cdr.c:943: [SIP/5000-00000088]ast_cdr_setanswer(0x42f286e8, t) src[5000] dst[5001] ... 
+[20140108 113039.408] VERB [20960] cdr.c:957: ast_cdr_setdisposition(0x42f286e8, 8) ... 
+[20140108 113043.374] VERB [20960] cdr.c:1059: [SIP/5000-00000088]ast_cdr_end(0x97d098) src[5000] dst[5001] ... 
+[20140108 113043.375] VERB [20960] cdr.c:1268: [SIP/5000-00000088]post_cdr(0x97d098) src[5000] dst[5001] ... 
+[20140108 113043.377] DEBUG[20960] cdr_sqlite3_custom.c:267: About to log: INSERT INTO cdr (accountcode,src,dst,dcontext,clid,channel,dstchannel,lastapp,last)
+
+
+[20140108 113043.426] VERB [20960] cdr.c:1362: [SIP/5000-00000088]ast_cdr_specialized_reset(0x42f286e8, (nil)) src[5000] dst[5001] ... 
+[20140108 113043.427] VERB [20960] cdr.c:767: [SIP/5000-00000088]ast_cdr_start(0x42f286e8) src[5000] dst[5001] ... 
+[20140108 113043.427] VERB [20960] cdr.c:1362: [SIP/5001-00000089]ast_cdr_specialized_reset(0x956890, (nil)) src[5001] dst[s] ... 
+[20140108 113043.427] VERB [20960] cdr.c:767: [SIP/5001-00000089]ast_cdr_start(0x956890) src[5001] dst[s] ... 
+[20140108 113043.431] DEBUG[20960] app_dial.c:3082: Exiting with DIALSTATUS=ANSWER.
+
+
+[20140108 113043.433] VERB [20960] pbx.c:5411:   == Spawn extension (from-internal, 5001, 1) exited non-zero on 'SIP/5000-00000088'
+
+
+[20140108 113043.433] VERB [20960] cdr.c:1225: [SIP/5000-00000088]ast_cdr_update(0x42f13948) ... 
+
+
+
+
+
+
+
+
+-----------------------============================================================================================-------------------
+
+
+[20140108 113710.216] ERROR[05955] chan_sip.c:29504: handle status is 1
+
+
+[20140108 113710.217] SECURITY[05907] res_security_log.c:138: SecurityEvent="ChallengeSent",EventTV="1389152230-217502",Severity="Informational",Service="SIP"
+
+
+[20140108 113710.576] VERB [05955] cdr.c:767: [SIP/5000-0000008c]ast_cdr_start(0x42f286e8) src[5000] dst[5001] ... 
+[20140108 113710.582] ERROR[05955] chan_sip.c:29504: handle status is 0
+
+
+[20140108 113710.584] SECURITY[05907] res_security_log.c:138: SecurityEvent="SuccessfulAuth",EventTV="1389152230-584627",Severity="Informational",Service="SI"
+
+
+[20140108 113710.586] VERB [20971] cdr.c:1225: [SIP/5000-0000008c]ast_cdr_update(0x42f13948) ... 
+[20140108 113710.605] VERB [20971] cdr.c:1195: [SIP/5000-0000008c]ast_cdr_setuserfield(0x42f13948:0x42f286e8, 0x43275f6f) src[5000] dst[5001] ... 
+[20140108 113710.639] CC   [20971] ccss.c:2189: Agent policy for SIP/5000-0000008c is 'never'. CC not possible
+
+
+[20140108 113710.642] VERB [20971] cdr.c:767: [SIP/5001-0000008d]ast_cdr_start(0x989bc0) src[] dst[s] ... 
+[20140108 113710.645] DEBUG[20971] channel.c:6319: Not copying variable DIALEDTIME.
+
+
+[20140108 113710.646] DEBUG[20971] channel.c:6319: Not copying variable ANSWEREDTIME.
+
+
+[20140108 113710.647] DEBUG[20971] channel.c:6319: Not copying variable DIALEDPEERNAME.
+
+
+[20140108 113710.648] DEBUG[20971] channel.c:6319: Not copying variable DIALEDPEERNUMBER.
+
+
+[20140108 113710.648] DEBUG[20971] channel.c:6319: Not copying variable DIALSTATUS.
+
+
+[20140108 113710.649] DEBUG[20971] channel.c:6319: Not copying variable MACRO_DEPTH.
+
+
+[20140108 113710.649] DEBUG[20971] channel.c:6319: Not copying variable MACRO_PRIORITY.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable MACRO_CONTEXT.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable MACRO_EXTEN.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable ARG1.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable CALL_OPTIONS.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable CALL_RT.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable DIAL_STR.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable DB_RESULT.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable ARG2.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable CUR_USER.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable i.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable REC_ENABLE.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable END_WHILE_0.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable WHILE_0.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable macro-record-check_s_23.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable TRUNK_IND.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable USER_LIST.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable USER_RT.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable CFUEXT.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable CFNEXT.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable CFBEXT.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable DNDON.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable EXTTOCALL.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable VMBOX.
+
+
+[20140108 113710.650] DEBUG[20971] channel.c:6315: Copying hard-transferable variable TTL.
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable OUTBOUNDCID.
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable AAUSERCIDNAME.
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable REALCALLERIDNUM.
+
+[20140108 113710.650] DEBUG[20971] channel.c:6308: Copying soft-transferable variable AAUSER.
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable SIPCALLID.
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable SIPDOMAIN.
+
+[20140108 113710.650] DEBUG[20971] channel.c:6319: Not copying variable SIPURI.
+
+[20140108 113710.654] VERB [20971] cdr.c:1001: [SIP/5001-0000008d]ast_cdr_setcid(0x989bc0, 0x8e7628) chan[SIP/5001-0000008d] ... 
+[20140108 113710.661] VERB [20971] cdr.c:911: [SIP/5000-0000008c]ast_cdr_setdestchan(0x42f286e8, 0x912006) dst: 5001 -> SIP/5001-0000008d  ... 
+[20140108 113710.665] VERB [20971] app_dial.c:2520:     -- Called SIP/5001
+
+[20140108 113710.798] VERB [20971] app_dial.c:1354:     -- SIP/5001-0000008d is ringing
+
+
+[20140108 113713.391] VERB [20971] app_dial.c:1262:     -- SIP/5001-0000008d answered SIP/5000-0000008c
+
+
+[20140108 113713.394] VERB [20971] cdr.c:911: [SIP/5000-0000008c]ast_cdr_setdestchan(0x42f286e8, 0x912006) dst: 5001 -> SIP/5001-0000008d  ... 
+[20140108 113713.394] VERB [20971] cdr.c:943: [SIP/5000-0000008c]ast_cdr_setanswer(0x42f286e8, t) src[5000] dst[5001] ... 
+[20140108 113713.395] VERB [20971] cdr.c:787: [SIP/5000-0000008c]ast_cdr_answer(0x42f286e8) src[5000] dst[5001] ... 
+[20140108 113713.395] VERB [20971] cdr.c:1225: [SIP/5000-0000008c]ast_cdr_update(0x42f13948) ... 
+[20140108 113713.395] VERB [20971] cdr.c:943: [SIP/5000-0000008c]ast_cdr_setanswer(0x9133c8, t) src[5000] dst[5001] ... 
+[20140108 113713.395] VERB [20971] cdr.c:957: ast_cdr_setdisposition(0x9133c8, 8) ... 
+[20140108 113713.395] VERB [20971] cdr.c:943: [SIP/5000-0000008c]ast_cdr_setanswer(0x42f286e8, t) src[5000] dst[5001] ... 
+[20140108 113713.395] VERB [20971] cdr.c:957: ast_cdr_setdisposition(0x42f286e8, 8) ... 
+[20140108 113714.582] DEBUG[20971] channel.c:7724: Returning from native bridge, channels: SIP/5000-0000008c, SIP/5001-0000008d
+
+
+[20140108 113714.584] VERB [20971] cdr.c:1059: [SIP/5000-0000008c]ast_cdr_end(0x9133c8) src[5000] dst[5001] ... 
+[20140108 113714.585] VERB [20971] cdr.c:1268: [SIP/5000-0000008c]post_cdr(0x9133c8) src[5000] dst[5001] ... 
+[20140108 113714.586] DEBUG[20971] cdr_sqlite3_custom.c:267: About to log: INSERT INTO cdr (accountcode,src,dst,dcontext,clid,channel,dstchannel,lastapp,last)
+
+
+[20140108 113714.685] VERB [20971] cdr.c:1362: [SIP/5000-0000008c]ast_cdr_specialized_reset(0x42f286e8, (nil)) src[5000] dst[5001] ... 
+[20140108 113714.686] VERB [20971] cdr.c:767: [SIP/5000-0000008c]ast_cdr_start(0x42f286e8) src[5000] dst[5001] ... 
+[20140108 113714.686] VERB [20971] cdr.c:1362: [SIP/5001-0000008d]ast_cdr_specialized_reset(0x989bc0, (nil)) src[5001] dst[s] ... 
+[20140108 113714.686] VERB [20971] cdr.c:767: [SIP/5001-0000008d]ast_cdr_start(0x989bc0) src[5001] dst[s] ... 
+[20140108 113714.687] DEBUG[20971] channel.c:2900: Hanging up channel 'SIP/5001-0000008d'
+
+
+[20140108 113714.690] DEBUG[20971] app_dial.c:3082: Exiting with DIALSTATUS=ANSWER.
+
+
+[20140108 113714.692] VERB [20971] cdr.c:1225: [SIP/5000-0000008c]ast_cdr_update(0x42f13948) ... 
+[20140108 113714.693] DEBUG[20971] channel.c:2900: Hanging up channel 'SIP/5000-0000008c'
+
+
+********************************************************************************
+
+[20140108 115306.392] ERROR[05955] chan_sip.c:29504: handle status is 1
+
+
+[20140108 115306.394] SECURITY[05907] res_security_log.c:138: SecurityEvent="ChallengeSent",EventTV="1389153186-394302",Severity="Informational",Service="SIP"
+
+
+[20140108 115306.452] DEBUG[05931] devicestate.c:348: No provider found, checking channel drivers for SIP - 5001
+
+[20140108 115306.452] DEBUG[05931] devicestate.c:478: Changing state for SIP/5001 - state 2 (In use)
+
+[20140108 115306.452] DEBUG[05931] devicestate.c:446: device 'SIP/5001' state '2'
+
+
+[20140108 115306.458] VERB [05955] cdr.c:767: [SIP/5001-00000094]ast_cdr_start(0x42f286e8) src[5001] dst[5000] ... 
+[20140108 115306.463] DEBUG[05931] devicestate.c:348: No provider found, checking channel drivers for SIP - 5001
+
+[20140108 115306.463] DEBUG[05931] devicestate.c:478: Changing state for SIP/5001 - state 2 (In use)
+
+[20140108 115306.463] DEBUG[05931] devicestate.c:446: device 'SIP/5001' state '2'
+
+
+[20140108 115306.466] ERROR[05955] chan_sip.c:29504: handle status is 0
+
+
+[20140108 115306.467] SECURITY[05907] res_security_log.c:138: SecurityEvent="SuccessfulAuth",EventTV="1389153186-467702",Severity="Informational",Service="SI"
+
+
+[20140108 115306.469] VERB [20984] cdr.c:1225: [SIP/5001-00000094]ast_cdr_update(0x42f13948) ... 
+[20140108 115306.487] VERB [20984] cdr.c:1195: [SIP/5001-00000094]ast_cdr_setuserfield(0x42f13948:0x42f286e8, 0x43275f6f) src[5001] dst[5000] ... 
+[20140108 115306.522] CC   [20984] ccss.c:2189: Agent policy for SIP/5001-00000094 is 'never'. CC not possible
+
+
+[20140108 115306.524] VERB [20984] cdr.c:767: [SIP/5000-00000095]ast_cdr_start(0x955940) src[] dst[s] ... 
+[20140108 115306.528] VERB [20984] cdr.c:1001: [SIP/5000-00000095]ast_cdr_setcid(0x955940, 0x8e7628) chan[SIP/5000-00000095] ... 
+[20140108 115306.529] DEBUG[05931] devicestate.c:348: No provider found, checking channel drivers for SIP - 5000
+
+[20140108 115306.529] DEBUG[05931] devicestate.c:478: Changing state for SIP/5000 - state 6 (Ringing)
+
+[20140108 115306.529] DEBUG[05931] devicestate.c:446: device 'SIP/5000' state '6'
+
+
+[20140108 115306.532] VERB [20984] cdr.c:911: [SIP/5001-00000094]ast_cdr_setdestchan(0x42f286e8, 0x911dd6) dst: 5000 -> SIP/5000-00000095  ... 
+[20140108 115306.534] VERB [20984] app_dial.c:2520:     -- Called SIP/5000
+
+
+[20140108 115306.572] VERB [20984] app_dial.c:1354:     -- SIP/5000-00000095 is ringing
+
+
+[20140108 115306.572] DEBUG[05931] devicestate.c:348: No provider found, checking channel drivers for SIP - 5000
+
+[20140108 115306.572] DEBUG[05931] devicestate.c:478: Changing state for SIP/5000 - state 6 (Ringing)
+
+[20140108 115306.572] DEBUG[05931] devicestate.c:446: device 'SIP/5000' state '6'
+
+
+[20140108 115310.026] DEBUG[05931] devicestate.c:348: No provider found, checking channel drivers for SIP - 5000
+
+[20140108 115310.026] DEBUG[05931] devicestate.c:478: Changing state for SIP/5000 - state 2 (In use)
+
+[20140108 115310.026] DEBUG[05931] devicestate.c:446: device 'SIP/5000' state '2'
+
+
+[20140108 115310.032] VERB [20984] app_dial.c:1262:     -- SIP/5000-00000095 answered SIP/5001-00000094
+
+
+[20140108 115310.032] DEBUG[05931] devicestate.c:348: No provider found, checking channel drivers for SIP - 5000
+
+
+[20140108 115310.032] DEBUG[05931] devicestate.c:478: Changing state for SIP/5000 - state 2 (In use)
+
+
+[20140108 115310.032] DEBUG[05931] devicestate.c:446: device 'SIP/5000' state '2'
+
+
+[20140108 115310.036] VERB [20984] cdr.c:911: [SIP/5001-00000094]ast_cdr_setdestchan(0x42f286e8, 0x911dd6) dst: 5000 -> SIP/5000-00000095  ... 
+[20140108 115310.036] VERB [20984] cdr.c:943: [SIP/5001-00000094]ast_cdr_setanswer(0x42f286e8, t) src[5001] dst[5000] ... 
+[20140108 115310.037] VERB [20984] cdr.c:787: [SIP/5001-00000094]ast_cdr_answer(0x42f286e8) src[5001] dst[5000] ... 
+[20140108 115310.037] VERB [20984] cdr.c:1225: [SIP/5001-00000094]ast_cdr_update(0x42f13948) ... 
+[20140108 115310.037] VERB [20984] cdr.c:943: [SIP/5001-00000094]ast_cdr_setanswer(0x9584d8, t) src[5001] dst[5000] ... 
+[20140108 115310.037] VERB [20984] cdr.c:957: ast_cdr_setdisposition(0x9584d8, 8) ... 
+[20140108 115310.037] VERB [20984] cdr.c:943: [SIP/5001-00000094]ast_cdr_setanswer(0x42f286e8, t) src[5001] dst[5000] ... 
+[20140108 115310.037] VERB [20984] cdr.c:957: ast_cdr_setdisposition(0x42f286e8, 8) ... 
+[20140108 115310.037] DEBUG[05931] devicestate.c:348: No provider found, checking channel drivers for SIP - 5001
+
+
+[20140108 115310.037] DEBUG[05931] devicestate.c:478: Changing state for SIP/5001 - state 2 (In use)
+
+
+[20140108 115310.037] DEBUG[05931] devicestate.c:446: device 'SIP/5001' state '2'
+
+
+[20140108 115311.624] VERB [20984] cdr.c:1059: [SIP/5001-00000094]ast_cdr_end(0x9584d8) src[5001] dst[5000] ... 
+[20140108 115311.626] VERB [20984] cdr.c:1268: [SIP/5001-00000094]post_cdr(0x9584d8) src[5001] dst[5000] ... 
+[20140108 115311.627] DEBUG[20984] cdr_sqlite3_custom.c:267: About to log: INSERT INTO cdr (accountcode,src,dst,dcontext,clid,channel,dstchannel,lastapp,last)
+
+
+[20140108 115311.721] VERB [20984] cdr.c:1362: [SIP/5001-00000094]ast_cdr_specialized_reset(0x42f286e8, (nil)) src[5001] dst[5000] ... 
+[20140108 115311.721] VERB [20984] cdr.c:767: [SIP/5001-00000094]ast_cdr_start(0x42f286e8) src[5001] dst[5000] ... 
+[20140108 115311.721] VERB [20984] cdr.c:1362: [SIP/5000-00000095]ast_cdr_specialized_reset(0x955940, (nil)) src[5000] dst[s] ... 
+[20140108 115311.721] VERB [20984] cdr.c:767: [SIP/5000-00000095]ast_cdr_start(0x955940) src[5000] dst[s] ... 
+[20140108 115311.723] DEBUG[05931] devicestate.c:348: No provider found, checking channel drivers for SIP - 5000
+
+[20140108 115311.723] DEBUG[05931] devicestate.c:478: Changing state for SIP/5000 - state 1 (Not in use)
+
+[20140108 115311.723] DEBUG[05931] devicestate.c:446: device 'SIP/5000' state '1'
+
+
+[20140108 115311.727] DEBUG[05931] devicestate.c:348: No provider found, checking channel drivers for SIP - 5000
+
+
+[20140108 115311.727] DEBUG[05931] devicestate.c:478: Changing state for SIP/5000 - state 1 (Not in use)
+
+
+[20140108 115311.727] DEBUG[05931] devicestate.c:446: device 'SIP/5000' state '1'
+
+
+[20140108 115311.728] DEBUG[20984] app_dial.c:3082: Exiting with DIALSTATUS=ANSWER.
+
+
+[20140108 115311.729] VERB [20984] cdr.c:1225: [SIP/5001-00000094]ast_cdr_update(0x42f13948) ... 
+[20140108 115311.730] DEBUG[05931] devicestate.c:348: No provider found, checking channel drivers for SIP - 5001
+
+
+[20140108 115311.730] DEBUG[05931] devicestate.c:478: Changing state for SIP/5001 - state 1 (Not in use)
+
+
+[20140108 115311.730] DEBUG[05931] devicestate.c:446: device 'SIP/5001' state '1'
+
+
+[20140108 115311.740] DEBUG[05931] devicestate.c:348: No provider found, checking channel drivers for SIP - 5001
+
+
+[20140108 115311.740] DEBUG[05931] devicestate.c:478: Changing state for SIP/5001 - state 1 (Not in use)
+
+
+[20140108 115311.740] DEBUG[05931] devicestate.c:446: device 'SIP/5001' state '1'
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+[20140108 115654.372] DEBUG[05955] acl.c:776: For destination '192.168.124.141', our source address is '192.168.124.147'.
+
+
+[20140108 115654.372] DEBUG[05955] netsock2.c:142: Splitting '192.168.124.147' into...
+
+[20140108 115654.372] DEBUG[05955] netsock2.c:196: ...host '192.168.124.147' and port ''.
+
+
+[20140108 115654.375] SECURITY[05907] res_security_log.c:138: SecurityEvent="ChallengeSent",EventTV="1389153414-372902",Severity="Informational",Service="SIP"
+
+
+[20140108 115654.375] DEBUG[05907] res_ucm_warning.c:224: Warning Event:SecurityEvent="ChallengeSent",EventTV="1389153414-372902",Severity="Informational",Se"
+
+
+[20140108 115654.375] DEBUG[05907] res_ucm_warning.c:228: Informational Event, discard it!
+
+
+[20140108 115654.430] DEBUG[05955] netsock2.c:142: Splitting '192.168.124.147' into...
+
+
+[20140108 115654.430] DEBUG[05955] netsock2.c:196: ...host '192.168.124.147' and port ''.
+
+
+[20140108 115654.430] DEBUG[05955] netsock2.c:142: Splitting '192.168.124.147' into...
+
+
+[20140108 115654.430] DEBUG[05955] netsock2.c:196: ...host '192.168.124.147' and port ''.
+
+
+[20140108 115654.431] DEBUG[05955] netsock2.c:142: Splitting '192.168.124.147' into...
+
+
+[20140108 115654.431] DEBUG[05955] netsock2.c:196: ...host '192.168.124.147' and port ''.
+
+
+[20140108 115654.431] DEBUG[05955] rtp_engine.c:388: Using engine 'asterisk' for RTP instance '0x8e56b0'
+
+
+[20140108 115654.431] DEBUG[05955] res_rtp_asterisk.c:592: Allocated port 15972 for RTP instance '0x8e56b0'
+
+
+[20140108 115654.431] DEBUG[05955] rtp_engine.c:397: RTP instance '0x8e56b0' is setup and ready to go
+
+
+[20140108 115654.431] DEBUG[05955] rtp_engine.c:388: Using engine 'asterisk' for RTP instance '0x9620a8'
+
+
+[20140108 115654.431] DEBUG[05955] res_rtp_asterisk.c:592: Allocated port 13862 for RTP instance '0x9620a8'
+
+
+[20140108 115654.431] DEBUG[05955] rtp_engine.c:397: RTP instance '0x9620a8' is setup and ready to go
+
+
+[20140108 115654.431] DEBUG[05955] res_rtp_asterisk.c:3066: Setup RTCP on RTP instance '0x9620a8'
+
+
+[20140108 115654.431] VERB [05955] netsock2.c:538:   == Using SIP VIDEO CoS mark 6
+
+
+[20140108 115654.431] DEBUG[05955] res_rtp_asterisk.c:3066: Setup RTCP on RTP instance '0x8e56b0'
+
+
+[20140108 115654.431] VERB [05955] netsock2.c:538:   == Using SIP RTP CoS mark 5
+
+
+[20140108 115654.432] DEBUG[05955] netsock2.c:142: Splitting '192.168.124.141' into...
+
+
+[20140108 115654.432] DEBUG[05955] netsock2.c:196: ...host '192.168.124.141' and port ''.
+
+
+[20140108 115654.432] DEBUG[05955] rtp_engine.c:579: Setting payload 0 based on m type on 0x42336f40
+
+
+[20140108 115654.432] DEBUG[05955] rtp_engine.c:579: Setting payload 4 based on m type on 0x42336f40
+
+
+[20140108 115654.432] DEBUG[05955] rtp_engine.c:579: Setting payload 101 based on m type on 0x42336f40
+
+
+[20140108 115654.432] DEBUG[05955] rtp_engine.c:682: Incorporating payload 0 on 0x42336f40
+
+
+[20140108 115654.432] DEBUG[05955] rtp_engine.c:682: Incorporating payload 4 on 0x42336f40
+
+
+[20140108 115654.432] DEBUG[05955] rtp_engine.c:682: Incorporating payload 101 on 0x42336f40
+
+
+[20140108 115654.432] DEBUG[05955] res_rtp_asterisk.c:3106: Setting RTCP address on RTP instance '0x8e56b0'
+
+
+[20140108 115654.432] DEBUG[05955] rtp_engine.c:560: Copying payload 0 from 0x42336f40 to 0x8e5860
+
+
+[20140108 115654.432] DEBUG[05955] rtp_engine.c:560: Copying payload 4 from 0x42336f40 to 0x8e5860
+
+[20140108 115654.432] DEBUG[05955] rtp_engine.c:560: Copying payload 101 from 0x42336f40 to 0x8e5860
+
+[20140108 115654.432] DEBUG[05955] res_rtp_asterisk.c:3032: Ignoring duplicate RTCP property on RTP instance '0x8e56b0'
+
+[20140108 115654.432] DEBUG[05955] res_rtp_asterisk.c:3106: Setting RTCP address on RTP instance '0x9620a8'
+
+[20140108 115654.437] DEBUG[05931] devicestate.c:348: No provider found, checking channel drivers for SIP - 5001
+
+[20140108 115654.437] DEBUG[05931] devicestate.c:478: Changing state for SIP/5001 - state 2 (In use)
+
+[20140108 115654.437] DEBUG[05931] devicestate.c:446: device 'SIP/5001' state '2'
+
+[20140108 115654.437] DEBUG[05966] app_queue.c:1578: Device 'SIP/5001' changed to state '2' (In use) but we don't care because they're not a member of any qu.
+
+[20140108 115654.437] DEBUG[06007] manager.c:4493: Examining event:
+Event: ExtensionStatus
+Privilege: call,all
+Exten: 5001
+Context: ext-local
+Hint: SIP/5001
+Status: 1
+
+
+
+[20140108 115654.441] DEBUG[05955] netsock2.c:142: Splitting '192.168.124.147' into...
+
+[20140108 115654.441] DEBUG[05955] netsock2.c:196: ...host '192.168.124.147' and port ''.
+
+[20140108 115654.441] DEBUG[05955] netsock2.c:142: Splitting '192.168.124.147' into...
+
+[20140108 115654.441] DEBUG[05955] netsock2.c:196: ...host '192.168.124.147' and port ''.
+
+[20140108 115654.441] VERB [05955] cdr.c:767: [SIP/5001-00000096]ast_cdr_start(0x9635f8) src[5001] dst[5000] ... 
+[20140108 115654.443] DEBUG[06007] manager.c:4493: Examining event:
+Event: Newchannel
+Privilege: call,all
+Channel: SIP/5001-00000096
+ChannelState: 0
+ChannelStateDesc: Down
+CallerIDNum: 5001
+CallerIDName: aaa
+AccountCode: 
+Exten: 5000
+Context: from-internal
+Uniqueid: 1389153414.150
+
+
+
+[20140108 115654.447] DEBUG[05931] devicestate.c:348: No provider found, checking channel drivers for SIP - 5001
+
+[20140108 115654.447] DEBUG[05931] devicestate.c:478: Changing state for SIP/5001 - state 2 (In use)
+
+[20140108 115654.447] DEBUG[05931] devicestate.c:446: device 'SIP/5001' state '2'
+
+[20140108 115654.447] DEBUG[05966] app_queue.c:1578: Device 'SIP/5001' changed to state '2' (In use) but we don't care because they're not a member of any qu.
+
+[20140108 115654.448] DEBUG[06007] manager.c:4493: Examining event:
+Event: Newstate
+Privilege: call,all
+Channel: SIP/5001-00000096
+ChannelState: 4
+ChannelStateDesc: Ring
+CallerIDNum: 5001
+CallerIDName: aaa
+ConnectedLineNum: 
+ConnectedLineName: 
+Uniqueid: 1389153414.150
+
+
+
+[20140108 115654.450] SECURITY[05907] res_security_log.c:138: SecurityEvent="SuccessfulAuth",EventTV="1389153414-449377",Severity="Informational",Service="SI"
+
+[20140108 115654.451] DEBUG[05907] res_ucm_warning.c:224: Warning Event:SecurityEvent="SuccessfulAuth",EventTV="1389153414-449377",Severity="Informational",S"
+
+[20140108 115654.451] DEBUG[05907] res_ucm_warning.c:228: Informational Event, discard it!
+
+[20140108 115654.456] VERB [20994] cdr.c:1225: [SIP/5001-00000096]ast_cdr_update(0x9618c0) ... 
+[20140108 115654.456] DEBUG[20994] pbx.c:4485: Launching 'Macro'
+
+[20140108 115654.456] VERB [20994] pbx.c:4493:     -- Executing [5000@from-internal:1] Macro("SIP/5001-00000096", "exten-vm,novm,5000") in new stack
+
+[20140108 115654.466] DEBUG[20994] pbx.c:4485: Launching 'Macro'
+
+[20140108 115654.466] VERB [20994] pbx.c:4493:     -- Executing [s@macro-exten-vm:1] Macro("SIP/5001-00000096", "user-callerid") in new stack
+
+[20140108 115654.469] DEBUG[20994] pbx.c:3491: Result of 'AAUSER' is NULL
+
+[20140108 115654.469] DEBUG[20994] pbx.c:4381: Expression result is '1'
+
+[20140108 115654.470] DEBUG[20994] pbx.c:4313: Function result is '5001'
+
+[20140108 115654.470] DEBUG[20994] pbx.c:3491: Result of 'AAUSER' is NULL
+
+[20140108 115654.470] DEBUG[20994] pbx.c:4313: Function result is '5001'
+
+[20140108 115654.470] DEBUG[20994] pbx.c:4485: Launching 'Set'
+
+[20140108 115654.470] VERB [20994] pbx.c:4493:     -- Executing [s@macro-user-callerid:1] Set("SIP/5001-00000096", "_AAUSER=5001") in new stack
+
+[20140108 115654.471] DEBUG[20994] app_macro.c:435: Executed application: Set
+
+[20140108 115654.472] DEBUG[20994] pbx.c:3494: Result of 'CHANNEL' is 'SIP/5001-00000096'
+
+[20140108 115654.473] DEBUG[20994] pbx.c:4381: Expression result is '0'
+
+[20140108 115654.473] DEBUG[20994] pbx.c:4485: Launching 'GotoIf'
+
+[20140108 115654.473] VERB [20994] pbx.c:4493:     -- Executing [s@macro-user-callerid:2] GotoIf("SIP/5001-00000096", "0?report") in new stack
+
+[20140108 115654.474] DEBUG[20994] pbx.c:10544: Not taking any branch
+
+[20140108 115654.474] DEBUG[20994] app_macro.c:435: Executed application: GotoIf
+
+[20140108 115654.474] DEBUG[20994] pbx.c:3491: Result of 'REALCALLERIDNUM' is NULL
+
+[20140108 115654.474] DEBUG[20994] pbx.c:4381: Expression result is '1'
+
+[20140108 115654.474] DEBUG[20994] pbx.c:4313: Function result is '5001'
+
+[20140108 115654.474] DEBUG[20994] pbx.c:4485: Launching 'ExecIf'
+
+[20140108 115654.474] VERB [20994] pbx.c:4493:     -- Executing [s@macro-user-callerid:3] ExecIf("SIP/5001-00000096", "1?Set(REALCALLERIDNUM=5001)") in new sk
+
+[20140108 115654.476] DEBUG[20994] app_macro.c:435: Executed application: ExecIf
+
+[20140108 115654.476] DEBUG[20994] pbx.c:4080: Evaluating 'REALCALLERIDNUM:1:2' (from 'REALCALLERIDNUM:1:2}" = ""' len 19)
+
+[20140108 115654.476] DEBUG[20994] pbx.c:3494: Result of 'REALCALLERIDNUM' is '5001'
+
+[20140108 115654.476] DEBUG[20994] pbx.c:4172: Expression result is '0'
+
+[20140108 115654.476] DEBUG[20994] pbx.c:4080: Evaluating 'CALLERID(number)' (from 'CALLERID(number)})' len 16)
+
+[20140108 115654.477] DEBUG[20994] pbx.c:4114: Function result is '5001'
+
+[20140108 115654.478] DEBUG[20994] pbx.c:3494: Result of 'AAUSER' is '5001'
+
+[20140108 115654.478] DEBUG[20994] db.c:377: Unable to find key '5001/CIDNAME' in family 'AAUSER'
+
+[20140108 115654.478] DEBUG[20994] func_db.c:137: DB: AAUSER/5001/CIDNAME not found in database.
+
+[20140108 115654.478] DEBUG[20994] pbx.c:4313: Function result is ''
+
+[20140108 115654.478] DEBUG[20994] pbx.c:4485: Launching 'Set'
+
+[20140108 115654.478] VERB [20994] pbx.c:4493:     -- Executing [s@macro-user-callerid:4] Set("SIP/5001-00000096", "AAUSERCIDNAME=") in new stack
+
+[20140108 115654.480] DEBUG[20994] app_macro.c:435: Executed application: Set
+
+[20140108 115654.480] DEBUG[20994] pbx.c:3491: Result of 'FROM_TRUNK' is NULL
+
+[20140108 115654.480] DEBUG[20994] pbx.c:4381: Expression result is '0'
+
+[20140108 115654.480] DEBUG[20994] pbx.c:4313: Function result is 'aaa'
+
+[20140108 115654.481] DEBUG[20994] pbx.c:4485: Launching 'ExecIf'
+
+[20140108 115654.481] VERB [20994] pbx.c:4493:     -- Executing [s@macro-user-callerid:5] ExecIf("SIP/5001-00000096", "0?Set(AAUSERCIDNAME=aaa)") in new stack
+
+[20140108 115654.484] DEBUG[20994] app_macro.c:435: Executed application: ExecIf
+
+[20140108 115654.484] DEBUG[20994] pbx.c:4080: Evaluating 'FROM_TRUNK' (from 'FROM_TRUNK}" = "yes"' len 10)
+
+[20140108 115654.484] DEBUG[20994] pbx.c:3491: Result of 'FROM_TRUNK' is NULL
+
+[20140108 115654.484] DEBUG[20994] pbx.c:4172: Expression result is '0'
+
+[20140108 115654.484] DEBUG[20994] pbx.c:4080: Evaluating 'CALLERID(name)' (from 'CALLERID(name)})' len 14)
+
+[20140108 115654.484] DEBUG[20994] pbx.c:4114: Function result is 'aaa'
+
+[20140108 115654.486] DEBUG[20994] pbx.c:3494: Result of 'AAUSERCIDNAME' is ''
+
+[20140108 115654.486] DEBUG[20994] pbx.c:4381: Expression result is '1'
+
+[20140108 115654.486] DEBUG[20994] pbx.c:4485: Launching 'GotoIf'
+
+[20140108 115654.486] VERB [20994] pbx.c:4493:     -- Executing [s@macro-user-callerid:6] GotoIf("SIP/5001-00000096", "1?report") in new stack
+
+[20140108 115654.487] VERB [20994] pbx.c:10233:     -- Goto (macro-user-callerid,s,11)
+
+[20140108 115654.487] DEBUG[20994] app_macro.c:435: Executed application: GotoIf
+
+[20140108 115654.488] DEBUG[20994] pbx.c:3494: Result of 'AAUSER' is '5001'
+
+[20140108 115654.488] DEBUG[20994] db.c:377: Unable to find key '5001/OUTBOUNDCID' in family 'AAUSER'
+
+[20140108 115654.488] DEBUG[20994] func_db.c:137: DB: AAUSER/5001/OUTBOUNDCID not found in database.
+
+[20140108 115654.488] DEBUG[20994] pbx.c:4313: Function result is ''
+
+[20140108 115654.488] DEBUG[20994] pbx.c:4485: Launching 'Set'
+
+[20140108 115654.488] VERB [20994] pbx.c:4493:     -- Executing [s@macro-user-callerid:11] Set("SIP/5001-00000096", "OUTBOUNDCID=") in new stack
+
+[20140108 115654.489] DEBUG[20994] app_macro.c:435: Executed application: Set
+
+[20140108 115654.490] DEBUG[20994] pbx.c:3494: Result of 'OUTBOUNDCID' is ''
+
+[20140108 115654.490] DEBUG[20994] pbx.c:4381: Expression result is '0'
+
+[20140108 115654.490] DEBUG[20994] pbx.c:3494: Result of 'OUTBOUNDCID' is ''
+
+[20140108 115654.490] DEBUG[20994] pbx.c:4485: Launching 'ExecIf'
+
+[20140108 115654.490] VERB [20994] pbx.c:4493:     -- Executing [s@macro-user-callerid:12] ExecIf("SIP/5001-00000096", "0?Set(CALLERID(all)=)") in new stack
+
+[20140108 115654.491] DEBUG[20994] app_macro.c:435: Executed application: ExecIf
+
+[20140108 115654.491] DEBUG[20994] pbx.c:4080: Evaluating 'OUTBOUNDCID' (from 'OUTBOUNDCID}" != ""' len 11)
+
+[20140108 115654.491] DEBUG[20994] pbx.c:3494: Result of 'OUTBOUNDCID' is ''
+
+[20140108 115654.491] DEBUG[20994] pbx.c:4172: Expression result is '0'
+
+[20140108 115654.491] DEBUG[20994] pbx.c:4080: Evaluating 'OUTBOUNDCID' (from 'OUTBOUNDCID})' len 11)
+
+[20140108 115654.491] DEBUG[20994] pbx.c:3494: Result of 'OUTBOUNDCID' is ''
+
+[20140108 115654.492] DEBUG[20994] pbx.c:3494: Result of 'ARG1' is 'novm'
+
+[20140108 115654.492] DEBUG[20994] pbx.c:4381: Expression result is '0'
+
+[20140108 115654.492] DEBUG[20994] pbx.c:4485: Launching 'GotoIf'
+
+[20140108 115654.492] VERB [20994] pbx.c:4493:     -- Executing [s@macro-user-callerid:13] GotoIf("SIP/5001-00000096", "0?continue") in new stack
+
+[20140108 115654.493] DEBUG[20994] pbx.c:10544: Not taking any branch
+
+[20140108 115654.493] DEBUG[20994] app_macro.c:435: Executed application: GotoIf
+
+[20140108 115654.494] DEBUG[20994] pbx.c:3491: Result of 'TTL' is NULL
+
+[20140108 115654.494] DEBUG[20994] pbx.c:4381: Expression result is '1'
+
+[20140108 115654.494] DEBUG[20994] pbx.c:3491: Result of 'TTL' is NULL
+
+[20140108 115654.494] DEBUG[20994] pbx.c:4381: Expression result is '-1'
+
+[20140108 115654.494] DEBUG[20994] pbx.c:4313: Function result is '64'
+
+[20140108 115654.494] DEBUG[20994] pbx.c:4485: Launching 'Set'
+
+[20140108 115654.494] VERB [20994] pbx.c:4493:     -- Executing [s@macro-user-callerid:14] Set("SIP/5001-00000096", "__TTL=64") in new stack
+
+[20140108 115654.496] DEBUG[20994] app_macro.c:435: Executed application: Set
+
+[20140108 115654.496] DEBUG[20994] pbx.c:3494: Result of 'TTL' is '64'
+
+[20140108 115654.497] DEBUG[20994] pbx.c:4381: Expression result is '1'
+
+[20140108 115654.497] DEBUG[20994] pbx.c:4485: Launching 'GotoIf'
+
+[20140108 115654.497] VERB [20994] pbx.c:4493:     -- Executing [s@macro-user-callerid:15] GotoIf("SIP/5001-00000096", "1?continue") in new stack
+
+[20140108 115654.497] VERB [20994] pbx.c:10233:     -- Goto (macro-user-callerid,s,22)
+
+[20140108 115654.497] DEBUG[20994] app_macro.c:435: Executed application: GotoIf
+
+[20140108 115654.498] DEBUG[20994] pbx.c:4313: Function result is '"aaa" <5001>'
+
+[20140108 115654.498] DEBUG[20994] pbx.c:4485: Launching 'Log'
+
+[20140108 115654.498] VERB [20994] pbx.c:4493:     -- Executing [s@macro-user-callerid:22] Log("SIP/5001-00000096", "NOTICE, "Using CallerID "aaa" <5001>"") k
+
+[20140108 115654.499] DEBUG[20994] app_macro.c:435: Executed application: Log
+
+[20140108 115654.500] DEBUG[20994] app_macro.c:435: Executed application: Macro
+
+[20140108 115654.501] DEBUG[20994] pbx.c:4485: Launching 'Set'
+
+[20140108 115654.501] VERB [20994] pbx.c:4493:     -- Executing [s@macro-exten-vm:2] Set("SIP/5001-00000096", "CDR(userfield)=EXT") in new stack
+
+[20140108 115654.501] VERB [20994] cdr.c:1195: [SIP/5001-00000096]ast_cdr_setuserfield(0x9618c0:0x9635f8, 0x43275f6f) src[5001] dst[5000] ... 
+ 
+
+[20140108 115654.617] DEBUG[20994] pbx.c:4485: Launching 'Dial'
+
+[20140108 115654.617] VERB [20994] pbx.c:4493:     -- Executing [s@macro-dial:7] Dial("SIP/5001-00000096", "SIP/5000,60,") in new stack
+
+[20140108 115654.619] CC   [20994] ccss.c:2189: Agent policy for SIP/5001-00000096 is 'never'. CC not possible
+
+[20140108 115654.622] DEBUG[20994] acl.c:776: For destination '192.168.124.57', our source address is '192.168.124.147'.
+
+[20140108 115654.622] VERB [20994] cdr.c:767: [SIP/5000-00000097]ast_cdr_start(0x9a9768) src[] dst[s] ... 
+[20140108 115654.623] DEBUG[06007] manager.c:4493: Examining event:
+Event: Newchannel
+Privilege: call,all
+Channel: SIP/5000-00000097
+ChannelState: 0
+ChannelStateDesc: Down
+CallerIDNum: 
+CallerIDName: 
+AccountCode: 
+Exten: 
+Context: from-internal
+Uniqueid: 1389153414.151
+
+
+
+[20140108 115654.627] DEBUG[20994] rtp_engine.c:1583: Seeded SDP of 'SIP/5000-00000097' with that of 'SIP/5001-00000096'
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable DIALEDTIME.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable ANSWEREDTIME.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable DIALEDPEERNAME.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable DIALEDPEERNUMBER.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable DIALSTATUS.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable MACRO_DEPTH.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable MACRO_PRIORITY.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable MACRO_CONTEXT.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable MACRO_EXTEN.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable ARG1.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable CALL_OPTIONS.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable CALL_RT.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable DIAL_STR.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable DB_RESULT.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable ARG2.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable CUR_USER.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable i.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable REC_ENABLE.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable END_WHILE_0.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable WHILE_0.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable macro-record-check_s_23.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable TRUNK_IND.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable USER_LIST.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable USER_RT.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable CFUEXT.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable CFNEXT.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable CFBEXT.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable DNDON.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable EXTTOCALL.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable VMBOX.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6315: Copying hard-transferable variable TTL.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable OUTBOUNDCID.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable AAUSERCIDNAME.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable REALCALLERIDNUM.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6308: Copying soft-transferable variable AAUSER.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable SIPCALLID.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable SIPDOMAIN.
+
+[20140108 115654.627] DEBUG[20994] channel.c:6319: Not copying variable SIPURI.
+
+[20140108 115654.628] DEBUG[06007] manager.c:4493: Examining event:
+Event: NewCallerid
+Privilege: call,all
+Channel: SIP/5000-00000097
+CallerIDNum: 5000
+CallerIDName: 
+Uniqueid: 1389153414.151
+CID-CallingPres: 0 (Presentation Allowed, Not Screened)
+
+
+
+[20140108 115654.629] VERB [20994] cdr.c:1001: [SIP/5000-00000097]ast_cdr_setcid(0x9a9768, 0x9c00a8) chan[SIP/5000-00000097] ... 
+
+[20140108 115654.632] VERB [20994] cdr.c:911: [SIP/5001-00000096]ast_cdr_setdestchan(0x9635f8, 0x9149ae) dst: 5000 -> SIP/5000-00000097  ... 
+
+
+[20140108 115654.633] VERB [20994] app_dial.c:2520:     -- Called SIP/5000
+
+[20140108 115654.672] VERB [20994] app_dial.c:1354:     -- SIP/5000-00000097 is ringing
+
+[20140108 115702.604] VERB [20994] app_dial.c:1262:     -- SIP/5000-00000097 answered SIP/5001-00000096
+
+
+
+[20140108 115702.606] DEBUG[20994] rtp_engine.c:1666: Setting early bridge SDP of 'SIP/5001-00000096' with that of 'SIP/5000-00000097'
+
+[20140108 115702.606] VERB [20994] cdr.c:911: [SIP/5001-00000096]ast_cdr_setdestchan(0x9635f8, 0x9149ae) dst: 5000 -> SIP/5000-00000097  ... 
+[20140108 115702.606] VERB [20994] cdr.c:943: [SIP/5001-00000096]ast_cdr_setanswer(0x9635f8, t) src[5001] dst[5000] ... 
+[20140108 115702.607] DEBUG[20994] res_rtp_asterisk.c:892: Setting the marker bit due to a source update
+
+[20140108 115702.607] VERB [20994] cdr.c:787: [SIP/5001-00000096]ast_cdr_answer(0x9635f8) src[5001] dst[5000] ... 
+[20140108 115702.607] VERB [20994] cdr.c:1225: [SIP/5001-00000096]ast_cdr_update(0x9618c0) ... 
+[20140108 115702.607] DEBUG[20994] features.c:4208: bridge answer set, chan answer set
+
+[20140108 115702.607] VERB [20994] cdr.c:943: [SIP/5001-00000096]ast_cdr_setanswer(0x983640, t) src[5001] dst[5000] ... 
+[20140108 115702.607] VERB [20994] cdr.c:957: ast_cdr_setdisposition(0x983640, 8) ... 
+[20140108 115702.607] VERB [20994] cdr.c:943: [SIP/5001-00000096]ast_cdr_setanswer(0x9635f8, t) src[5001] dst[5000] ... 
+[20140108 115702.607] VERB [20994] cdr.c:957: ast_cdr_setdisposition(0x9635f8, 8) ... 
+[20140108 115702.608] DEBUG[20994] features.c:4026: Removing dialed interfaces datastore on SIP/5000-00000097 since we're bridging
+
+[20140108 115703.878] DEBUG[20994] rtp_engine.c:931: rtp-engine-local-bridge: Ooh, got a hangup
+
+[20140108 115703.878] DEBUG[20994] channel.c:7724: Returning from native bridge, channels: SIP/5001-00000096, SIP/5000-00000097
+
+[20140108 115703.879] VERB [20994] cdr.c:1059: [SIP/5001-00000096]ast_cdr_end(0x983640) src[5001] dst[5000] ... 
+[20140108 115703.879] VERB [20994] cdr.c:1268: [SIP/5001-00000096]post_cdr(0x983640) src[5001] dst[5000] ... 
+[20140108 115703.879] DEBUG[20994] pbx.c:4313: Function result is '(null)'
+
+[20140108 115703.879] DEBUG[20994] pbx.c:4313: Function result is '5001'
+
+[20140108 115703.879] DEBUG[20994] pbx.c:4313: Function result is '5000'
+
+[20140108 115703.879] DEBUG[20994] pbx.c:4313: Function result is 'from-internal'
+
+[20140108 115703.879] DEBUG[20994] pbx.c:4313: Function result is '"aaa" <5001>'
+
+[20140108 115703.879] DEBUG[20994] pbx.c:4313: Function result is 'SIP/5001-00000096'
+
+[20140108 115703.879] DEBUG[20994] pbx.c:4313: Function result is 'SIP/5000-00000097'
+
+[20140108 115703.879] DEBUG[20994] pbx.c:4313: Function result is 'Dial'
+
+[20140108 115703.879] DEBUG[20994] pbx.c:4313: Function result is 'SIP/5000,60,'
+
+[20140108 115703.879] DEBUG[20994] pbx.c:4313: Function result is '2014-01-08 11:56:54'
+
+[20140108 115703.879] DEBUG[20994] pbx.c:4313: Function result is '2014-01-08 11:57:02'
+
+[20140108 115703.879] DEBUG[20994] pbx.c:4313: Function result is '2014-01-08 11:57:03'
+
+[20140108 115703.879] DEBUG[20994] pbx.c:4313: Function result is '9'
+
+[20140108 115703.879] DEBUG[20994] pbx.c:4313: Function result is '1'
+
+[20140108 115703.879] DEBUG[20994] pbx.c:4313: Function result is 'ANSWERED'
+
+[20140108 115703.879] DEBUG[20994] pbx.c:4313: Function result is 'DOCUMENTATION'
+
+[20140108 115703.879] DEBUG[20994] pbx.c:4313: Function result is '1389153414.150'
+
+[20140108 115703.879] DEBUG[20994] pbx.c:4313: Function result is 'EXT'
+
+[20140108 115703.880] DEBUG[20994] pbx.c:4313: Function result is '(null)'
+
+[20140108 115703.880] DEBUG[20994] cdr_sqlite3_custom.c:267: About to log: INSERT INTO cdr (accountcode,src,dst,dcontext,clid,channel,dstchannel,lastapp,last)
+
+[20140108 115703.934] VERB [20994] cdr.c:1362: [SIP/5001-00000096]ast_cdr_specialized_reset(0x9635f8, (nil)) src[5001] dst[5000] ... 
+[20140108 115703.935] VERB [20994] cdr.c:767: [SIP/5001-00000096]ast_cdr_start(0x9635f8) src[5001] dst[5000] ... 
+[20140108 115703.935] VERB [20994] cdr.c:1362: [SIP/5000-00000097]ast_cdr_specialized_reset(0x9a9768, (nil)) src[5000] dst[s] ... 
+[20140108 115703.935] VERB [20994] cdr.c:767: [SIP/5000-00000097]ast_cdr_start(0x9a9768) src[5000] dst[s] ... 
+[20140108 115703.935] DEBUG[20994] channel.c:2900: Hanging up channel 'SIP/5000-00000097'
+
+[20140108 115703.937] DEBUG[20994] app_dial.c:3082: Exiting with DIALSTATUS=ANSWER.
+
+
+[20140108 115703.938] DEBUG[20994] pbx.c:5410: Spawn extension (from-internal,5000,1) exited non-zero on 'SIP/5001-00000096'
+
+[20140108 115703.938] VERB [20994] pbx.c:5411:   == Spawn extension (from-internal, 5000, 1) exited non-zero on 'SIP/5001-00000096'
+
+[20140108 115703.938] VERB [20994] cdr.c:1225: [SIP/5001-00000096]ast_cdr_update(0x9618c0) ... 
+[20140108 115703.939] DEBUG[20994] channel.c:2900: Hanging up channel 'SIP/5001-00000096'
+                                                                              
+
+
+
+
++++++++++++++++++_____________________=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+[20140108 174326.337] VERB [21870] app_dial.c:1663:     -- Nobody picked up in 60000 ms
+
+[20140108 174326.337] VERB [21870] cdr.c:854: [SIP/5001-0000009e]ast_cdr_noanswer(0x8e75f8) src[5001] dst[5000] ... 
+[20140108 174326.337] VERB [21870] cdr.c:1059: [SIP/5000-0000009f]ast_cdr_end(0x93a3a0) src[5000] dst[s] ... 
+[20140108 174326.337] VERB [21870] cdr.c:1268: [SIP/5000-0000009f]post_cdr(0x93a3a0) src[5000] dst[s] ... 
+[20140108 174326.343] VERB [21870] pbx.c:4493:     -- Executing [s@macro-exten-vm:21] Set("SIP/5001-0000009e", "SV_DIALSTATUS=NOANSWER") in new stack
+
+
+[20140108 174326.344] VERB [21870] pbx.c:4493:     -- Executing [s@macro-exten-vm:22] GosubIf("SIP/5001-0000009e", "0?docfn,1") in new stack
+
+
+[20140108 174326.344] VERB [21870] pbx.c:4493:     -- Executing [s@macro-exten-vm:23] GosubIf("SIP/5001-0000009e", "0?docfb,1") in new stack
+
+
+[20140108 174326.345] VERB [21870] pbx.c:4493:     -- Executing [s@macro-exten-vm:24] Set("SIP/5001-0000009e", "DIALSTATUS=NOANSWER") in new stack
+
+
+[20140108 174326.351] VERB [21870] pbx.c:4493:     -- Executing [s@macro-exten-vm:25] ExecIf("SIP/5001-0000009e", "0?Macro(hangupcall)") in new stack
+
+
+[20140108 174326.356] VERB [21870] pbx.c:4493:     -- Executing [s@macro-exten-vm:26] GotoIf("SIP/5001-0000009e", "0?s-NOANSWER,1") in new stack
+
+
+[20140108 174326.358] VERB [21870] pbx.c:4493:     -- Executing [s@macro-exten-vm:27] Log("SIP/5001-0000009e", "NOTICE, "Sending to Voicemail box 5000"") in k
+
+
+[20140108 174326.362] VERB [21870] pbx.c:4493:     -- Executing [s@macro-exten-vm:28] Macro("SIP/5001-0000009e", "vm,5000,NOANSWER,") in new stack
+
+
+[20140108 174326.368] VERB [21870] pbx.c:4493:     -- Executing [s@macro-vm:1] Macro("SIP/5001-0000009e", "get-vmcontext,5000") in new stack
+
+
+[20140108 174326.374] VERB [21870] pbx.c:4493:     -- Executing [s@macro-get-vmcontext:1] Set("SIP/5001-0000009e", "VMCONTEXT=") in new stack
+
+
+[20140108 174326.377] VERB [21870] pbx.c:4493:     -- Executing [s@macro-get-vmcontext:2] GotoIf("SIP/5001-0000009e", "1?200") in new stack
+
+
+[20140108 174326.380] VERB [21870] pbx.c:10233:     -- Goto (macro-get-vmcontext,s,200)
+
+
+[20140108 174326.381] VERB [21870] pbx.c:4493:     -- Executing [s@macro-get-vmcontext:200] Set("SIP/5001-0000009e", "VMCONTEXT=default") in new stack
+
+
+[20140108 174326.383] VERB [21870] pbx.c:4493:     -- Executing [s@macro-vm:2] Set("SIP/5001-0000009e", "CDR(userfield)=VM") in new stack
+
+
+[20140108 174326.384] VERB [21870] cdr.c:1195: [SIP/5001-0000009e]ast_cdr_setuserfield(0x90bb48:0x8e75f8, 0x4326f4f7) src[5001] dst[5000] ... 
+[20140108 174326.385] VERB [21870] pbx.c:4493:     -- Executing [s@macro-vm:3] Goto("SIP/5001-0000009e", "s-NOANSWER,1") in new stack
+
+
+[20140108 174326.387] VERB [21870] pbx.c:10233:     -- Goto (macro-vm,s-NOANSWER,1)
+
+
+[20140108 174326.388] VERB [21870] pbx.c:4493:     -- Executing [s-NOANSWER@macro-vm:1] Macro("SIP/5001-0000009e", "get-vmcontext,5000") in new stack
+
+
+[20140108 174326.390] VERB [21870] pbx.c:4493:     -- Executing [s@macro-get-vmcontext:1] Set("SIP/5001-0000009e", "VMCONTEXT=") in new stack
+
+
+[20140108 174326.391] VERB [21870] pbx.c:4493:     -- Executing [s@macro-get-vmcontext:2] GotoIf("SIP/5001-0000009e", "1?200") in new stack
+
+[20140108 174326.392] VERB [21870] pbx.c:10233:     -- Goto (macro-get-vmcontext,s,200)
+
+[20140108 174326.393] VERB [21870] pbx.c:4493:     -- Executing [s@macro-get-vmcontext:200] Set("SIP/5001-0000009e", "VMCONTEXT=default") in new stack
+
+[20140108 174326.395] VERB [21870] pbx.c:4493:     -- Executing [s-NOANSWER@macro-vm:2] VoiceMail("SIP/5001-0000009e", "5000@default,u") in new stack
+
+[20140108 174326.399] VERB [21870] cdr.c:787: [SIP/5001-0000009e]ast_cdr_answer(0x8e75f8) src[5001] dst[5000] ... 
+[20140108 174326.567] VERB [21870] file.c:995:     -- <SIP/5001-0000009e> Playing 'vm-theperson.gsm' (language 'en')
+
+
+[20140108 174328.230] VERB [21870] file.c:995:     -- <SIP/5001-0000009e> Playing 'digits/5.gsm' (language 'en')
+
+
+[20140108 174328.914] VERB [21870] file.c:995:     -- <SIP/5001-0000009e> Playing 'digits/0.gsm' (language 'en')
+
+
+[20140108 174329.737] VERB [21870] file.c:995:     -- <SIP/5001-0000009e> Playing 'digits/0.gsm' (language 'en')
+
+
+[20140108 174330.560] VERB [21870] file.c:995:     -- <SIP/5001-0000009e> Playing 'digits/0.gsm' (language 'en')
+
+
+[20140108 174331.383] VERB [21870] file.c:995:     -- <SIP/5001-0000009e> Playing 'vm-isunavail.gsm' (language 'en')
+
+
+[20140108 174332.526] VERB [21870] file.c:995:     -- <SIP/5001-0000009e> Playing 'vm-intro.gsm' (language 'en')
+
+
+[20140108 174334.157] VERB [05929] dnsmgr.c:335:        > Refreshing DNS lookups.
+
+
+[20140108 174338.089] VERB [21870] file.c:995:     -- <SIP/5001-0000009e> Playing 'beep.gsm' (language 'en')
+
+
+[20140108 174338.530] VERB [21870] app_voicemail.c:13633:     -- Recording the message
+
+
+[20140108 174338.532] VERB [21870] app.c:815:     -- x=0, open writing:  /app/asterisk/var/spool/asterisk/voicemail/default/5000/tmp/tpMV7L format: wav49, 0x8
+
+[20140108 174344.235] VERB [21870] app.c:939:     -- User hung up
+
+
+[20140108 174344.250] VERB [21870] app_macro.c:430:   == Spawn extension (macro-vm, s-NOANSWER, 2) exited non-zero on 'SIP/5001-0000009e' in macro 'vm'
+
+
+[20140108 174344.253] VERB [21870] app_macro.c:430:   == Spawn extension (macro-exten-vm, s, 28) exited non-zero on 'SIP/5001-0000009e' in macro 'exten-vm'
+
+
+[20140108 174344.255] VERB [21870] pbx.c:5411:   == Spawn extension (from-internal, 5000, 1) exited non-zero on 'SIP/5001-0000009e'
+
+
+[20140108 174344.258] VERB [21870] cdr.c:1225: [SIP/5001-0000009e]ast_cdr_update(0x90bb48) ... 
+[20140108 174344.266] VERB [21870] cdr.c:1059: [SIP/5001-0000009e]ast_cdr_end(0x8e75f8) src[5001] dst[5000] ... 
+[20140108 174344.267] VERB [21870] cdr.c:1268: [SIP/5001-0000009e]post_cdr(0x8e75f8) src[5001] dst[5000] ... 
+                                             
